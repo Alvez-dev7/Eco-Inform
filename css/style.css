@@ -2,14 +2,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
+
      /*Paleta de Cores Parte 01*/
-    --fundo-principal: #0F172A;
-    --fundo-cards: #1E293B;
-    --destaque01v: #10B981;
-    --destaque02m: #D97706;
-    --texto:#F8FAFC;
+    :root {
+
+    --fundo-principal: #FFFFFF; 
+    --texto-principal: #3A4035;  
+    
+    --destaque-suave: #84967A;  
+    --destaque-cta: #D4A373;    
 }
+
 
 *{
     margin: 0px;
@@ -21,9 +24,8 @@
 
 header#cabecalho-fixo{
     display: grid;
-    grid-template-columns: 1fr 50vw 1fr;
-    grid-template-rows: 5%;
-    grid-auto-flow: column nowrap;
+    grid-template-columns: 1fr  auto 1fr ;
+    align-items: center;
     position: fixed;
     top: 15px;
     left: 50%;
@@ -31,30 +33,34 @@ header#cabecalho-fixo{
     width: 92%;
     max-width: 1400px;
     z-index: 5;
-    background: rgba(15, 23, 42, 0.4);
-    backdrop-filter: blur(8px);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
 
     
 }
 
 div.hud-centro{
-    justify-self: center;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
     grid-column: 2;
+    backdrop-filter: blur(15px);
+    padding: 10px;
+    border-radius: 8px;
+    border: 0.5px solid rgba(255, 255, 255, 0.499);;
     
     
 }
 
 div#barra-fundo{
     width: 40vw;
-    height: 4vh;
+    height: 15px;
     background-color: transparent;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.499);
 }
 div#barra-progresso{
-    height: 4vh;
+    height: 15px;
     width: 50%;
     overflow: hidden;
     border: 1px solid rgb(188, 176, 176);
@@ -63,24 +69,42 @@ div#barra-progresso{
 }
 
 div#config{
-    justify-self: start;
+    
     grid-column: 1;
+    border-radius: 8px;
 }
 
 
 #engrenagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 45px;
     height: 50px;
     border-radius: 15px;
     background-color: transparent;
+    backdrop-filter: blur(15px);
     color:  rgba(255, 255, 255, 0.499);
-    border: 1px solid rgba(255, 255, 255, 0.499);
+    border: 0.5px solid rgba(255, 255, 255, 0.499);
     font-size: 1.2em;
-    margin-left: 20px;
+    padding: 10px;
+    
+    
 }
 
+#engrenagem:hover{
+    border: 2px solid rgba(255, 255, 255, 0.499);
+    font-size: 1.3em;
+}
+
+#planta-progresso{
+    color:  rgba(255, 255, 255, 0.499);
+    font-size: 1,2em;
+}
+
+
 section#hero{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: flex-start;
     align-items: top;
@@ -89,6 +113,18 @@ section#hero{
     background-position: center;
     position: relative;
 }
+
+/*section#hero::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #FFFFFF);
+    pointer-events: none;
+    z-index: 10;
+}*/
 
 
 div#titulo-principal{
@@ -107,7 +143,7 @@ div#titulo-principal{
 
     font-size: 4em;
 
-    margin-top: 65px;
+    margin-top: 140px;
     margin-left: 50px;
 }
 
@@ -119,4 +155,22 @@ div#efeito-escuro{
     height: 100%;
     background-color: black;
     background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), transparent 60px, rgba(15, 23, 42, 0.981) 100px);
+}
+
+
+
+
+
+@media (max-width: 768px){
+    div#efeito-escuro{
+        background: rgba(15, 23, 42, 0.853);
+        backdrop-filter: blur(4px);
+    }
+
+    div#titulo-principal{
+        font-size: 2.5em;
+        margin-left: 20px;
+        margin-top: 140px;
+        
+    }
 }
