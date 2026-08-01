@@ -18,8 +18,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 200;
 }
 
 header#cabecalho-fixo{
@@ -47,7 +45,7 @@ div.hud-centro{
     backdrop-filter: blur(15px);
     padding: 10px;
     border-radius: 8px;
-    border: 0.5px solid rgba(255, 255, 255, 0.499);;
+    border: 0.5px solid rgba(255, 255, 255, 0.499);
     
     
 }
@@ -99,52 +97,119 @@ div#config{
 
 #planta-progresso{
     color:  rgba(255, 255, 255, 0.499);
-    font-size: 1,2em;
+    
 }
 
 
 section#hero{
-    min-height: 100vh;
+    min-height: 250vh;
     display: flex;
-    justify-content: flex-start;
-    align-items: top;
+    flex-flow: column nowrap;
     background-image: url(../assets/background-teste.webp);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     position: relative;
+    
 }
 
-/*section#hero::after{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #FFFFFF);
-    pointer-events: none;
-    z-index: 10;
-}*/
 
 
 div#titulo-principal{
     z-index: 3;
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.059);
     background-image: url(../assets/background-teste.webp);
-
-    background-position: center;
+    justify-self: flex-start;
+    
+    background-position: center ;
     background-size: cover;
     background-attachment: fixed;
-
     -webkit-background-clip: text;
     background-clip: text;
 
     color: transparent;
-
+    font-family: "Bebas Neue", sans-serif;
     font-size: 4em;
+    font-weight: 100;
 
     margin-top: 140px;
     margin-left: 50px;
+}
+
+div#narrativa-textos{
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40vh;
+    margin-top: 100vh;
+    width: 100%;
+}
+
+.card-frase{
+    max-width: 400px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.6em;
+    background-color: rgba(15, 23, 42, 0.65);
+    color: #F4F6F0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    margin: 30px;
+    padding: 20px;
+
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition: opacity 3s ease, transform 3s ease;
+}
+
+.card-frase.visivel{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.esquerda{
+    align-self: flex-start;
+    
+}
+
+.direita{
+    align-self: flex-end;
+}
+
+#indicador-rolagem{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 12px;
+
+    position: absolute;
+    left: 50%;
+    top: calc(100vh - 150px);
+
+    transform: translateX(-50%);
+    transition: opacity .5s ease;
+    animation: flutuar 2s infinite ease-in-out;
+
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+@keyframes flutuar {
+    0%, 100%{
+        transform: translate(-50%, 0);
+        opacity: .5s;
+    }
+    50%{
+        transform: translate(-50%, 10px);
+        opacity: 1;
+    }
 }
 
 div#efeito-escuro{
@@ -157,9 +222,91 @@ div#efeito-escuro{
     background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), transparent 60px, rgba(15, 23, 42, 0.981) 100px);
 }
 
+#quiz{
+    display: grid;
+    grid-template-columns: 1fr 90vh 1fr;
+    font-family: "Montserrat";
+    font-weight: 200;
+}
+#questao01{
+    grid-column: 2;
+}
+.card-quiz{
+    grid-column: 2;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    margin: 20px auto;
+    background: transparent;
+    max-width: 600px;
+    
+    border-radius: 12px;
+    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.373), 4px 5px 7px rgba(0, 0, 0, 0.244);
+    
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+
+}
+
+.card-quiz  h2{
+    border-radius: 8px;
+    padding: 20px;
+    color: var(--texto-principal);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.262);
+    
+}
+
+div.opcoes-container{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.btn-opcao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
+    font-size: 0.8em;
 
+    background: transparent;
+    color: var(--texto-principal);
+
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+
+    border-radius: 20px;
+    border: 3px solid var(--destaque-cta);
+    box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.293);
+    
+    cursor: pointer;
+    transition: transform .5s;
+    justify-content: center;
+}
+
+.btn-opcao:hover{
+    transform:translateY(-4px);
+    box-shadow: 7px 8px 7px rgba(0, 0, 0, 0.288);
+}
+
+.btn-opcao:active{
+    transform:translateY(1px);
+}
+
+div.card-info{
+    display: none;
+}
 
 @media (max-width: 768px){
     div#efeito-escuro{
@@ -171,6 +318,10 @@ div#efeito-escuro{
         font-size: 2.5em;
         margin-left: 20px;
         margin-top: 140px;
-        
+    }
+
+    .card-frase{
+        font-size: 1.3em;
+        line-height: 2;
     }
 }
