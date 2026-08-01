@@ -22,11 +22,15 @@
 
 html{
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 50px;
 }
 
 header#cabecalho-fixo{
     opacity: 0;
     pointer-events: none;
+    transition: all 0.5s ease;
+    transform: translateX(-50% -100);
 
     display: grid;
     grid-template-columns: 1fr  auto 1fr ;
@@ -34,7 +38,7 @@ header#cabecalho-fixo{
     position: fixed;
     top: 15px;
     left: 50%;
-    transform: translateX(-50%);
+
     width: 92%;
     max-width: 1400px;
     z-index: 5;
@@ -43,9 +47,10 @@ header#cabecalho-fixo{
     
 }
 
-.cabecalho-visivel{
+header#cabecalho-fixo.cabecalho-visivel{
     opacity: 1;
     pointer-events: auto;
+    transform: translateX(-50%);
 }
 
 
@@ -123,7 +128,6 @@ section#hero{
     background-position: center;
     background-attachment: fixed;
     position: relative;
-    
 }
 
 
@@ -160,6 +164,8 @@ div#narrativa-textos{
 }
 
 .card-frase{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
     display: flex;
     flex-flow: column nowrap;
     gap: 30px;
@@ -261,11 +267,18 @@ div#efeito-escuro{
 }
 
 #quiz{
-    display: grid;
+    display: none;
+    opacity: 0;
     grid-template-columns: 1fr 90% 1fr;
     font-family: "Montserrat";
     font-weight: 200;
     width: 100%;
+    transition: opacity 1s;
+}
+
+#quiz.quiz-visivel{
+    display: grid;
+    opacity: 1;
 }
 
 #questao01::before{
@@ -281,6 +294,7 @@ div#efeito-escuro{
 }
 
 #questao01{
+    scroll-snap-align: start;
     position: relative;
     display: flex;
     grid-column: 1/-1;
@@ -373,7 +387,7 @@ div.card-info{
 
 @media (max-width: 768px){
     div#efeito-escuro{
-        background: rgba(15, 23, 42, 0.853);
+        background: rgba(0, 0, 0, 0.692);
         backdrop-filter: blur(4px);
     }
 
@@ -388,10 +402,15 @@ div.card-info{
         line-height: 2;
     }
 
+    #questao01::before{
+        background-image: linear-gradient(to bottom,  rgba(0, 0, 0, 0.692), transparent);
+    }
+
     #questao01{
         background: url(../assets/img-questao01.jpg);
         background-position: left center;
-        min-height: 100vh;
+        background-size: cover;
+        min-height: 110vh;
     }
 
     .card-quiz{
@@ -406,7 +425,7 @@ div.card-info{
 @media (min-width: 768px) and (max-width: 1024px) {
     #questao01{
         background: gray url(../assets/img-questao01-tablet.jpg);
-        background-position: center center ;
+        background-position: center center;
         min-height: 100vh;
         
     }
