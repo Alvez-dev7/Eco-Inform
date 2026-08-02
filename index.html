@@ -60,7 +60,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, cum! Molestiae, sequi qui facere suscipit inventore cupiditate eveniet delectus explicabo soluta impedit neque ullam aspernatur odio autem veritatis, ea maiores?</p>
 
                     <a href="#quiz" id="link-quiz">Ir para o quiz</a>
-                    
+
 
                 </div>
             </div>
@@ -77,25 +77,47 @@
                 <div class="card-quiz">
                     <h2>Você sabe exatamente o que é a ODS 12 da ONU e qual é o seu objetivo principal?</h2>
                     <div class="opcoes-container">
-                        <button type="button" class="btn-opcao" data-resposta="sim" data-info="Excelente.........">Sim, estou ciente!</button>
-                        <button type="button" class="btn-opcao" data-resposta="nao" data-info ='Sem problemas! ...............'>Tenho dúvidas / Não sei</button>
+                        <button type="button" class="btn-opcao" data-resposta="sim" data-alvo="#info-questao01" data-titulo="Você sabia?" data-info="Exato! A ODS 12 é sobre Produção e Consumo Sustentáveis. Cientificamente isso é olhar o ciclo de vida completo de um produto: desde a extração da matéria-prima até o descarte. O objetivo é desacoplar crescimento econômico da degradação ambiental, ou seja, fazer mais e melhor com menos e sair do modelo extrai-usa-joga fora.">Sim, estou ciente!</button>
+                        <button type="button" class="btn-opcao"
+                         data-resposta="nao" data-alvo="#info-questao01" data-titulo="Não tem problema!" data-info ='A ODS 12 da ONU defende o consumo consciente e responsável. A grande meta é trocar a nossa economia linear por uma economia circular. Na prática isso significa projetar produtos pra durar mais, reaproveitar resíduos e reduzir desperdício, poluição e o uso excessivo de recursos naturais.'>Tenho dúvidas / Não sei</button>
                     </div>
                 
                 </div>
             </article>
 
-            <article id="infoquestao01">
-                <div class="info-conteudo card-info" >
-                    <h3>Voce sabia?</h3>
+            <article id="info-questao01" class="info-conteudo">
+                <div class= "card-info">
+                    <h3>Você sabia?</h3>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error iusto id dicta, unde saepe nam dolorem incidunt doloribus quam ab maxime, dolorum animi minus doloremque repellat voluptate illo optio!</p>
                     
-                <button type="button" class="btn-avancar">Avançar</button>
+                <button type="button" class="btn-avancar" data-proxima="questao02">Próxima pergunta</button>
                 </div>
 
             </article>
 
+           <article id="questao02">
+                <div class="card-quiz">
+                    <h2>Você sabe exatamente o que é a ODS 12 da ONU e qual é o seu objetivo principal?</h2>
+                    <div class="opcoes-container">
+                        <button type="button" class="btn-opcao" data-resposta="sim" data-alvo="#info-questao02" data-titulo="Você sabia?" data-info="Arrasou! Isso é logística reversa na prática. Levar pra um ponto de coleta garante a desmontagem segura e a reciclagem. Assim esses metais e plásticos voltam pra cadeia produtiva, reduzindo a necessidade de extrair novos minérios e evitando contaminação ambiental.">Sim, estou ciente!</button>
+                        <button type="button" class="btn-opcao"
+                         data-resposta="nao" data-alvo="#info-questao02" data-titulo="Não tem problema!" data-info ='Atenção! Eletrônico é considerado resíduo perigoso pela Política Nacional de Resíduos Sólidos. Ele tem metais pesados como chumbo, mercúrio e cádmio. Quando descartado de forma errada, ocorre a lixiviação e esses elementos contaminam o solo e a água. Além disso, a gente desperdiça a chance de recuperar materiais nobres como ouro, prata e cobre das placas.'>Tenho dúvidas / Não sei</button>
+                    </div>
+                
+                </div>
+            </article>
 
+            <article id="info-questao02" class="info-conteudo">
+                <div class= "card-info">
+                    <h3>Você sabia?</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error iusto id dicta, unde saepe nam dolorem incidunt doloribus quam ab maxime, dolorum animi minus doloremque repellat voluptate illo optio!</p>
+                    
+                <button type="button" class="btn-avancar" data-proxima="questao03">Próxima pergunta</button>
+                </div>
+
+            </article>
 
 
         </section>

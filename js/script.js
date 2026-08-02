@@ -59,3 +59,27 @@ document.addEventListener("DOMContentLoaded", function(){
         quiz.classList.add('quiz-visivel')
         quiz.scrollIntoView({behavior: 'smooth'})
     })
+    const card_info = document.querySelector('.card-info')
+    const botoes_quiz = document.querySelectorAll('.btn-opcao')
+
+    botoes_quiz.forEach(function(clica_botao){
+
+        clica_botao.addEventListener('click', function(){
+            const id_alvo = clica_botao.dataset.alvo;
+
+            const container_info = document.querySelector(id_alvo)
+
+            const paragrafo_info = card_info.querySelector('p')
+            const titulo_info = card_info.querySelector('h3')
+
+            paragrafo_info.textContent = clica_botao.dataset.info
+            titulo_info.textContent = clica_botao.dataset.titulo
+
+            container_info.classList.add('visivel');
+
+            container_info.scrollIntoView({behavior: 'smooth'})
+        });
+    });
+
+
+    
