@@ -250,7 +250,6 @@
                         <!-- OPÇÃO 2 -->
                         <button type="button" class="btn-opcao"
                             
-                            data-alvo="#info-questao[NUMERO DA QUESTAO]" 
                             data-titulo="[TITULO DE ATENÇÃO]" 
                             data-info="[TEXTO DE EXPLICACAO DE ATENÇÃO]">
                             Quero conhecer o game!
@@ -260,21 +259,84 @@
                 </div>
             </article>
 
-                    <!-- CARD DE INFORMAÇÃO DA QUESTÃO [NUMERO DA QUESTAO] -->
-                    <article id="info-questao[NUMERO DA QUESTAO]" class="info-conteudo escondida">
-                        <div class="card-info">
-                            
-                            <h3>Você sabia?</h3>
-                            
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error iusto id dicta, unde saepe nam dolorem incidunt doloribus quam ab maxime, dolorum animi minus doloremque repellat voluptate illo optio!</p>
-                            
-                            <!-- ATENÇÃO AQUI: O data-proxima deve apontar para o NÚMERO DA SEGUINTE -->
-                            <button type="button" class="btn-avancar" data-proxima="#questao[NUMERO DA PROXIMA QUESTÃO]">Próxima pergunta</button>
-                            
-                        </div>
-                    </article>
         </section>
        
+        <section id="calculadora" class="escondida">
+
+            <!-- PERGUNTA 01 DA CALCULADORA -->
+            <article id="calc-pergunta01" class="visivel">
+                <div class="card-quiz">
+                    
+                    <h2>Quantos minutos, em média, dura o seu banho diário?</h2>
+                    
+                    <div class="opcoes-container">
+                        <input type="number" id="input-calc01" min="1" max="100" placeholder="Ex: 15" class="input-calculadora">
+                        
+                        <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta02">Confirmar</button>
+                    </div>
+                
+                </div>
+            </article>
+
+            <!-- PERGUNTA 02 DA CALCULADORA -->
+            <article id="calc-pergunta02" class="visivel">
+                <div class="card-quiz">
+                    
+                    <h2>Quantos aparelhos ou acessórios eletrônicos sem uso (celulares velhos, fones quebrados, cabos soltos) você guarda nas gavetas de casa?</h2>
+                    
+                    <div class="opcoes-container">
+                        <input type="number" id="input-calc02" min="1" max="100" placeholder="Ex: 15" class="input-calculadora">
+                        
+                        <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta03">Confirmar</button>
+                    </div>
+                
+                </div>
+            </article>
+            <!-- PERGUNTA 03 DA CALCULADORA -->
+            <article id="calc-pergunta03" class="visivel">
+                <div class="card-quiz">
+                    
+                    <h2>Quantos aparelhos ou acessórios eletrônicos sem uso (celulares velhos, fones quebrados, cabos soltos) você guarda nas gavetas de casa?</h2>
+                    
+                    <div class="opcoes-container">
+                        
+                        <input type="number" id="input-calc03" min="1" max="100" placeholder="Ex: 15" class="input-calculadora">
+                        
+                        <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta04">Confirmar</button>
+                    </div>
+                
+                </div>
+            </article>
+
+            <!-- PERGUNTA 04 DA CALCULADORA -->
+            <article id="calc-pergunta04" class="visivel">
+                <div class="card-quiz">
+                    
+                    <h2>Quantos aparelhos ou acessórios eletrônicos sem uso (celulares velhos, fones quebrados, cabos soltos) você guarda nas gavetas de casa?</h2>
+                    
+                    <div class="opcoes-container">
+                        
+                        <input type="number" id="input-calc04" min="1" max="100" placeholder="Ex: 15" class="input-calculadora">
+                    
+                        <button type="button" class="btn-avancar-calc" data-proxima="#card-pessoal">Confirmar</button>
+                    </div>
+                
+                </div>
+            </article>
+
+            <article id="card-pessoal" class="visivel">
+                <div id="info-pessoal">
+                    <h2>
+                        Parabéns!!
+                    </h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ipsum nam recusandae. Eveniet, recusandae! Odit aliquid fugit, incidunt deleniti distinctio ut repellendus. Excepturi deleniti doloremque, hic quas quod perspiciatis vero?
+                    </p>
+                </div>
+            </article>
+
+</section>
+
 
 
 

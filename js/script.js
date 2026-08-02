@@ -82,6 +82,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const btn_avancar_conjunto = document.querySelectorAll('.btn-avancar');
 
+    const barra_progresso = document.querySelector('#barra-progresso')
+
+    let progresso_total = 20
+
     btn_avancar_conjunto.forEach(function(btn_avancar_individual){
         
         btn_avancar_individual.addEventListener('click', function(){
@@ -93,6 +97,13 @@ document.addEventListener("DOMContentLoaded", function(){
             destino.classList.add('visivel')
 
             destino.scrollIntoView({behavior: 'smooth'})
+
+
+            if (progresso_total < 100){
+                progresso_total +=20
+
+                barra_progresso.style.width = `${progresso_total}%`
+            }
 
         })
     })    
