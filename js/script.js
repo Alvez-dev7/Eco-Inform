@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function(){
         quiz.classList.add('quiz-visivel')
         quiz.scrollIntoView({behavior: 'smooth'})
     })
-    const card_info = document.querySelector('.card-info')
     const botoes_quiz = document.querySelectorAll('.btn-opcao')
 
     botoes_quiz.forEach(function(clica_botao){
@@ -69,11 +68,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
             const container_info = document.querySelector(id_alvo)
 
-            const paragrafo_info = card_info.querySelector('p')
-            const titulo_info = card_info.querySelector('h3')
+            const paragrafo_info = container_info.querySelector('p')
+            const titulo_info = container_info.querySelector('h3')
 
-            paragrafo_info.textContent = clica_botao.dataset.info
-            titulo_info.textContent = clica_botao.dataset.titulo
+            paragrafo_info.innerHTML = clica_botao.dataset.info
+            titulo_info.innerHTML = clica_botao.dataset.titulo
 
             container_info.classList.add('visivel');
 
@@ -81,5 +80,19 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
 
+    const btn_avancar_conjunto = document.querySelectorAll('.btn-avancar');
 
-    
+    btn_avancar_conjunto.forEach(function(btn_avancar_individual){
+        
+        btn_avancar_individual.addEventListener('click', function(){
+            const proxima_quest =btn_avancar_individual.dataset.proxima
+
+            const destino = document.querySelector(proxima_quest);
+
+            destino.classList.remove('escondida')
+            destino.classList.add('visivel')
+
+            destino.scrollIntoView({behavior: 'smooth'})
+
+        })
+    })    

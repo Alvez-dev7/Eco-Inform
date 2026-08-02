@@ -73,53 +73,206 @@
         </section> <!--FIM HERO-SECTION-->
             
         <section id="quiz">
+            
+            <!--               QUESTÃO 01               -->
             <article id="questao01">
                 <div class="card-quiz">
                     <h2>Você sabe exatamente o que é a ODS 12 da ONU e qual é o seu objetivo principal?</h2>
                     <div class="opcoes-container">
-                        <button type="button" class="btn-opcao" data-resposta="sim" data-alvo="#info-questao01" data-titulo="Você sabia?" data-info="Exato! A ODS 12 é sobre Produção e Consumo Sustentáveis. Cientificamente isso é olhar o ciclo de vida completo de um produto: desde a extração da matéria-prima até o descarte. O objetivo é desacoplar crescimento econômico da degradação ambiental, ou seja, fazer mais e melhor com menos e sair do modelo extrai-usa-joga fora.">Sim, estou ciente!</button>
+                        <button type="button"class="btn-opcao"
+                            
+                            data-alvo="#info-questao01"
+                            data-titulo="Ciclo de Vida" 
+                            data-info="Exato! A ODS 12 é sobre Produção e Consumo Sustentáveis. Cientificamente isso é olhar o ciclo de vida completo de um produto: desde a extração da matéria-prima até o descarte. O objetivo é desacoplar crescimento econômico da degradação ambiental, ou seja, fazer mais e melhor com menos e sair do modelo extrai-usa-joga fora.">
+                            Sim, estou ciente!
+                        </button>
                         <button type="button" class="btn-opcao"
-                         data-resposta="nao" data-alvo="#info-questao01" data-titulo="Não tem problema!" data-info ='A ODS 12 da ONU defende o consumo consciente e responsável. A grande meta é trocar a nossa economia linear por uma economia circular. Na prática isso significa projetar produtos pra durar mais, reaproveitar resíduos e reduzir desperdício, poluição e o uso excessivo de recursos naturais.'>Tenho dúvidas / Não sei</button>
+                            
+                            data-alvo="#info-questao01"
+                            data-titulo="Economia Circular"
+                            data-info ='A ODS 12 da ONU defende o consumo consciente e responsável. A grande meta é trocar a nossa economia linear por uma economia circular. Na prática isso significa projetar produtos pra durar mais, reaproveitar resíduos e reduzir desperdício, poluição e o uso excessivo de recursos naturais.'>
+                            Tenho dúvidas / Não sei
+                        </button>
                     </div>
                 
                 </div>
             </article>
-
+                
+                    <!-- CARD DE INFORMAÇÃO DA QUESTÃO 01 -->
             <article id="info-questao01" class="info-conteudo">
                 <div class= "card-info">
                     <h3>Você sabia?</h3>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error iusto id dicta, unde saepe nam dolorem incidunt doloribus quam ab maxime, dolorum animi minus doloremque repellat voluptate illo optio!</p>
                     
-                <button type="button" class="btn-avancar" data-proxima="questao02">Próxima pergunta</button>
+                <button type="button" class="btn-avancar" data-proxima="#questao02">Próxima pergunta</button>
                 </div>
 
             </article>
-
-           <article id="questao02">
+            
+            <!--               QUESTÃO 02               -->
+           <article id="questao02" class="escondida">
                 <div class="card-quiz">
-                    <h2>Você sabe exatamente o que é a ODS 12 da ONU e qual é o seu objetivo principal?</h2>
+                    <h2>Quando um fone, celular ou cabo quebra na sua casa, qual costuma ser o destino dele? </h2>
                     <div class="opcoes-container">
-                        <button type="button" class="btn-opcao" data-resposta="sim" data-alvo="#info-questao02" data-titulo="Você sabia?" data-info="Arrasou! Isso é logística reversa na prática. Levar pra um ponto de coleta garante a desmontagem segura e a reciclagem. Assim esses metais e plásticos voltam pra cadeia produtiva, reduzindo a necessidade de extrair novos minérios e evitando contaminação ambiental.">Sim, estou ciente!</button>
                         <button type="button" class="btn-opcao"
-                         data-resposta="nao" data-alvo="#info-questao02" data-titulo="Não tem problema!" data-info ='Atenção! Eletrônico é considerado resíduo perigoso pela Política Nacional de Resíduos Sólidos. Ele tem metais pesados como chumbo, mercúrio e cádmio. Quando descartado de forma errada, ocorre a lixiviação e esses elementos contaminam o solo e a água. Além disso, a gente desperdiça a chance de recuperar materiais nobres como ouro, prata e cobre das placas.'>Tenho dúvidas / Não sei</button>
+                            
+                            data-alvo="#info-questao02"
+                            data-titulo="Logística Reversa"
+                            data-info="Arrasou! Isso é logística reversa na prática. Levar pra um ponto de coleta garante a desmontagem segura e a reciclagem. Assim esses metais e plásticos voltam pra cadeia produtiva, reduzindo a necessidade de extrair novos minérios e evitando contaminação ambiental.">
+                            Levo num ponto de coleta seletiva
+                        </button>
+                        <button type="button" class="btn-opcao"
+                            
+                            data-alvo="#info-questao02"
+                            data-titulo="Lixo Perigoso"
+                            data-info="Atenção! Eletrônico é considerado resíduo perigoso pela Política Nacional de Resíduos Sólidos. Ele tem metais pesados como chumbo, mercúrio e cádmio. Quando descartado de forma errada, ocorre a lixiviação e esses elementos <span> contaminam o solo e a água </span>. Além disso, a gente desperdiça a chance de recuperar materiais nobres como ouro, prata e cobre das placas.">
+                            Guardo na gaveta / Lixo comum
+                        </button>
                     </div>
                 
                 </div>
             </article>
-
-            <article id="info-questao02" class="info-conteudo">
+                
+                    <!-- CARD DE INFORMAÇÃO DA QUESTÃO 02 -->
+            <article id="info-questao02" class="info-conteudo escondida">
                 <div class= "card-info">
                     <h3>Você sabia?</h3>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error iusto id dicta, unde saepe nam dolorem incidunt doloribus quam ab maxime, dolorum animi minus doloremque repellat voluptate illo optio!</p>
                     
-                <button type="button" class="btn-avancar" data-proxima="questao03">Próxima pergunta</button>
+                <button type="button" class="btn-avancar" data-proxima="#questao03">Próxima pergunta</button>
                 </div>
 
             </article>
 
+            <!--               QUESTÃO 03               -->
+            <article id="questao03" class="escondida">
+                <div class="card-quiz">
+        
+                 <h2>Você faz ideia de quanta água é gasta para fabricar apenas UMA calça jeans que usamos no dia a dia?</h2>
+        
+                    <div class="opcoes-container">
+                        
+                        <button type="button" class="btn-opcao" 
+                            
+                            data-alvo="#info-questao03" 
+                            data-titulo="Água e Moda" 
+                            data-info="Isso mesmo! A moda é a 2ª indústria que mais consome água no mundo. Além do alto volume, temos a poluição: corantes e químicos, se não tratados, alteram o pH e a oxigenação dos rios. Por isso comprar menos, comprar melhor e reutilizar faz uma diferença enorme.">
+                            Acho que mais de 5.000 Litros
+                        </button>
+                    
+                        <button type="button" class="btn-opcao"
+                             
+                            data-alvo="#info-questao03" 
+                            data-titulo="A parte Hídrica" 
+                            data-info="É bem mais do que isso! Para produzir uma calça jeans são gastos de *5.000 a 10.000L de água* no ciclo completo. Isso se chama *pegada hídrica*: ela soma a água da irrigação do algodão, do tingimento, das lavagens e do acabamento. É por isso que a indústria têxtil está entre as que mais pressionam os recursos hídricos do planeta.">
+                            Acho que até 1.000 Litros
+                        </button>
+                    </div>
+    
+                </div>
+            </article>
 
+                    <!-- CARD DE INFORMAÇÃO DA QUESTÃO 03 -->
+                    <article id="info-questao03" class="info-conteudo escondida">
+                        <div class="card-info">
+                            
+                            <h3>Você sabia?</h3>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error iusto id dicta, unde saepe nam dolorem incidunt doloribus quam ab maxime, dolorum animi minus doloremque repellat voluptate illo optio!</p>
+                            
+                            <button type="button" class="btn-avancar" data-proxima="#questao04">Próxima pergunta</button>
+                            
+                        </div>
+                    </article>
+                        <!--               QUESTÃO 04                -->
+            <article id="questao04" class="escondida">
+                <div class="card-quiz">
+        
+                 <h2>No seu cotidiano, você costuma planejar compras e refeições para evitar jogar alimentos ou embalagens fora?</h2>
+        
+                    <div class="opcoes-container">
+                        <!-- OPÇÃO 1 -->
+                        <button type="button" class="btn-opcao" 
+                            
+                            data-alvo="#info-questao04" 
+                            data-titulo="Planejamento Consciente" 
+                            data-info="Mandou bem! Planejar as compras é uma das estratégias mais eficazes contra o *desperdício de alimentos*. Cerca de 1/3 de toda comida produzida é perdida. E quando ela vai pro aterro, se decompõe e gera *metano*, um gás de efeito estufa até 25x mais potente que o CO2.">
+                            Sempre tento planejar
+                        </button>
+                    
+                        <!-- OPÇÃO 2 -->
+                        <button type="button" class="btn-opcao"
+                             
+                            data-alvo="#info-questao04" 
+                            data-titulo="Custo Oculto" 
+                            data-info=" Acontece com todo mundo. Mas vale lembrar: desperdiçar comida é desperdiçar também toda a *água, energia, solo e mão de obra* que foram usados pra produzir e transportar. Pequenas atitudes como lista de compras, aproveitar sobras e armazenar direito já ajudam a quebrar esse ciclo. faça um titulo de um card informativo para cada alternativa de cada questão.">
+                            Acabo desperdiçando às vezes
+                        </button>
+                    </div>
+    
+                </div>
+            </article>
+
+                    <!-- CARD DE INFORMAÇÃO DA QUESTÃO 04 -->
+                    <article id="info-questao04" class="info-conteudo escondida">
+                        <div class="card-info">
+                            
+                            <h3>Você sabia?</h3>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error iusto id dicta, unde saepe nam dolorem incidunt doloribus quam ab maxime, dolorum animi minus doloremque repellat voluptate illo optio!</p>
+                            
+                            <button type="button" class="btn-avancar" data-proxima="#questao05">Próxima pergunta</button>
+                            
+                        </div>
+                    </article>
+
+                    
+
+
+            <!--               QUESTÃO 05              -->
+            <article id="questao05" class="escondida">
+                <div class="card-quiz">
+        
+                 <h2>E se você pudesse aprender a coletar e separar todos esses resíduos da cidade na prática, jogando um game retrô Top-Down?</h2>
+        
+                    <div class="opcoes-container">
+                        <!-- OPÇÃO 1 -->
+                        <button type="button" class="btn-opcao" 
+                            
+                            data-alvo="#info-questao05" 
+                            data-titulo="" 
+                            data-info="[TEXTO DE EXPLICACAO POSITIVA]">
+                            Sim, seria incrível!
+                        </button>
+                    
+                        <!-- OPÇÃO 2 -->
+                        <button type="button" class="btn-opcao"
+                            
+                            data-alvo="#info-questao[NUMERO DA QUESTAO]" 
+                            data-titulo="[TITULO DE ATENÇÃO]" 
+                            data-info="[TEXTO DE EXPLICACAO DE ATENÇÃO]">
+                            Quero conhecer o game!
+                        </button>
+                    </div>
+    
+                </div>
+            </article>
+
+                    <!-- CARD DE INFORMAÇÃO DA QUESTÃO [NUMERO DA QUESTAO] -->
+                    <article id="info-questao[NUMERO DA QUESTAO]" class="info-conteudo escondida">
+                        <div class="card-info">
+                            
+                            <h3>Você sabia?</h3>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error iusto id dicta, unde saepe nam dolorem incidunt doloribus quam ab maxime, dolorum animi minus doloremque repellat voluptate illo optio!</p>
+                            
+                            <!-- ATENÇÃO AQUI: O data-proxima deve apontar para o NÚMERO DA SEGUINTE -->
+                            <button type="button" class="btn-avancar" data-proxima="#questao[NUMERO DA PROXIMA QUESTÃO]">Próxima pergunta</button>
+                            
+                        </div>
+                    </article>
         </section>
        
 
