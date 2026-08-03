@@ -141,10 +141,10 @@ document.addEventListener("DOMContentLoaded", function(){
                 let valor_calc = Number(valor_digitado)
                 pontuacao_total += valor_calc
                 const proxima = document.querySelector(btn_avancar_calc.dataset.proxima)
-                
+                const footer = document.querySelector('footer')
                 if(btn_avancar_calc.dataset.proxima ==="#card-pessoal"){
                     document.querySelector('#resultado-numero').innerHTML = (pontuacao_total*3);
-
+                    footer.style.display = 'block'
                     const campo_mensagem = document.querySelector('#resultado-mensagem')
                     if (pontuacao_total > 30){
                         campo_mensagem.innerText = "Atenção ao seu consumo! Pequenas mudanças nas escolhas diárias geram grande impacto. A ODS 12 da ONU nos alerta que os recursos da Terra são finitos, mas nosso padrão de consumo atual continua crescendo. Ajustar pequenas decisões no dia a dia do prato de comida à escolha das roupas ajuda a construir uma cadeia produtiva mais justa e sustentável para as próximas gerações."

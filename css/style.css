@@ -54,7 +54,7 @@ header#cabecalho-fixo.cabecalho-visivel{
 
 
 div.hud-centro{
-    z-index: 1000;
+    z-index: 100;
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -125,7 +125,7 @@ section#hero{
     min-height: 250vh;
     display: flex;
     flex-flow: column nowrap;
-    background-image: url(../assets/background-teste.webp);
+    background-image: url(../assets/background-herosection.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -137,7 +137,7 @@ section#hero{
 div#titulo-principal{
     z-index: 10;
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.059);
-    background-image: url(../assets/background-teste.webp);
+    background-image: url(../assets/background-herosection.jpg);
     justify-self: flex-start;
     
     background-position: center;
@@ -176,6 +176,7 @@ div#narrativa-textos{
     font-size: 1.5em;
     font-weight: 600;
     line-height: 1.6em;
+    text-align: left;
     background-color: rgba(0, 0, 0, 0.475);
     color: #F4F6F0;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -194,6 +195,10 @@ div#narrativa-textos{
 .card-frase.visivel{
     opacity: 1;
     transform: translateY(0);
+}
+
+.card-frase span{
+    font-weight: 700;
 }
 
 .card-frase a{
@@ -571,6 +576,36 @@ article.visivel{
 #card-pessoal span{
     font-size: 1.6em;
     font-weight: 900;
+}
+
+
+footer {
+    display: none;
+    background-color: transparent; 
+    border-top: 1px solid var(--destaque-suave); 
+    padding: 30px 20px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin-top: 40px; 
+}
+
+footer p {
+    color: var(--texto-principal);
+    margin-bottom: 8px;
+}
+
+/* Destaque para o seu nome como criador */
+footer span {
+    color: var(--destaque-cta);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+footer .copyright {
+    font-size: 0.8rem;
+    opacity: 0.6; 
+    margin-top: 15px;
 }
 
 @media (max-width: 768px){
