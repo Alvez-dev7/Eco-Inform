@@ -92,7 +92,7 @@ div#config{
     border-radius: 8px;
 }
 
-
+/*
 #engrenagem{
     display: flex;
     align-items: center;
@@ -109,7 +109,7 @@ div#config{
     
     
 }
-
+*/
 #engrenagem:hover{
     border: 2px solid var(--texto-principal);
     font-size: 1.3em;
