@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap');
 
 
      /*Paleta de Cores Parte 01*/
@@ -10,7 +10,10 @@
     --texto-principal: #3A4035;  
     
     --destaque-suave: #84967A;  
-    --destaque-cta: #D4A373;    
+    --destaque-cta: #D4A373;   
+    
+    --fundo-jogo: #F4F0EA;    
+    --hero-jogo-escuro: #2B3028;
 }
 
 
@@ -566,6 +569,10 @@ article.visivel{
     outline: 1px solid var(--destaque-suave);
 }
 
+#card-pessoal.visivel{
+    display: flex;
+    flex-flow: column nowrap;
+}
 
 #card-pessoal > div.card-info{
     text-align: justify;
@@ -583,16 +590,89 @@ article.visivel{
     font-weight: 900;
 }
 
+#link-game{
+    display: none;
+    margin-top: 85px;
+}
 
+/*CSS DA PARTE DO JOGO*/
+#game{
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--fundo-jogo);
+    color: var(--texto-principal);
+    font-family: "Montserrat", sans-serif;
+}
+
+#hero-game{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--hero-jogo-escuro);
+    color: #F4F0EA;
+    width: 100%;
+    min-height: 110vh;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2rem;
+
+}
+#hero-game #titulo-hero{
+    display: flex;
+    flex-flow: column nowrap;
+}
+#hero-game h2{
+    background-color: #42493c;
+    color: #F6EBB7;
+    align-self: center;
+    font-size: 6rem;
+    font-family: "Lilita One", sans-serif;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    letter-spacing: 4px;
+    border-radius: 30px;
+    padding: 20px;
+    width: fit-content;
+
+}
+
+#hero-game span > h2{   
+    margin: auto;
+    width: fit-content;
+    background-color: #F6EBB7;
+    color: #42493c;
+    
+}
+
+#hero-game  blockquote{
+    max-width: 400px;
+    align-self: flex-start;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 2px;
+}
+
+#hero-game > #link-GDD{
+    height: 9vh;
+    width: 13vw;
+    align-self: center;
+    background-color: F4F0EA;
+    border: 2.5px solid var(--destaque-suave);
+    border-radius: 8px;
+    color: var(--texto-principal);
+}
+
+/*-------------------*/
 footer {
     display: none;
+    justify-content: center;
     background-color: transparent; 
     border-top: 1px solid var(--destaque-suave); 
     padding: 30px 20px;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    margin-top: 40px; 
+    margin-top: 100px; 
 }
 
 footer p {
@@ -669,6 +749,10 @@ footer .copyright {
     line-height: 1.2em;
     font-size: 1.3em;
     height: 80vh;
+}
+
+#hero-game #titulo-hero h2{
+    font-size: 4rem;
 }
 
 }

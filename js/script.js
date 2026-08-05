@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function(){
             })
         btn_avancar_calc.addEventListener('click', function(){
             
-            const valor_digitado = campo_input_calc.value // Identificamos o valor digitado a caixa pai selecionada
+            const valor_digitado = campo_input_calc.value // Identificamos o valor digitado na caixa pai selecionada
             
             if(valor_digitado === ""){
                 window.alert('Para prosseguir, preencha o campo vazio.') //Precaução de campo vazio
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 if(btn_avancar_calc.dataset.proxima ==="#card-pessoal"){  
                     document.querySelector('#resultado-numero').innerHTML = (pontuacao_total*3); //Resultado é 3x da pontuação total
 
-                    footer.style.display = 'block' //Footer aparece
+                    footer.style.display = 'flex' //Footer aparece
 
                     const campo_mensagem = document.querySelector('#resultado-mensagem') 
                     //Campo da mensagem do card recebe informações conforme a pontuação total
@@ -189,6 +189,15 @@ document.addEventListener("DOMContentLoaded", function(){
                         campo_mensagem.innerText = "Parabéns! Você demonstra hábitos de consumo consciente e equilibrado. Cada decisão inteligente que você toma desde evitar produtos descartáveis até valorizar cadeias de produção sustentáveis reduz diretamente a sua pegada ecológica. Você já faz parte da solução para preservar os recursos naturais que todos nós compartilhamos.";
                     }
                 }
+
+                const botao_pessoal = document.querySelector('.botao-pessoal')
+                const caixa_link_game = document.querySelector('#link-game')
+                botao_pessoal.addEventListener('click', function(){
+                    if(caixa_link_game){
+                    caixa_link_game.style.display = 'flex'
+                    caixa_link_game.scrollIntoView({behavior: 'smooth'})
+                    }
+                })
 
                 proxima.classList.remove('escondida') // Revela a proxima questão
                 proxima.classList.add('visivel')
@@ -207,3 +216,17 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     })
 })
+
+
+// Salva a posição do scroll antes de a página recarregar
+window.addEventListener("beforeunload", function () {
+    sessionStorage.setItem("posicaoScroll", window.scrollY);
+});
+
+// Assim que a página carrega, devolve o scroll para o mesmo lugar
+window.addEventListener("load", function () {
+    const posicaoSalva = sessionStorage.getItem("posicaoScroll");
+    if (posicaoSalva) {
+        window.scrollTo(0, Number(posicaoSalva));
+    }
+});
