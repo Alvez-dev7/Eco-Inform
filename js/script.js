@@ -178,7 +178,10 @@ document.addEventListener("DOMContentLoaded", function(){
                 if(btn_avancar_calc.dataset.proxima ==="#card-pessoal"){  
                     document.querySelector('#resultado-numero').innerHTML = (pontuacao_total*3); //Resultado é 3x da pontuação total
 
-                    footer.style.display = 'flex' //Footer aparece
+                    if (footer) {
+                        footer.style.display = 'flex';
+                    }
+                     //Footer aparece
 
                     const campo_mensagem = document.querySelector('#resultado-mensagem') 
                     //Campo da mensagem do card recebe informações conforme a pontuação total
@@ -190,27 +193,50 @@ document.addEventListener("DOMContentLoaded", function(){
                     }
                 }
 
-                const botao_pessoal = document.querySelector('.botao-pessoal')
-                const caixa_link_game = document.querySelector('#link-game')
+                const botao_pessoal = document.querySelector('.btn-pessoal')
+                const link_game = document.querySelector('#link-game')
+
                 botao_pessoal.addEventListener('click', function(){
-                    if(caixa_link_game){
-                    caixa_link_game.style.display = 'flex'
-                    caixa_link_game.scrollIntoView({behavior: 'smooth'})
-                    }
+                    link_game.classList.add('visivel')
+                    link_game.scrollIntoView({behavior: 'smooth'})
+                })
+
+                const btn_chama_game = document.querySelector('#btn-chama-game')
+                const secao_game = document.querySelector('#game')
+                btn_chama_game.addEventListener('click', function(){
+                    secao_game.classList.add('visivel')
+                    secao_game.scrollIntoView({behavior: 'smooth'})
+                })
+
+                const link_gdd = document.querySelector('#link-gdd')
+                const secao_gdd = document.querySelector('article#gdd')
+
+                link_gdd.addEventListener('click', function(){
+
+                    secao_gdd.classList.add('visivel')
+                    secao_gdd.scrollIntoView({behavior: 'smooth'})
+
+                })
+
+                const lista_cards_gdd = document.querySelectorAll('.card-gdd')
+                
+                lista_cards_gdd.forEach(function(card_gdd){
+                    card_gdd.addEventListener('click', function(){
+                        card_gdd.classList.add('desembacado')
+                    })
                 })
 
                 proxima.classList.remove('escondida') // Revela a proxima questão
                 proxima.classList.add('visivel')
                 proxima.scrollIntoView({behavior: 'smooth'}) //Faz um efeito de rolagem leve
 
-                if (btn_avancar_calc.dataset.proxima !== "#card-pessoal"){
 
                     const proximo_input = proxima.querySelector('input')
 
                     if (proximo_input){
                         proximo_input.focus()
                     }
-                }
+                
 
             }
         })
