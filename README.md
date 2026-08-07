@@ -1,11 +1,10 @@
 # 🌿 Eco-Inform | Portal Web & GDD Showcase
 
-[![Acessar Projeto Online](https://img.shields.io/badge/Status-Online_na_Vercel-success?style=for-the-badge&logo=vercel&logoColor=white)](https://eco-inform.vercel.app)
-
 O **Eco-Inform** é uma plataforma interativa desenvolvida para conscientizar os usuários sobre o impacto invisível de suas escolhas diárias — desde o descarte de lixo eletrônico até o consumo hídrico na indústria da moda. 
 
 Este projeto atua como o módulo principal de um ecossistema focado na **ODS 12 da ONU (Consumo e Produção Responsáveis)**. Ele combina uma narrativa imersiva, ferramentas de autoavaliação ambiental e atua como o portal oficial de apresentação e distribuição do nosso jogo de sobrevivência e limpeza urbana.
 
+🔗 **Acesse o site oficial:** [eco-inform.vercel.app](https://eco-inform.vercel.app)
 
 ## ✨ Experiência e Funcionalidades
 
