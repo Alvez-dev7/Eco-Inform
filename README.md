@@ -10,7 +10,7 @@ Este projeto atua como o módulo principal de um ecossistema focado na **ODS 12 
 
 * **🔦 Interface Imersiva (Hero Section):** Sistema interativo com efeito de "lanterna" guiado pelo cursor do usuário, construído dinamicamente com coordenadas capturadas via JavaScript e aplicadas em variáveis CSS (`radial-gradient`).
 * **🧠 Quiz Educativo Dinâmico:** Perguntas baseadas em cenários reais com painéis informativos acionados dinamicamente via `data-attributes`, sem a necessidade de recarregar a página.
-* **🧮 Calculadora de Pegada Ecológica:** Coleta dados de hábitos de consumo do usuário, processa a pontuação em tempo real e exibe um diagnóstico personalizado ao final.
+* **🧮 Calculadora de consciência Ecológica:** Coleta dados de hábitos de consumo do usuário, processa a pontuação em tempo real e exibe um diagnóstico personalizado ao final.
 * **🃏 Showcase Interativo do GDD:** Apresentação fluida do *Game Design Document*. Os cartões de mecânicas do jogo reagem à rolagem da página, revelando-se com efeitos de desfoque (`backdrop-filter`) e animações de balanço (`keyframes`).
 
 
