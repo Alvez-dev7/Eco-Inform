@@ -167,7 +167,7 @@ div#narrativa-textos{
     max-width: 400px;
     font-family: "Montserrat", sans-serif;
     font-size: 1.5em;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.6em;
     text-align: left;
     background-color: rgba(0, 0, 0, 0.475);
@@ -191,7 +191,7 @@ div#narrativa-textos{
 }
 
 .card-frase span{
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .card-frase a{
@@ -417,7 +417,7 @@ article.visivel{
     align-items: center;
     flex-flow: column nowrap;
     gap: 20px;
-    height: 70vh;
+    height: 80vh;
     max-height: 1000px;
     width: 90vw;
     max-width: 600px;
@@ -769,7 +769,8 @@ article.visivel{
     flex-flow: column nowrap;
     width: 100%;
     background-color: var(--fundo-jogo);
-    min-height: 250vh;
+    height: auto; 
+    min-height: 100vh; 
 }
 
 
@@ -930,8 +931,9 @@ article.visivel{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 200vh;
     background-color: var(--fundo-jogo);
+    height: auto; 
+    min-height: 100vh; 
 }
 
 .card-dowload{
@@ -965,7 +967,7 @@ article.visivel{
     border: 2px solid #F6EBB7;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.307);
     padding: 40px;
-    margin-bottom: 50px;
+    margin-top: 100px;
 }
 
 .btn-game{
@@ -978,16 +980,16 @@ article.visivel{
     font-size: 1.1em;
     
     box-shadow: 5px 7px 7px rgba(0, 0, 0, 0.418);
-    transition: transform .7s ease;
+    transition: transform .5s;
 }
 
 .btn-game:hover{
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     box-shadow: 7px 9px 9px rgba(0, 0, 0, 0.418);
 }
 
 .btn-game:active{
-    transform:translateY(2px);
+    transform:translateY(3px);
     box-shadow: 5px 6px 6px rgba(0, 0, 0, 0.418);
 }
 
@@ -1081,12 +1083,12 @@ footer {
     display: none;
     justify-content: center;
     background-color: transparent; 
-    border-top: 1px solid var(--destaque-suave); 
+    border-top: 1px solid var(--destaque-cta); 
     padding: 30px 20px;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    margin-top: 100px; 
+     
 }
 
 footer p {
@@ -1094,10 +1096,11 @@ footer p {
     margin-bottom: 8px;
 }
 
-footer span {
+footer a {
     color: var(--destaque-cta);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
+    text-decoration: none;
 }
 
 footer .copyright {
@@ -1113,7 +1116,7 @@ footer .copyright {
     }
 
     div#titulo-principal{
-        font-size: 4em;
+        font-size: 5em;
         margin-left: 20px;
         margin-top: 130px;
     }
@@ -1171,9 +1174,10 @@ footer .copyright {
     font-size: 4rem;
     }
 
-    #gdd.visivel{
-        height: 600vh;
-    }
+    #dowload-game.visivel, #gdd.visivel {
+    height: auto; 
+    min-height: 100vh; 
+}
 
     #rodada-cards01, #rodada-cards02{
         display: flex;

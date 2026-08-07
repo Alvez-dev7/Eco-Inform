@@ -173,15 +173,11 @@ document.addEventListener("DOMContentLoaded", function(){
                 let valor_calc = Number(valor_digitado)
                 pontuacao_total += valor_calc //Calculamos o acumulamento do valor digitado
                 const proxima = document.querySelector(btn_avancar_calc.dataset.proxima) // identificamos a proxima questao
-                const footer = document.querySelector('footer') //Identificamos o footer
+                
 
                 if(btn_avancar_calc.dataset.proxima ==="#card-pessoal"){  
                     document.querySelector('#resultado-numero').innerHTML = (pontuacao_total*3); //Resultado é 3x da pontuação total
 
-                    if (footer) {
-                        footer.style.display = 'flex';
-                    }
-                     //Footer aparece
 
                     const campo_mensagem = document.querySelector('#resultado-mensagem') 
                     //Campo da mensagem do card recebe informações conforme a pontuação total
@@ -272,16 +268,23 @@ document.addEventListener("DOMContentLoaded", function(){
     const observador_cards_dowload = new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
             if(entry.isIntersecting){
-                entry.target.classList('visivel')
+                entry.target.classList.add('visivel')
             }
         })
     },{threshold: 0.1})
-
-    const btn_link_caixa_dowload = document.querySelector('#chama-dowload')
+    
+    const footer = document.querySelector('footer') //Identificamos o footer
+    const btn_link_caixa_dowload = document.querySelector('#btn-chama-dowload')
     const caixa_dowload = document.querySelector('#caixa-dowload')
+
     btn_link_caixa_dowload.addEventListener('click', function(){
+
         caixa_dowload.classList.add('visivel')
         caixa_dowload.scrollIntoView({behavior: "smooth"})
+
+        if(footer){
+            footer.style.display = 'flex'
+        }
     })
 
 })
