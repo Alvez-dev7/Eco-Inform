@@ -1001,7 +1001,6 @@ article.visivel{
     color: #F4F0EA;
     width: 100%;
     min-height: 110vh;
-    display: flex;
     flex-flow: column nowrap;
     padding: 2rem;
     
@@ -1114,6 +1113,7 @@ footer .copyright {
     }
 
     div#titulo-principal{
+        font-size: 4em;
         margin-left: 20px;
         margin-top: 130px;
     }
