@@ -193,38 +193,9 @@ document.addEventListener("DOMContentLoaded", function(){
                     }
                 }
 
-                const botao_pessoal = document.querySelector('.btn-pessoal')
-                const link_game = document.querySelector('#link-game')
-
-                botao_pessoal.addEventListener('click', function(){
-                    link_game.classList.add('visivel')
-                    link_game.scrollIntoView({behavior: 'smooth'})
-                })
-
-                const btn_chama_game = document.querySelector('#btn-chama-game')
-                const secao_game = document.querySelector('#game')
-                btn_chama_game.addEventListener('click', function(){
-                    secao_game.classList.add('visivel')
-                    secao_game.scrollIntoView({behavior: 'smooth'})
-                })
-
-                const link_gdd = document.querySelector('#link-gdd')
-                const secao_gdd = document.querySelector('article#gdd')
-
-                link_gdd.addEventListener('click', function(){
-
-                    secao_gdd.classList.add('visivel')
-                    secao_gdd.scrollIntoView({behavior: 'smooth'})
-
-                })
-
-                const lista_cards_gdd = document.querySelectorAll('.card-gdd')
                 
-                lista_cards_gdd.forEach(function(card_gdd){
-                    card_gdd.addEventListener('click', function(){
-                        card_gdd.classList.add('desembacado')
-                    })
-                })
+
+                
 
                 proxima.classList.remove('escondida') // Revela a proxima questão
                 proxima.classList.add('visivel')
@@ -239,8 +210,80 @@ document.addEventListener("DOMContentLoaded", function(){
                 
 
             }
+
         })
     })
+
+    const botao_pessoal = document.querySelector('.btn-pessoal')
+    const link_game = document.querySelector('#link-game')
+
+    botao_pessoal.addEventListener('click', function(){
+        link_game.classList.add('visivel')
+        link_game.scrollIntoView({behavior: 'smooth'})
+    })
+
+    const btn_chama_game = document.querySelector('#btn-chama-game')
+    const secao_game = document.querySelector('#game')
+    btn_chama_game.addEventListener('click', function(){
+        secao_game.classList.add('visivel')
+        secao_game.scrollIntoView({behavior: 'smooth'})
+    })
+
+    const link_gdd = document.querySelector('#link-gdd')
+    const secao_gdd = document.querySelector('article#gdd')
+
+    const secao_dowload = document.querySelector('#dowload-game')
+
+    link_gdd.addEventListener('click', function(){
+
+        secao_gdd.classList.add('visivel')
+        secao_gdd.scrollIntoView({behavior: 'smooth'})
+
+    })
+
+
+    const lista_cards_gdd = document.querySelectorAll('.card-gdd')
+    const aviso_clique = document.querySelector('#aviso-clique')
+    const observador_cards_gdd = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                entry.target.classList.add('visivel')
+            }
+        })
+    },{threshold: 0.1})
+
+    lista_cards_gdd.forEach(function(card_gdd){
+        observador_cards_gdd.observe(card_gdd)
+
+        card_gdd.addEventListener('click', function(){
+        card_gdd.classList.add('desembacado');
+
+        if(aviso_clique){
+            aviso_clique.style.opacity = '0'
+        }
+
+        
+        secao_dowload.classList.add('visivel')
+    });
+    })
+
+    const lista_cards_dowload = document.querySelectorAll('.card-dowload')
+
+    const observador_cards_dowload = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                entry.target.classList('visivel')
+            }
+        })
+    },{threshold: 0.1})
+
+    const btn_link_caixa_dowload = document.querySelector('#chama-dowload')
+    const caixa_dowload = document.querySelector('#caixa-dowload')
+    btn_link_caixa_dowload.addEventListener('click', function(){
+        caixa_dowload.classList.add('visivel')
+        caixa_dowload.scrollIntoView({behavior: "smooth"})
+    })
+
 })
 
 
