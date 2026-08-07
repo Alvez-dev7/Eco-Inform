@@ -290,15 +290,3 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 
-// Salva a posição do scroll antes de a página recarregar
-window.addEventListener("beforeunload", function () {
-    sessionStorage.setItem("posicaoScroll", window.scrollY);
-});
-
-// Assim que a página carrega, devolve o scroll para o mesmo lugar
-window.addEventListener("load", function () {
-    const posicaoSalva = sessionStorage.getItem("posicaoScroll");
-    if (posicaoSalva) {
-        window.scrollTo(0, Number(posicaoSalva));
-    }
-});
