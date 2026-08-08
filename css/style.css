@@ -153,8 +153,8 @@ div#narrativa-textos{
     z-index: 4;
     display: flex;
     flex-flow: column nowrap;
-    gap: 40vh;
-    margin-top: 100vh;
+    gap: 10vh;
+    margin-top: 90vh;
     width: 100%;
 }
 
@@ -176,13 +176,18 @@ div#narrativa-textos{
     border-radius: 16px;
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    margin: 50px;
-    padding: 20px;
+    margin: 50px 50px 20px 50px;
+    padding: 30px;
 
     opacity: 0;
     transform: translateY(40px);
 
-    transition: opacity 3s ease, transform 3s ease;
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.card-frase.caixa-link-quiz{
+    
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .card-frase.visivel{
@@ -216,12 +221,12 @@ div#narrativa-textos{
     transform: translateY(1px);
 }
 
-.esquerda{
+.card-frase.esquerda{
     align-self: flex-start;
     
 }
 
-.direita{
+.card-frase.direita{
     align-self: flex-end;
 }
 
@@ -368,7 +373,7 @@ div.opcoes-container{
     justify-content: center;
     align-items: center;
 
-
+    font-weight: 650;
     font-size: 0.8em;
 
     background: transparent;
@@ -459,7 +464,7 @@ article.visivel{
     box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.293);
 
     color: var(--texto-principal);
-
+    font-weight: 650;
     font-size: 0.8em;
 
     cursor: pointer;
@@ -470,6 +475,7 @@ article.visivel{
 .btn-avancar, .btn-avancar-calc, .btn-chama-calculadora, .btn-pessoal:hover{
     transform:translateY(-4px);
     box-shadow: 7px 8px 7px rgba(0, 0, 0, 0.288);
+    
 }
 
 .btn-avancar:active{
@@ -1130,6 +1136,10 @@ footer .copyright {
         line-height: 2;
     }
 
+    .card-frase.esquerda, .card-frase.direita{
+        align-self: center;
+    }
+
     #questao01::before{
         background-image: linear-gradient(to bottom,  rgba(0, 0, 0, 0.86), transparent);
         height: 20vh;
@@ -1137,25 +1147,24 @@ footer .copyright {
 
     #questao01{
         background: url(../assets/img-questao01.jpg);
-        justify-content: center;
-        background-position: left center;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        background-position: top center;
         background-size: cover;
-        min-height: 110vh;
+        min-height: 130vh;
     }
 
-    #questao01 > .card-quiz > h2{
-        color: var(--destaque-cta);
-    }
-
-    #questao01 button{
-        color: white;
+    #questao01 > .card-quiz{
+        background-color: white;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.392);
     }
 
     .card-quiz{
         font-size: 1.2em;
-        -webkit-backdrop-filter: blur(2px);
-        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
         gap: 15px;
+        margin: 50px 0px;
         font-weight: 500;
         
     }
