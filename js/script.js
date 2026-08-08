@@ -290,13 +290,13 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 
-    window.addEventListener("beforeunload", function () {
-        sessionStorage.setItem("posicaoScroll", window.scrollY);
-    });
+window.addEventListener("beforeunload", function () {
+    sessionStorage.setItem("posicaoScroll", window.scrollY);
+});
 
-    window.addEventListener("load", function () {
-        const posicaoSalva = sessionStorage.getItem("posicaoScroll");
-        if (posicaoSalva) {
-            window.scrollTo(0, Number(posicaoSalva));
-        }
-    });
+window.addEventListener("load", function () {
+    const posicaoSalva = sessionStorage.getItem("posicaoScroll");
+    if (posicaoSalva) {
+        window.scrollTo(0, Number(posicaoSalva));
+    }
+});
