@@ -316,32 +316,33 @@ const traducoes = {
         //HERO SECTION
         tituloHero: "El costo invisible.",
         textoBotaoIdioma: "ES",
+
         //CARDS HERO SECTION
-        "card-frase01": "Vivimos en un planeta de recursos finitos, pero con un ritmo de consumo que no para de crecer. Cada elección diaria deja una <span>huella invisible en la Tierra</span>, exigiendo una nueva mirada sobre la forma en que producimos, usamos y descartamos todo a nuestro alrededor.",
+        "card-frase01": "Vivimos en un planeta de recursos finitos, pero con un ritmo de consumo que no para de crecer. Cada elección diaria deja una <span>huella invisible en la Tierra</span>, exigiendo una nueva mirada sobre la forma en que producimos, usamos y desechamos todo a nuestro alrededor.",
 
         "card-frase02": "<span>El ODS 12 de la ONU</span> - Producción y Consumo Responsables surge para cambiar este rumbo. El objetivo no es detener el progreso, sino garantizar que el desarrollo ocurra en armonía con el medio ambiente, preservando recursos vitales para las próximas generaciones.",
 
-        "card-frase03": "<span>Desde el agua utilizada en una prenda de ropa hasta el plástico descartado en minutos</span>, existe un viaje oculto. Entender el origen y el destino de lo que consumimos es el primer paso para salir del piloto automático y asumir la responsabilidad de nuestro impacto.",
+        "card-frase03": "<span>Desde el agua utilizada en una prenda de ropa hasta el plástico desechado en minutos</span>, existe un viaje oculto. Entender el origen y el destino de lo que consumimos es el primer paso para salir del piloto automático y asumir la responsabilidad de nuestro impacto.",
 
         "card-frase04": "La transformación no exige gestos inalcanzables, sino la <span>constancia de decisiones diarias</span>. Repensar las necesidades, combatir el desperdicio y valorar las opciones sostenibles son actitudes simples que, sumadas, generan un cambio global enorme.",
-        
+
         "card-frase05": "<span>¿Y tú, cuál es el tamaño de tu impacto en el planeta?</span> Responde a nuestro cuestionario interactivo, descubre la dimensión de tus hábitos y observa cómo las pequeñas elecciones transforman el futuro.",
 
         "link-quiz": "Ir al cuestionario",
 
-        indicadorRolagem:"Desliza para explorar", 
+        indicadorRolagem: "Desliza para explorar", 
 
         // TEXTOS DA QUESTAO 01 (ESPANHOL)
         pergunta01: "¿Sabes exactamente qué es el ODS 12 de la ONU y cuál es su objetivo principal?",
 
-        textoOpt1Q1: " ¡Sí, estoy consciente!",
+        textoOpt1Q1: "¡Sí, soy consciente!",
         tituloOpt1Q1: "Ciclo de Vida",
-        infoOpt1Q1: "¡Exacto! El ODS 12 trata sobre Producción y Consumo Sostenibles. Científicamente esto es mirar el ciclo de vida completo de un producto: desde la extracción de la materia prima hasta el descarte. El objetivo es desacoplar el crecimiento económico de la degradación ambiental, es decir, hacer más y mejor con menos y salir del modelo extraer-usar-tirar.",
-        
+        infoOpt1Q1: "¡Exacto! El ODS 12 trata sobre Producción y Consumo Sostenibles. Científicamente esto es mirar el ciclo de vida completo de un producto: desde la extracción de la materia prima hasta la disposición final. El objetivo es desacoplar el crecimiento económico de la degradación ambiental, es decir, hacer más y mejor con menos y salir del modelo extraer-usar-tirar.",
+
         textoOpt2Q1: "Tengo dudas / No lo sé",
         tituloOpt2Q1: "Economía Circular",
         infoOpt2Q1: "El ODS 12 de la ONU defiende el consumo consciente y responsable. La gran meta es cambiar nuestra economía lineal por una economía circular. En la práctica esto significa diseñar productos para que duren más, reutilizar residuos y reducir el desperdicio, la contaminación y el uso excesivo de recursos naturales.",
-        botaoProximaPergunta:" Siguiente pregunta",
+        botaoProximaPergunta: "Siguiente pregunta",
 
         //------------//
         //TEXTOS DA QUESTAO 02 (ESPANHOL)
@@ -353,22 +354,22 @@ const traducoes = {
 
         textoOpt2Q2: "Lo guardo en el cajón / Basura común",
         tituloOpt2Q2: "Residuo Peligroso",
-        infoOpt2Q2: "¡Atención! Un aparato electrónico es considerado residuo peligroso por la Política de Residuos Sólidos. Tiene metales pesados como plomo, mercurio y cadmio. Cuando se descarta de forma incorrecta, ocurre la lixiviación y estos elementos contaminan el suelo y el agua. Además, desperdiciamos la oportunidad de recuperar materiales nobles como oro, plata y cobre de las placas.",
+        infoOpt2Q2: "¡Atención! Un aparato electrónico es considerado residuo peligroso por la Política de Residuos Sólidos. Tiene metales pesados como plomo, mercurio y cadmio. Cuando se desecha de forma incorrecta, ocurre la lixiviación y estos elementos contaminan el suelo y el agua. Además, desperdiciamos la oportunidad de recuperar materiales nobles como oro, plata y cobre de las placas.",
+
         //----------//
         //TEXTOS DA QUESTAO 03 (ESPANHOL)
-
         pergunta03: "¿Tienes idea de cuánta agua se gasta para fabricar tan solo UN pantalón vaquero (jeans) que usamos en el día a día?",
 
-        textoOpt1Q3: "Creo que más de 5.000 Litros",
+        textoOpt1Q3: "Creo que más de 5.000 litros",
         tituloOpt1Q3: "Agua y Moda",
-        infoOpt1Q3: "¡Así es! La moda es la 2ª industria que más consume agua en el mundo. Además del alto volumen, tenemos la contaminación: tintes y químicos, si no se tratan, alteran el pH y la oxigenación de los ríos. Por eso comprar menos, comprar mejor y reutilizar hace una diferencia enorme.",
+        infoOpt1Q3: "¡Así es! La moda es la segunda industria que más consume agua en el mundo. Además del alto volumen, tenemos la contaminación: tintes y químicos, si no se tratan, alteran el pH y la oxigenación de los ríos. Por eso comprar menos, comprar mejor y reutilizar hace una diferencia enorme.",
 
-        textoOpt2Q3: "Creo que hasta 1.000 Litros",
+        textoOpt2Q3: "Creo que hasta 1.000 litros",
         tituloOpt2Q3: "La parte Hídrica",
-        infoOpt2Q3: "¡Es mucho más que eso! Para producir un pantalón vaquero se gastan de 5.000 a 10.000L de agua en el ciclo completo. Esto se llama huella hídrica: suma el agua de riego del algodón, el teñido, los lavados y el acabado. Por eso la industria textil está entre las que más presionan los recursos hídricos del planeta.",
+        infoOpt2Q3: "¡Es mucho más que eso! Para producir un pantalón vaquero se gastan de 5.000 a 10.000 L de agua en el ciclo completo. Esto se llama huella hídrica: suma el agua de riego del algodón, el teñido, los lavados y el acabado. Por eso la industria textil está entre las que más presionan los recursos hídricos del planeta.",
+
         //----------//
         //TEXTOS DA QUESTAO 04 (ESPANHOL)
-
         pergunta04: "En tu vida cotidiana, ¿sueles planificar las compras y las comidas para evitar tirar alimentos o envases?",
 
         textoOpt1Q4: "Siempre intento planificar",
@@ -377,55 +378,55 @@ const traducoes = {
 
         textoOpt2Q4: "Acabo desperdiciando a veces",
         tituloOpt2Q4: "Costo Oculto",
-        infoOpt2Q4: "Le pasa a todo el mundo. Pero vale recordar: desperdiciar comida es desperdiciar también toda el agua, energía, suelo y mano de obra que se usaron para producirla y transportarla. Pequeñas actitudes como hacer lista de compras, aprovechar las sobras y almacenar correctamente ya ayudan a romper este ciclo.",
+        infoOpt2Q4: "Le pasa a todo el mundo. Pero vale la pena recordar: desperdiciar comida es desperdiciar también toda el agua, energía, suelo y mano de obra que se usaron para producirla y transportarla. Pequeñas actitudes como hacer una lista de compras, aprovechar las sobras y almacenar correctamente ayudan a romper este ciclo.",
+
         //-----------//
         //TEXTOS DA QUESTÃO 05 -- CHAMA CALCULADORA (ESPANHOL)
-
         pergunta05: "¿Y si pudieras ver el impacto ambiental que causas basado en tus gastos por medio de una calculadora ambiental?",
         textoBotaoChamaCalculadora: "¡Sería increíble!",
 
         //---------------//
-      //PERGUNTAS CALCULADORA (ESPANHOL)//
-      //--------------//
+        //PERGUNTAS CALCULADORA (ESPANHOL)//
+        //--------------//
 
         //QUESTAO 01 CALC
-
         calcPergunta01: "¿Cuántos minutos, en promedio, dura tu ducha diaria?",
         botaoConfirmar: "Confirmar",
 
         //QUESTAO 02 CALC
         calcPergunta02: "¿Cuántos aparatos o accesorios electrónicos sin uso (móviles viejos, auriculares rotos, cables sueltos) guardas en los cajones de casa?",
-        
-        //QUESTAO 03 CALC
 
-        calcPergunta03: "¿Cuántos vasos plásticos descartables o botellas PET estimas que usas en una semana normal?",
+        //QUESTAO 03 CALC
+        calcPergunta03: "¿Cuántos vasos de plástico desechables o botellas PET estimas que usas en una semana normal?",
 
         //QUESTAO 04 CALC
-
         calcPergunta04: "De 0 a 10 (donde 0 es nunca y 10 es siempre), ¿con qué frecuencia compras ropa, calzado o productos nuevos solo por impulso, sin realmente necesitarlos?",
+
         //------//
         // CARD PESSOAL (ESPANHOL)
-        //Estrutura fixa do html:
         tituloResultado: "Tu Resultado",
         textoPontuacaoIntro: "Tu puntuación fue de: ",
         textoPontuacaoFim: " puntos!",
         botaoContinuar: "Continuar",
-        //Estrutura JS:
-        msgResultadoRuim: "¡Atención a tu consumo! Pequeños cambios en las elecciones diarias generan un gran impacto. El ODS 12 de la ONU nos advierte que los recursos de la Tierra son finitos, pero nuestro patrón de consumo actual sigue creciendo. Ajustar pequeñas decisiones en el día a día, del plato de comida a la elección de la ropa ayuda a construir una cadena productiva más justa y sostenible para las próximas generaciones.",
 
-        msgResultadoBom: "¡Felicitaciones! Demuestras hábitos de consumo consciente y equilibrado. Cada decisión inteligente que tomas, desde evitar productos descartables hasta valorar cadenas de producción sostenibles reduce directamente tu huella ecológica. Ya formasa parte de la solución para preservar los recursos naturales que todos compartimos.",
+        //Estrutura JS:
+        msgResultadoRuim: "¡Atención a tu consumo! Pequeños cambios en las elecciones diarias generan un gran impacto. El ODS 12 de la ONU nos advierte que los recursos de la Tierra son finitos, pero nuestro patrón de consumo actual sigue creciendo. Ajustar pequeñas decisiones en el día a día, del plato de comida a la elección de la ropa, ayuda a construir una cadena productiva más justa y sostenible para las próximas generaciones.",
+
+        msgResultadoBom: "¡Felicitaciones! Demuestras hábitos de consumo consciente y equilibrado. Cada decisión inteligente que tomas, desde evitar productos desechables hasta valorar cadenas de producción sostenibles, reduce directamente tu huella ecológica. Ya formas parte de la solución para preservar los recursos naturales que todos compartimos.",
+
         //----------//
         //CARD-CHAMA-GAME (ESPANHOL)//
         TituloCardLinkGame: "¡Felicitaciones!",
-        TextoCardLinkGame: "¿Ahora que ya entendiste un poco sobre el ODS 12, ya viste en la práctica cuáles son tus gastos y tu perfil de consumidor, qué tal entender un poco más sobre este asunto de forma divertida jugando a un juego?",
+        TextoCardLinkGame: "¿Ahora que ya entendiste un poco sobre el ODS 12, viste en la práctica cuáles son tus gastos y tu perfil de consumidor, qué tal entender un poco más sobre este tema de forma divertida jugando a un juego?",
         btnConhecerJogo: "Conocer el Juego",
+
         //--------//
         //HERO SECTION (ESPANHOL)//
         citacaoHeroGame: "Mientras los Vándalos pudren la ciudad, descubres que la culpa no es de los que persisten, sino de la sociedad",
         botaoComecarGame: "Comenzar",
+
         //----------//
         //CARDS GDD (ESPANHOL)//
-        //----------//
         tituloCardGDD01: "¿Quién es el verdadero villano?",
         textoCardGDD01: "¿Crees que el problema son los Vándalos destruyendo la calle? Qué va. La culpa del caos es de nuestra propia sociedad y de cómo consumimos las cosas. Con cada calle que limpias, la cruda realidad va apareciendo.",
 
@@ -435,31 +436,34 @@ const traducoes = {
         tituloCardGDD03: "Limpiar, Reciclar, Sobrevivir",
         textoCardGDD03: "La regla es clara: busca en el área, recoge los residuos y corre al centro de reciclaje. Hacer lo correcto no solo salva la ciudad, sino que te otorga dinero y ventajas (mejoras) esenciales para aguantar el tirón.",
 
-        tituloCardGDD04: "Tu Jornada a tu manera",
-        textoCardGDD04: "Elige a tu héroe entre 4 personajes únicos y afronta el desafío en modo solitario o llama a la gente para el multijugador. Son 4 zonas de puro caos esperando a ser purificadas por ti.",
+        tituloCardGDD04: "Tu Aventura a tu manera",
+        textoCardGDD04: "Elige a tu héroe entre 4 personajes únicos y afronta el desafío en modo solitario o llama a tus amigos para el multijugador. Son 4 zonas de puro caos esperando a ser purificadas por ti.",
 
         avisoClique: "HAZ CLIC EN LOS CARDS PARA REVELAR",
 
         tituloCardGDD05: "¡Cuidado con el Cansancio!",
-        textoCardGDD05: "El trabajo pesado cobra su precio. ¡Vigila tu barra de energía! Si la fatiga golpea, el juego te mostrará el lado más cruel del impacto ambiental. Gestionar tu aliento es cuestión de supervivencia.",
+        textoCardGDD05: "El trabajo pesado pasa factura. ¡Vigila tu barra de energía! Si la fatiga golpea, el juego te mostrará el lado más cruel del impacto ambiental. Gestionar tu aliento es cuestión de supervivencia.",
 
         tituloCardGDD06: "El Riesgo de Limpiar la Ciudad",
-        textoCardGDD06: "Hacer lo correcto tiene sus peligros. Los Vándalos patrullan cada calle e intentarán impedírtelo a toda costa. ¿Vas con sigilo, usando el sigilo, o vas a encarar el peligro cara a cara? Un movimiento en falso y te atrapan.",
+        textoCardGDD06: "Hacer lo correcto tiene sus peligros. Los Vándalos patrullan cada calle e intentarán impedírtelo a toda costa. ¿Apostarás por el sigilo o vas a encarar el peligro cara a cara? Un movimiento en falso y te atrapan.",
 
         tituloCardGDD07: "¡La sostenibilidad también genera dinero!",
-        textoCardGDD07: "Aquí, la basura tiene mucho valor. Entrega los reciclables para llenar el bolsillo de monedas. Con ellas, pasas por la tienda y aseguras esas mejoras y equipos pesados para limpiar las áreas más peligrosas.",
+        textoCardGDD07: "Aquí, la basura tiene mucho valor. Entrega los reciclables para llenar tu bolsillo de monedas. Con ellas, pasas por la tienda y aseguras esas mejoras y equipos pesados para limpiar las áreas más peligrosas.",
 
         tituloCardGDD08: "A veces, el fin es el inicio del juego",
-        tituloCardGDD08: "Ser atrapado no es un simple Game Over, es una lección. La pantalla de muerte activa un cuestionario rápido sobre consumo. ¿Acertaste? Vuelves al juego más fuerte y con mejoras. ¿Fallaste? Renaces castigado y más débil. Aquí, tu conocimiento es tu mayor arma.",
+        textoCardGDD08: "Ser atrapado no es un simple Game Over, es una lección. La pantalla de derrota activa un cuestionario rápido sobre consumo. ¿Acertaste? Vuelves al juego más fuerte y con mejoras. ¿Fallaste? Renaces castigado y más débil. Aquí, tu conocimiento es tu mayor arma.",
+
         //-----------//
         //CARD CHAMA DOWLOAD (ESPANHOL)//
-        textoChamaDowload: "La planificación ha terminado, la ciudad se está derrumbando y las calles de Nueva York aguardan a quien ose limpiarlas. Ahora que conociste todos los secretos, mecánicas y el alma de Eco Education, ha llegado el momento de pasar de la teoría al asfalto.",
+        textoChamaDowload: "La planificación ha terminado, la ciudad se está derrumbando y las calles de Nueva York aguardan a quien ose limpiarlas. Ahora que conoces todos los secretos, mecánicas y el alma de Eco Education, ha llegado el momento de pasar de la teoría al asfalto.",
+
         //----------//
         //SECAO DOWLOAD (ESPANHOL)
         tituloSuperiorSecaoDowload: "Salva",
         tituloInferiorSecaoDowload: "el Futuro",
         textoSecaoDowload: "Los Vándalos no duermen y la ciudad se está asfixiando. ¿Estás preparado para ensuciarte las manos para salvar el futuro?",
         btnDowload: "Descargar",
+
         //--------//
         //RODAPÉ (ESPANHOL)//
         textoRodape01: "Proyecto <strong>Eco-Inform - </strong> ODS 12",
@@ -467,5 +471,4 @@ const traducoes = {
         textoRodape03: "Una solución multiplataforma desarrollada por el Equipo 02 - 1°C &mdash; ETE Cícero Dias",
         textoRodape04: "&copy; 2026 Eco-Inform. Todos los derechos reservados.",
     }
-
 };
