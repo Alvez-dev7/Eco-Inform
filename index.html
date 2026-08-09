@@ -6,15 +6,16 @@
     <title>Eco-Inform</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=settingspotted_plantarrow_downardunfold_more" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=settingspotted_plantarrow_downardunfold_morelanguage" />
 </head>
 <body>
     
     <header id="cabecalho-fixo">
         
         <div id="config">
-            <button id="engrenagem">
-                EN
+            <button id="btn-idioma">
+                <span data-i18n="textoBotaoIdioma" id="texto-sigla">PT</span>
+                 <span><svg xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -960 960 960" width="14px" fill="#e3e3e3"><path d="M331-126q-70-30-122.5-82.5T126-331q-30-70-30-149.5t30-149q30-69.5 82.5-122T331-834q70-30 149.5-30t149 30q69.5 30 122 82.5t82.5 122q30 69.5 30 149T834-331q-30 70-82.5 122.5t-122 82.5q-69.5 30-149 30T331-126Zm149-45q17-17 34-63.5T540-336H420q9 55 26 101.5t34 63.5Zm-91-10q-14-30-24.5-69T347-336H204q29 57 77 97.5T389-181Zm182 0q60-17 108-57.5t77-97.5H613q-7 47-17.5 86T571-181ZM177-408h161q-2-19-2.5-37.5T335-482q0-18 .5-35.5T338-552H177q-5 19-7 36.5t-2 35.5q0 18 2 35.5t7 36.5Zm234 0h138q2-20 2.5-37.5t.5-34.5q0-17-.5-35t-2.5-37H411q-2 19-2.5 37t-.5 35q0 17 .5 35t2.5 37Zm211 0h161q5-19 7-36.5t2-35.5q0-18-2-36t-7-36H622q2 19 2.5 37.5t.5 36.5q0 18-.5 35.5T622-408Zm-9-216h143q-29-57-77-97.5T571-779q14 30 24.5 69t17.5 86Zm-193 0h120q-9-55-26-101.5T480-789q-17 17-34 63.5T420-624Zm-216 0h143q7-47 17.5-86t24.5-69q-60 17-108 57.5T204-624Z"/></svg></span>
             </button>
         </div>
         
@@ -43,30 +44,30 @@
                 
             <div id="narrativa-textos">
                 <div class="card-frase esquerda">
-                    <p>Vivemos em um planeta de recursos finitos, mas com um ritmo de consumo que não para de crescer. Cada escolha diária deixa uma <span>marca invisível na Terra</span>, exigindo um novo olhar sobre a forma como produzimos, usamos e descartamos tudo ao nosso redor.</p>
+                    <p data-i18n="card-frase01">Vivemos em um planeta de recursos finitos, mas com um ritmo de consumo que não para de crescer. Cada escolha diária deixa uma <span>marca invisível na Terra</span>, exigindo um novo olhar sobre a forma como produzimos, usamos e descartamos tudo ao nosso redor.</p>
                 </div>
                 <div class="card-frase direita">
-                    <p><span>A ODS 12 da ONU</span> - Consumo e Produção Responsáveis surge para virar essa chave. O objetivo não é parar o progresso, mas garantir que o desenvolvimento aconteça em harmonia com o meio ambiente, preservando recursos vitais para as próximas gerações.</p>
+                    <p data-i18n="card-frase02"><span>A ODS 12 da ONU</span> - Consumo e Produção Responsáveis surge para virar essa chave. O objetivo não é parar o progresso, mas garantir que o desenvolvimento aconteça em harmonia com o meio ambiente, preservando recursos vitais para as próximas gerações.</p>
                 </div>
 
                 <div class="card-frase esquerda">
-                    <p><span>Da água usada numa peça de roupa ao plástico descartado em minutos</span>, existe uma jornada oculta. Entender a origem e o destino do que consumimos é o primeiro passo para sair do automático e assumir a responsabilidade pelo nosso impacto.</p>
+                    <p data-i18n="card-frase03"><span>Da água usada numa peça de roupa ao plástico descartado em minutos</span>, existe uma jornada oculta. Entender a origem e o destino do que consumimos é o primeiro passo para sair do automático e assumir a responsabilidade pelo nosso impacto.</p>
 
                 </div>
 
                 <div class="card-frase direita">
-                    <p>A transformação não exige gestos inalcançáveis, mas sim a<span> constância de decisões diárias</span>. Repensar necessidades, combater o desperdício e valorizar escolhas sustentáveis são atitudes simples que, somadas, geram uma enorme mudança global.</p>
+                    <p data-i18n="card-frase04">A transformação não exige gestos inalcançáveis, mas sim a<span> constância de decisões diárias</span>. Repensar necessidades, combater o desperdício e valorizar escolhas sustentáveis são atitudes simples que, somadas, geram uma enorme mudança global.</p>
                 </div>
                 <div class="card-frase esquerda caixa-link-quiz" >
-                    <p><span>E você, qual é o tamanho do seu impacto no planeta?</span> Responda ao nosso quiz interativo, descubra a dimensão dos seus hábitos e veja como pequenas escolhas transformam o futuro.</p>
+                    <p data-i18n="card-frase05"><span>E você, qual é o tamanho do seu impacto no planeta?</span> Responda ao nosso quiz interativo, descubra a dimensão dos seus hábitos e veja como pequenas escolhas transformam o futuro.</p>
 
-                    <a href="#quiz" id="link-quiz">Ir para o quiz</a>
+                    <a href="#quiz" id="link-quiz" data-i18n="link-quiz">Ir para o quiz</a>
 
 
                 </div>
             </div>
             <div id="indicador-rolagem">
-                <span>Role para explorar</span>
+                <span data-i18n="indicadorRolagem">Role para explorar</span>
                 <span class="material-symbols-outlined">arrow_downward</span>
 
 
@@ -78,20 +79,26 @@
             <!--               QUESTÃO 01               -->
             <article id="questao01">
                 <div class="card-quiz">
-                    <h2>Você sabe exatamente o que é a ODS 12 da ONU e qual é o seu objetivo principal?</h2>
+                    <h2 data-i18n="pergunta01">Você sabe exatamente o que é a ODS 12 da ONU e qual é o seu objetivo principal?</h2>
                     <div class="opcoes-container">
                         <button type="button"class="btn-opcao"
                             
                             data-alvo="#info-questao01"
                             data-titulo="Ciclo de Vida" 
-                            data-info="Exato! A ODS 12 é sobre Produção e Consumo Sustentáveis. Cientificamente isso é olhar o ciclo de vida completo de um produto: desde a extração da matéria-prima até o descarte. O objetivo é desacoplar crescimento econômico da degradação ambiental, ou seja, fazer mais e melhor com menos e sair do modelo extrai-usa-joga fora.">
+                            data-i18n-titulo="tituloOpt1Q1"
+                            data-info="Exato! A ODS 12 é sobre Produção e Consumo Sustentáveis. Cientificamente isso é olhar o ciclo de vida completo de um produto: desde a extração da matéria-prima até o descarte. O objetivo é desacoplar crescimento econômico da degradação ambiental, ou seja, fazer mais e melhor com menos e sair do modelo extrai-usa-joga fora."
+                            data-i18n-info="infoOpt1Q1"
+                            data-i18n="textoOpt1Q1">>
                             Sim, estou ciente!
                         </button>
                         <button type="button" class="btn-opcao"
                             
                             data-alvo="#info-questao01"
                             data-titulo="Economia Circular"
-                            data-info ='A ODS 12 da ONU defende o consumo consciente e responsável. A grande meta é trocar a nossa economia linear por uma economia circular. Na prática isso significa projetar produtos pra durar mais, reaproveitar resíduos e reduzir desperdício, poluição e o uso excessivo de recursos naturais.'>
+                            data-i18n-titulo="tituloOpt2Q1"
+                            data-info ='A ODS 12 da ONU defende o consumo consciente e responsável. A grande meta é trocar a nossa economia linear por uma economia circular. Na prática isso significa projetar produtos pra durar mais, reaproveitar resíduos e reduzir desperdício, poluição e o uso excessivo de recursos naturais.'
+                            data-i18n-info="infoOpt2Q1"
+                            data-i18n="textoOpt2Q1">
                             Tenho dúvidas / Não sei
                         </button>
                     </div>
@@ -106,7 +113,7 @@
 
                     <p></p>
                     
-                <button type="button" class="btn-avancar btn-chama-barra-progresso" data-proxima="#questao02">Próxima pergunta</button>
+                <button type="button" class="btn-avancar btn-chama-barra-progresso" data-proxima="#questao02" data-i18n="botaoProximaPergunta">Próxima pergunta</button>
                 </div>
 
             </article>
@@ -114,20 +121,26 @@
             <!--               QUESTÃO 02               -->
            <article id="questao02" class="escondida">
                 <div class="card-quiz">
-                    <h2>Quando um fone, celular ou cabo quebra na sua casa, qual costuma ser o destino dele? </h2>
+                    <h2 data-i18n="pergunta02">Quando um fone, celular ou cabo quebra na sua casa, qual costuma ser o destino dele? </h2>
                     <div class="opcoes-container">
                         <button type="button" class="btn-opcao"
                             
                             data-alvo="#info-questao02"
                             data-titulo="Logística Reversa"
-                            data-info="Arrasou! Isso é logística reversa na prática. Levar pra um ponto de coleta garante a desmontagem segura e a reciclagem. Assim esses metais e plásticos voltam pra cadeia produtiva, reduzindo a necessidade de extrair novos minérios e evitando contaminação ambiental.">
+                            data-i18n-titulo="tituloOpt1Q2"
+                            data-info="Arrasou! Isso é logística reversa na prática. Levar pra um ponto de coleta garante a desmontagem segura e a reciclagem. Assim esses metais e plásticos voltam pra cadeia produtiva, reduzindo a necessidade de extrair novos minérios e evitando contaminação ambiental."
+                            data-i18n-info="infoOpt1Q2"
+                            data-i18n="textoOpt1Q2">
                             Levo num ponto de coleta seletiva
                         </button>
                         <button type="button" class="btn-opcao"
                             
                             data-alvo="#info-questao02"
                             data-titulo="Lixo Perigoso"
-                            data-info="Atenção! Eletrônico é considerado resíduo perigoso pela Política Nacional de Resíduos Sólidos. Ele tem metais pesados como chumbo, mercúrio e cádmio. Quando descartado de forma errada, ocorre a lixiviação e esses elementos contaminam o solo e a água. Além disso, a gente desperdiça a chance de recuperar materiais nobres como ouro, prata e cobre das placas.">
+                            data-i18n-titulo="tituloOpt2Q2"
+                            data-info="Atenção! Eletrônico é considerado resíduo perigoso pela Política Nacional de Resíduos Sólidos. Ele tem metais pesados como chumbo, mercúrio e cádmio. Quando descartado de forma errada, ocorre a lixiviação e esses elementos contaminam o solo e a água. Além disso, a gente desperdiça a chance de recuperar materiais nobres como ouro, prata e cobre das placas."
+                            data-i18n-info="infoOpt2Q2"
+                            data-i18n="textoOpt2Q2">
                             Guardo na gaveta / Lixo comum
                         </button>
                     </div>
@@ -142,7 +155,7 @@
 
                     <p></p>
                     
-                <button type="button" class="btn-avancar" data-proxima="#questao03">Próxima pergunta</button>
+                <button type="button" class="btn-avancar" data-proxima="#questao03" data-i18n="botaoProximaPergunta">Próxima pergunta</button>
                 </div>
 
             </article>
@@ -151,7 +164,7 @@
             <article id="questao03" class="escondida">
                 <div class="card-quiz">
         
-                 <h2>Você faz ideia de quanta água é gasta para fabricar apenas UMA calça jeans que usamos no dia a dia?</h2>
+                 <h2 data-i18n="pergunta03">Você faz ideia de quanta água é gasta para fabricar apenas UMA calça jeans que usamos no dia a dia?</h2>
         
                     <div class="opcoes-container">
                         
@@ -159,7 +172,10 @@
                             
                             data-alvo="#info-questao03" 
                             data-titulo="Água e Moda" 
-                            data-info="Isso mesmo! A moda é a 2ª indústria que mais consome água no mundo. Além do alto volume, temos a poluição: corantes e químicos, se não tratados, alteram o pH e a oxigenação dos rios. Por isso comprar menos, comprar melhor e reutilizar faz uma diferença enorme.">
+                            data-i18n-titulo="tituloOpt1Q3"
+                            data-info="Isso mesmo! A moda é a 2ª indústria que mais consome água no mundo. Além do alto volume, temos a poluição: corantes e químicos, se não tratados, alteram o pH e a oxigenação dos rios. Por isso comprar menos, comprar melhor e reutilizar faz uma diferença enorme."
+                            data-i18n-info="infoOpt1Q3"
+                            data-i18n="textoOpt1Q3">
                             Acho que mais de 5.000 Litros
                         </button>
                     
@@ -167,7 +183,10 @@
                              
                             data-alvo="#info-questao03" 
                             data-titulo="A parte Hídrica" 
-                            data-info="É bem mais do que isso! Para produzir uma calça jeans são gastos de 5.000 a 10.000L de água no ciclo completo. Isso se chama pegada hídrica: ela soma a água da irrigação do algodão, do tingimento, das lavagens e do acabamento. É por isso que a indústria têxtil está entre as que mais pressionam os recursos hídricos do planeta.">
+                            data-i18n-titulo="tituloOpt2Q3"
+                            data-info="É bem mais do que isso! Para produzir uma calça jeans são gastos de 5.000 a 10.000L de água no ciclo completo. Isso se chama pegada hídrica: ela soma a água da irrigação do algodão, do tingimento, das lavagens e do acabamento. É por isso que a indústria têxtil está entre as que mais pressionam os recursos hídricos do planeta."
+                            data-i18n-info="infoOpt2Q3"
+                            data-i18n="textoOpt2Q3">
                             Acho que até 1.000 Litros
                         </button>
                     </div>
@@ -183,7 +202,7 @@
                             
                             <p></p>
                             
-                            <button type="button" class="btn-avancar" data-proxima="#questao04">Próxima pergunta</button>
+                            <button type="button" class="btn-avancar" data-proxima="#questao04" data-i18n="botaoProximaPergunta">Próxima pergunta</button>
                             
                         </div>
                     </article>
@@ -191,7 +210,7 @@
             <article id="questao04" class="escondida">
                 <div class="card-quiz">
         
-                 <h2>No seu cotidiano, você costuma planejar compras e refeições para evitar jogar alimentos ou embalagens fora?</h2>
+                 <h2 data-i18n="pergunta04">No seu cotidiano, você costuma planejar compras e refeições para evitar jogar alimentos ou embalagens fora?</h2>
         
                     <div class="opcoes-container">
                         <!-- OPÇÃO 1 -->
@@ -199,7 +218,10 @@
                             
                             data-alvo="#info-questao04" 
                             data-titulo="Planejamento Consciente" 
-                            data-info="Mandou bem! Planejar as compras é uma das estratégias mais eficazes contra o desperdício de alimentos. Cerca de 1/3 de toda comida produzida é perdida. E quando ela vai pro aterro, se decompõe e gera metano, um gás de efeito estufa até 25x mais potente que o CO2.">
+                            data-i18n-titulo="tituloOpt1Q4"
+                            data-info="Mandou bem! Planejar as compras é uma das estratégias mais eficazes contra o desperdício de alimentos. Cerca de 1/3 de toda comida produzida é perdida. E quando ela vai pro aterro, se decompõe e gera metano, um gás de efeito estufa até 25x mais potente que o CO2."
+                            data-i18n-info="infoOpt1Q4"
+                            data-i18n="textoOpt1Q4">
                             Sempre tento planejar
                         </button>
                     
@@ -208,7 +230,10 @@
                              
                             data-alvo="#info-questao04" 
                             data-titulo="Custo Oculto" 
-                            data-info=" Acontece com todo mundo. Mas vale lembrar: desperdiçar comida é desperdiçar também toda a água, energia, solo e mão de obra que foram usados pra produzir e transportar. Pequenas atitudes como lista de compras, aproveitar sobras e armazenar direito já ajudam a quebrar esse ciclo. ">
+                            data-i18n-titulo="tituloOpt2Q4"
+                            data-info=" Acontece com todo mundo. Mas vale lembrar: desperdiçar comida é desperdiçar também toda a água, energia, solo e mão de obra que foram usados pra produzir e transportar. Pequenas atitudes como lista de compras, aproveitar sobras e armazenar direito já ajudam a quebrar esse ciclo."
+                            data-i18n-info="infoOpt2Q4"
+                            data-i18n="textoOpt2Q4">
                             Acabo desperdiçando às vezes
                         </button>
                     </div>
@@ -224,7 +249,7 @@
                             
                             <p></p>
                             
-                            <button type="button" class="btn-avancar" data-proxima="#questao05">Próxima pergunta</button>
+                            <button type="button" class="btn-avancar" data-proxima="#questao05" data-i18n="botaoProximaPergunta">Próxima pergunta</button>
                             
                         </div>
                     </article>
@@ -236,11 +261,11 @@
             <article id="questao05" class="escondida">
                 <div class="card-quiz">
         
-                 <h2>E se você pudesse ver o impacto ambiental que você causa baseado nos seus gastos por meio de uma calculadora ambiental?</h2>
+                 <h2 data-i18n="pergunta05">E se você pudesse ver o impacto ambiental que você causa baseado nos seus gastos por meio de uma calculadora ambiental?</h2>
         
                     <div class="opcoes-container">
                         <!-- OPÇÃO 1 -->
-                        <button type="button" class="btn-chama-calculadora">
+                        <button type="button" class="btn-chama-calculadora" data-i18n="textoBotaoChamaCalculadora">
                             Seria incrível!
                         </button>
                     
@@ -257,12 +282,12 @@
             <article id="calc-pergunta01" class="visivel">
                 <div class="card-quiz">
                     
-                    <h2>Quantos minutos, em média, dura o seu banho diário?</h2>
+                    <h2 data-i18n="calcPergunta01">Quantos minutos, em média, dura o seu banho diário?</h2>
                     
                     <div class="opcoes-container">
                         <input type="number" id="input-calc01" min="1" max="100" placeholder="Ex: 15" class="input-calculadora">
                         
-                        <button type="button" class="btn-avancar-calc btn-chama-barra-progresso" data-proxima="#calc-pergunta02">Confirmar</button>
+                        <button type="button" class="btn-avancar-calc btn-chama-barra-progresso" data-proxima="#calc-pergunta02" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
                 
                 </div>
@@ -272,12 +297,12 @@
             <article id="calc-pergunta02" class="escondida">
                 <div class="card-quiz">
                     
-                    <h2>Quantos aparelhos ou acessórios eletrônicos sem uso (celulares velhos, fones quebrados, cabos soltos) você guarda nas gavetas de casa?</h2>
+                    <h2 data-i18n="calcPergunta02">Quantos aparelhos ou acessórios eletrônicos sem uso (celulares velhos, fones quebrados, cabos soltos) você guarda nas gavetas de casa?</h2>
                     
                     <div class="opcoes-container">
                         <input type="number" id="input-calc02" min="1" max="100" placeholder="Ex: 3" class="input-calculadora">
                         
-                        <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta03">Confirmar</button>
+                        <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta03" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
                 
                 </div>
@@ -286,13 +311,13 @@
             <article id="calc-pergunta03" class="escondida">
                 <div class="card-quiz">
                     
-                    <h2>Quantos copos plásticos descartáveis ou garrafas PET você estima que usa em uma semana normal?</h2>
+                    <h2 data-i18n="calcPergunta03">Quantos copos plásticos descartáveis ou garrafas PET você estima que usa em uma semana normal?</h2>
                     
                     <div class="opcoes-container">
                         
                         <input type="number" id="input-calc03" min="1" max="100" placeholder="Ex: 10" class="input-calculadora">
                         
-                        <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta04">Confirmar</button>
+                        <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta04" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
                 
                 </div>
@@ -302,13 +327,13 @@
             <article id="calc-pergunta04" class="escondida">
                 <div class="card-quiz">
                     
-                    <h2>De 0 a 10 (onde 0 é nunca e 10 é sempre), com que frequência você compra roupas, calçados ou produtos novos apenas por impulso, sem realmente precisar?</h2>
+                    <h2 data-i18n="calcPergunta04">De 0 a 10 (onde 0 é nunca e 10 é sempre), com que frequência você compra roupas, calçados ou produtos novos apenas por impulso, sem realmente precisar?</h2>
                     
                     <div class="opcoes-container">
                         
                         <input type="number" id="input-calc04" min="0" max="10" maxlength="2" placeholder="Ex: 4" class="input-calculadora">
                     
-                        <button type="button" class="btn-avancar-calc" data-proxima="#card-pessoal">Confirmar</button>
+                        <button type="button" class="btn-avancar-calc" data-proxima="#card-pessoal" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
                 
                 </div>
@@ -316,20 +341,26 @@
 
             <article id="card-pessoal" class="escondida">
                 <div class="card-info">
-                    <h2>Seu Resultado</h2>
+                    <h2 data-i18n="tituloResultado">Seu Resultado</h2>
                     
-                    <p>Sua pontuação foi de: <span id="resultado-numero"></span> pontos!</p>
+                    <p>
+                        <span data-i18n="textoPontuacaoIntro">Sua pontuação foi de: </span>
+                        <span id="resultado-numero"></span>
+                        <span data-i18n="textoPontuacaoFim"> pontos!</span>
+                    </p>
+
                     <p id="resultado-mensagem"></p>
-                    <button class="btn-pessoal">Continuar</button>
+
+                    <button class="btn-pessoal" data-i18n="botaoContinuar">Continuar</button>
                 </div>
 
             </article>
 
             <article id="link-game">
                     <div class="card-link-game">
-                        <h2>Parabéns!!</h2>
-                        <p>Agora que voce já entendeu um pouco sobre a ODS 12, já viu na prática quais são seus gastos e seu perfil de consumidor, que tal entender um pouco mais sobre esse assunto de forma divertida jogando um game?</p>
-                        <button id="btn-chama-game">Conhecer o Jogo</button>
+                        <h2 data-i18n="TituloCardLinkGame">Parabéns!!</h2>
+                        <p data-i18n="TextoCardLinkGame">Agora que voce já entendeu um pouco sobre a ODS 12, já viu na prática quais são seus gastos e seu perfil de consumidor, que tal entender um pouco mais sobre esse assunto de forma divertida jogando um game?</p>
+                        <button id="btn-chama-game" data-i18n="btnConhecerJogo">Conhecer o Jogo</button>
                     </div>
                 </article>
             
@@ -343,50 +374,50 @@
                         <h2>Eco</h2>
                     </span>
                     <h2>Education</h2>
-                    <blockquote>Enquanto os Vândalos apodrecem a cidade, você descobre que a culpa não é dos que persistem,  e sim, da sociedade</blockquote>
+                    <blockquote data-i18n="citacaoHeroGame">Enquanto os Vândalos apodrecem a cidade, você descobre que a culpa não é dos que persistem,  e sim, da sociedade</blockquote>
                     
                 </div>
                 
-                <button id="link-gdd" class="botao-game">Começar</button>
+                <button id="link-gdd" class="botao-game" data-i18n="botaoComecarGame">Começar</button>
             </article>
 
             <article id="gdd">
                 <div id="rodada-cards01">
                     <div class="card-gdd torto-direita">
-                        <h3>Quem é o verdadeiro vilão?</h3>
-                        <p>Você acha que o problema são os Vândalos destruindo a rua? Que nada. A culpa do caos é da nossa própria sociedade e de como a gente consome as coisas. A cada rua que você limpa, a verdade nua e crua vai aparecendo.</p>
+                        <h3 data-i18n="tituloCardGDD01">Quem é o verdadeiro vilão?</h3>
+                        <p data-i18n="textoCardGDD01">Você acha que o problema são os Vândalos destruindo a rua? Que nada. A culpa do caos é da nossa própria sociedade e de como a gente consome as coisas. A cada rua que você limpa, a verdade nua e crua vai aparecendo.</p>
                     </div>
                     <div class="card-gdd torto-esquerda">
-                        <h3>Nova York em 16-bits</h3>
-                        <p>A cidade que nunca dorme agora está soterrada de lixo e dominada pelo caos. Explore os bairros de NY com aquele visual retrô em pixel art visto de cima, lutando para devolver a vida a uma cidade sufocada.</p>
+                        <h3 data-i18n="tituloCardGDD02">Nova York em 16-bits</h3>
+                        <p data-i18n="textoCardGDD02">A cidade que nunca dorme agora está soterrada de lixo e dominada pelo caos. Explore os bairros de NY com aquele visual retrô em pixel art visto de cima, lutando para devolver a vida a uma cidade sufocada.</p>
                     </div>
                     <div class="card-gdd torto-esquerda">
-                        <h3>Limpar, Reciclar, Sobreviver</h3>
-                        <p>A regra é clara: vasculhe a área, cate os resíduos e corra para o centro de reciclagem. Fazer a coisa certa não só salva a cidade, mas te rende grana e vantagens (buffs) essenciais para aguentar o tranco.</p>
+                        <h3 data-i18n="tituloCardGDD03">Limpar, Reciclar, Sobreviver</h3>
+                        <p data-i18n="textoCardGDD03">A regra é clara: vasculhe a área, cate os resíduos e corra para o centro de reciclagem. Fazer a coisa certa não só salva a cidade, mas te rende grana e vantagens (buffs) essenciais para aguentar o tranco.</p>
                     </div>
                     <div class="card-gdd torto-direita">
-                        <h3>Sua Jornada do seu jeito</h3>
-                        <p>Escolha o seu herói entre 4 personagens únicos e encare o desafio no modo solo ou chame a galera para o multiplayer. São 4 zonas de puro caos esperando para serem purificadas por você.</p>
+                        <h3 data-i18n="tituloCardGDD04">Sua Jornada do seu jeito</h3>
+                        <p data-i18n="textoCardGDD04">Escolha o seu herói entre 4 personagens únicos e encare o desafio no modo solo ou chame a galera para o multiplayer. São 4 zonas de puro caos esperando para serem purificadas por você.</p>
                     </div>
-                    <div id="aviso-clique">CLIQUE NOS CARDS PARA REVELAR</div>
+                    <div id="aviso-clique" data-i18n="avisoClique">CLIQUE NOS CARDS PARA REVELAR</div>
                 </div>
 
                 <div id="rodada-cards02">
                     <div class="card-gdd torto-direita">
-                        <h3>Cuidado com o Cansaço!</h3>
-                        <p>O trabalho pesado cobra o seu preço. Fique de olho na sua barra de energia! Se a fadiga bater, o jogo vai te mostrar o lado mais cruel do impacto ambiental. Gerenciar seu fôlego é questão de sobrevivência.</p>
+                        <h3 data-i18n="tituloCardGDD05">Cuidado com o Cansaço!</h3>
+                        <p data-i18n="textoCardGDD05">O trabalho pesado cobra o seu preço. Fique de olho na sua barra de energia! Se a fadiga bater, o jogo vai te mostrar o lado mais cruel do impacto ambiental. Gerenciar seu fôlego é questão de sobrevivência.</p>
                     </div>
                     <div class="card-gdd torto-esquerda">
-                        <h3>O Risco de Limpar a Cidade</h3>
-                        <p>Fazer a coisa certa tem seus perigos. Os Vândalos patrulham cada rua e vão tentar te impedir a todo custo. Vai no sapatinho, usando a furtividade, ou vai encarar o perigo olho no olho? Uma decisão errada e eles te pegam.</p>
+                        <h3 data-i18n="tituloCardGDD06">O Risco de Limpar a Cidade</h3>
+                        <p data-i18n="textoCardGDD06">Fazer a coisa certa tem seus perigos. Os Vândalos patrulham cada rua e vão tentar te impedir a todo custo. Vai no sapatinho, usando a furtividade, ou vai encarar o perigo olho no olho? Uma decisão errada e eles te pegam.</p>
                     </div>
                     <div class="card-gdd torto-esquerda">
-                        <h3>Sustentabilidade também gera dinheiro!</h3>
-                        <p>Aqui, o lixo tem muito valor. Entregue os recicláveis para encher o bolso de moedas. Com elas, você passa na loja e garante aqueles upgrades e equipamentos pesados para limpar as áreas mais perigosas.</p>
+                        <h3 data-i18n="tituloCardGDD07">Sustentabilidade também gera dinheiro!</h3>
+                        <p data-i18n="textoCardGDD07">Aqui, o lixo tem muito valor. Entregue os recicláveis para encher o bolso de moedas. Com elas, você passa na loja e garante aqueles upgrades e equipamentos pesados para limpar as áreas mais perigosas.</p>
                     </div>
                     <div class="card-gdd torto-direita">
-                        <h3>Às vezes, o fim é o inicio do game</h3>
-                        <p>Ser pego não é um simples Game Over, é uma lição. A tela de morte ativa um quiz rápido sobre consumo. Acertou? Você volta pro jogo mais forte e com buffs. Errou? Renasce punido e mais fraco. Aqui, o seu conhecimento é a sua maior arma.</p>
+                        <h3 data-i18n="tituloCardGDD08">Às vezes, o fim é o inicio do game</h3>
+                        <p data-i18n="textoCardGDD08">Ser pego não é um simples Game Over, é uma lição. A tela de morte ativa um quiz rápido sobre consumo. Acertou? Você volta pro jogo mais forte e com buffs. Errou? Renasce punido e mais fraco. Aqui, o seu conhecimento é a sua maior arma.</p>
                     </div>
                 </div>
                 
@@ -396,23 +427,23 @@
 
             <article id="chama-dowload" >
                     <div class="card-dowload">
-                        <p>O planejamento acabou, a cidade está ruindo e as ruas de Nova York aguardam quem ouse limpá-las. Agora que você conheceu todos os segredos, mecânicas e a alma do Eco Education, chegou o momento de passar da teoria para o asfalto.</p>
-                        <button id="btn-chama-dowload" class="btn-game">Continuar</button>
+                        <p data-i18n="textoChamaDowload">O planejamento acabou, a cidade está ruindo e as ruas de Nova York aguardam quem ouse limpá-las. Agora que você conheceu todos os segredos, mecânicas e a alma do Eco Education, chegou o momento de passar da teoria para o asfalto.</p>
+                        <button id="btn-chama-dowload" class="btn-game" data-i18n="botaoContinuar">Continuar</button>
                     </div>
             </article>
             
             <article id="caixa-dowload">
                 <div id="titulo-dowload">
                     <span>
-                        <h2>Salve</h2>
+                        <h2 data-i18n="tituloSuperiorSecaoDowload">Salve</h2>
                     </span>
-                    <h2>o Futuro</h2>
-                    <blockquote>
+                    <h2 data-i18n="tituloInferiorSecaoDowload">o Futuro</h2>
+                    <blockquote data-i18n="textoSecaoDowload">
                         Os Vândalos não dormem e a cidade está sufocando. Você está preparado para sujar as mãos para salvar o futuro?
 
                     </blockquote>
                 </div>
-                    <button class="btn-game" id="btn-dowload">Fazer dowload</button>
+                    <button class="btn-game" id="btn-dowload" data-i18n="btnDowload">Fazer dowload</button>
 
             </article>
 
@@ -426,10 +457,10 @@
     
     <footer>
         <div>
-            <p>Projeto <strong>Eco-Inform - </strong> ODS 12</p>
-            <p>Front-End & Web Design por <span><a href="https://github.com/Alvez-dev7">Vitor</a></span></p>
-            <p>Uma solução multiplataforma desenvolvida pelo Time 02 - 1°C &mdash; ETE Cícero Dias</p>
-            <p class="copyright">&copy; 2026 Eco-Inform. Todos os direitos reservados.</p>
+            <p data-i18n="textoRodape01">Projeto <strong>Eco-Inform - </strong> ODS 12</p>
+            <p data-i18n="textoRodape02">Front-End & Web Design por <span><a href="https://github.com/Alvez-dev7">Vitor</a></span></p>
+            <p data-i18n="textoRodape03">Uma solução multiplataforma desenvolvida pelo Time 02 - 1°C &mdash; ETE Cícero Dias</p>
+            <p class="copyright" data-i18n="textoRodape04">&copy; 2026 Eco-Inform. Todos os direitos reservados.</p>
         </div>
     </footer>
     <script src="js/idiomas.js"></script>

@@ -195,12 +195,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
                     const campo_mensagem = document.querySelector('#resultado-mensagem') 
                     //Campo da mensagem do card recebe informações conforme a pontuação total
+                    let chaveMensagem = ''
+
 
                     if (pontuacao_total > 30){
-                        campo_mensagem.innerText = "Atenção ao seu consumo! Pequenas mudanças nas escolhas diárias geram grande impacto. A ODS 12 da ONU nos alerta que os recursos da Terra são finitos, mas nosso padrão de consumo atual continua crescendo. Ajustar pequenas decisões no dia a dia do prato de comida à escolha das roupas ajuda a construir uma cadeia produtiva mais justa e sustentável para as próximas gerações."
+                        chaveMensagem = 'msgResultadoRuim'
+                        
                     } else{
-                        campo_mensagem.innerText = "Parabéns! Você demonstra hábitos de consumo consciente e equilibrado. Cada decisão inteligente que você toma desde evitar produtos descartáveis até valorizar cadeias de produção sustentáveis reduz diretamente a sua pegada ecológica. Você já faz parte da solução para preservar os recursos naturais que todos nós compartilhamos.";
+                        chaveMensagem = 'msgResultadoBom'
+                    
                     }
+                    campo_mensagem.setAttribute('data-i18n', chaveMensagem)
+
+                    atualizaTextos()
                 }
 
                 
@@ -299,6 +306,55 @@ document.addEventListener("DOMContentLoaded", function(){
         if(footer){
             footer.style.display = 'flex'
         }
+    })
+
+    const btn_idioma = document.querySelector("#btn-idioma")
+    const seletor_idioma = document.querySelector("#seletor-idioma")
+    let idioma_atual = "pt"
+
+    function atualizaTextos(){
+        //Traduz os elementos visíveis
+        const elementosTraduziveis = document.querySelectorAll('[data-i18n]')
+
+        elementosTraduziveis.forEach(function(elementoTraduzivel){
+
+            const chave = elementoTraduzivel.dataset.i18n;
+            if(traducoes[idioma_atual][chave]){
+                elementoTraduzivel.innerHTML = traducoes[idioma_atual][chave];
+            }
+        })
+        //Traduz Elementos data-titulo
+        const elementosTitulo = document.querySelectorAll('[data-i18n-titulo]')
+        elementosTitulo.forEach(function(elementoTitulo){
+            
+                const chaveTitulo = elementoTitulo.dataset.i18nTitulo
+            if(traducoes[idioma_atual][chaveTitulo]){
+                elementoTitulo.setAttribute("data-titulo", traducoes[idioma_atual][chaveTitulo]) //Traz para o data-titulo o texto traduzido
+            }
+        })
+        //Traduz Elementos data-info
+        const elementosInfo = document.querySelectorAll('[data-i18n-info]')
+        elementosInfo.forEach(function(elementoInfo){
+            const chaveInfo = elementoInfo.dataset.i18nInfo
+            if(traducoes[idioma_atual][chaveInfo]){
+                elementoInfo.setAttribute('data-info', traducoes[idioma_atual][chaveInfo])
+            }
+        })
+
+
+        document.querySelector('#texto-sigla').innerText = traducoes[idioma_atual].textoBotaoIdioma;
+
+    }
+
+    btn_idioma.addEventListener('click', function(){
+        if (idioma_atual === "pt"){
+            idioma_atual = 'en'
+        } else if(idioma_atual ==='en'){
+            idioma_atual = 'es'
+        } else{
+            idioma_atual = 'pt'
+        }
+        atualizaTextos()
     })
 
 })

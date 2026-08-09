@@ -29,7 +29,7 @@ html{
 }
 
 header#cabecalho-fixo{
-    pointer-events: auto;
+    pointer-events: all;
     transition: all 0.5s ease;
     transform: translateX(-50%);
 
@@ -49,10 +49,25 @@ header#cabecalho-fixo{
 }
 
 
+#btn-idioma{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    color: white;
+    backdrop-filter: blur(5px);
+    border: 2px solid var(--destaque-suave);
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+
+
+    transition: all 0.3s ease;
+}
 div.hud-centro{
     opacity: 0;
     transition: all 0.5s ease;
-    transform: translateX(-50%);
+    transform: translateX(50%);
 
     z-index: 100;
     display: flex;
@@ -189,7 +204,7 @@ div#narrativa-textos{
 
     opacity: 0;
     transform: translateY(40px);
-
+    z-index: 10;
     transition: opacity 2s ease, transform 2s ease;
 }
 
@@ -572,7 +587,9 @@ article.visivel{
 }
 
 #card-pessoal > div.card-info{
-    text-align: justify;
+    text-align: left;
+    text-wrap: balance;
+    text-indent: 15px;
     padding: 40px;
     line-height: 1.3em;
     font-size: 1.4em;
@@ -583,7 +600,7 @@ article.visivel{
     color: var(--destaque-cta);
 }
 
-#card-pessoal span{
+#card-pessoal span#resultado-numero{
     font-size: 1.6em;
     font-weight: 900;
 }
@@ -834,7 +851,7 @@ article.visivel{
 
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     gap: 15px;
 
@@ -1060,7 +1077,7 @@ article.visivel{
 #caixa-dowload blockquote{
     max-width: 400px;
     align-self: flex-start;
-
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     line-height: 1.5rem;
     letter-spacing: 2px;
