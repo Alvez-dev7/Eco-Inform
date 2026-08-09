@@ -38,7 +38,22 @@ document.addEventListener("DOMContentLoaded", function(){
     cards.forEach(function(card){
         observador.observe(card)
     })
+    
+    const segundo_card_frase = document.querySelector('#segundoCardFrase')
+    const titulo_principal = document.querySelector('#titulo-principal')
+    const indicador_rolagem = document.querySelector('#indicador-rolagem')
+    const observador_idioma = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            if (entry.isIntersecting){
+                btn_idioma.classList.add('visivel')
+            }else{
+                btn_idioma.classList.remove('visivel')
+            }
+        })
+    }, {threshold: 0.1})
 
+    observador_idioma.observe(titulo_principal)
+    observador_idioma.observe(indicador_rolagem)
 
     // BARRA PROGRESSO INVISIVEL - HERO / QUIZ
     const hud_centro = document.querySelector('.hud-centro')

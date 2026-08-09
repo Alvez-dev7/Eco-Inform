@@ -48,21 +48,39 @@ header#cabecalho-fixo{
     
 }
 
+#btn-idioma.visivel{
+    opacity: 1;
+}
 
 #btn-idioma{
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background: transparent;
     color: white;
-    backdrop-filter: blur(5px);
-    border: 2px solid var(--destaque-suave);
+    border: 1px solid var(--destaque-suave);
     border-radius: 10px;
     padding: 5px;
     cursor: pointer;
-
+    font-family: "Montserrat";
+    font-weight: 300;
 
     transition: all 0.3s ease;
+}
+
+#btn-idioma svg{
+    transition: all 0.3s ease;
+}
+
+#btn-idioma:hover{
+    font-weight: 500;
+    background-color: white;
+    color: black;
+}
+
+#btn-idioma:hover svg{
+    fill: black;
 }
 div.hud-centro{
     opacity: 0;
