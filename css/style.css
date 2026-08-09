@@ -29,10 +29,9 @@ html{
 }
 
 header#cabecalho-fixo{
-    opacity: 0;
-    pointer-events: none;
+    pointer-events: auto;
     transition: all 0.5s ease;
-    transform: translateX(-50% -100);
+    transform: translateX(-50%);
 
     display: grid;
     grid-template-columns: 1fr  auto 1fr ;
@@ -49,28 +48,30 @@ header#cabecalho-fixo{
     
 }
 
-header#cabecalho-fixo.cabecalho-visivel{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%);
-}
-
 
 div.hud-centro{
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+
     z-index: 100;
     display: flex;
     gap: 15px;
     justify-content: center;
     align-items: center;
-    grid-column: 2;
+    grid-area: 1 / 2 / 2 / 3;
     backdrop-filter: blur(15px);
     padding: 10px;
     border-radius: 8px;
     border: 2px solid var(--texto-principal);
     
-    
 }
 
+div.hud-centro.visivel{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
 div#barra-fundo{
     width: 40vw;
     height: 15px;
@@ -78,15 +79,22 @@ div#barra-fundo{
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.800);
 }
+
 div#barra-progresso{
-    height: 15px;
-    width: 20%;
-    overflow: hidden;
+    opacity: 0;
+
     border: 0.5px solid rgba(0, 0, 0, 0.800);
     border-radius: 12px;
     background-color: var(--destaque-suave);
+    height: 15px;
+    width: 0%;
+    
+    transition: width 0.5s ease-in-out, opacity 0.5s ease, visibility 0.5s;
+}
 
-    transition: width 0.5s ease;
+div#barra-progresso.visivel{
+    overflow: hidden;
+    opacity: 1;
 }
 
 div#config{

@@ -40,15 +40,15 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
 
-    // CABECALHO INVISIVEL - HERO / QUIZ
-    const cabecalho = document.querySelector('#cabecalho-fixo')
+    // BARRA PROGRESSO INVISIVEL - HERO / QUIZ
+    const hud_centro = document.querySelector('.hud-centro')
     const quiz = document.querySelector('#quiz')
     const observador_cabecalho = new IntersectionObserver(function(entries){ //Nova instancia - Todas as entradas
         entries.forEach(function(entry){ 
             if(entry.isIntersecting){
-                cabecalho.classList.add('cabecalho-visivel')
+                hud_centro.classList.add('visivel')
             } else{
-                cabecalho.classList.remove('cabecalho-visivel')
+                hud_centro.classList.remove('visivel')
             }
             
         })
@@ -101,8 +101,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const barra_progresso = document.querySelector('#barra-progresso')
 
-    let progresso_total = 20 // Barra de progresso começa com 20 
+    let progresso_total = 0 // Barra de progresso começa com 20 
 
+    const chama_barra_progresso = document.querySelectorAll('.btn-chama-barra-progresso')
+    chama_barra_progresso.forEach(function(botao){
+        botao.addEventListener('click', function(){
+            progresso_total = 0
+            barra_progresso.classList.add('visivel')
+        })
+    })
+    
+    
     btn_avancar_conjunto.forEach(function(btn_avancar_individual){
         
         btn_avancar_individual.addEventListener('click', function(){
@@ -116,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function(){
             destino.scrollIntoView({behavior: 'smooth'}) //Rolagem leve até a proxima questão 
 
             if (progresso_total < 100){ //Lógica de progresso para a barra de progresso
-                progresso_total += 20
+                progresso_total += 25
                 barra_progresso.style.width = `${progresso_total}%`
             }
 
@@ -129,24 +138,23 @@ document.addEventListener("DOMContentLoaded", function(){
     btn_chama_calculadora.addEventListener('click', function(){
         quiz.classList.remove('quiz-visivel')   // Quiz passa a ficar invisivel
         observador_cabecalho.observe(secao_calculadora) // Cabeçalho também fica visivel na seção calc 
-        progresso_total = 20; // Barra de progresso diminui numericamente
-        
-        if(barra_progresso) {  
-            barra_progresso.style.width = `${progresso_total}%`; // Barra de progresso diminui visualmente
-        }
-         
         secao_calculadora.classList.add('visivel') //Deixa a seção da calculadora visivel
 
         secao_calculadora.scrollIntoView({behavior: 'smooth'}) //Faz um efeito de rolagem simples até ela
+
+        barra_progresso.classList.remove('visivel')
+        progresso_total = 0 
     })
 
     const botoes_avancar_calculadora = document.querySelectorAll('.btn-avancar-calc')
     let pontuacao_total = 0
-    
+        
+
     botoes_avancar_calculadora.forEach(function(btn_avancar_calc){
         const caixa_pai = btn_avancar_calc.parentElement //Caixa_pai recebe a caixa relacionada ao botao de avançar especifico
             const campo_input_calc = caixa_pai.querySelector('input')
 
+            
             campo_input_calc.addEventListener('keypress', function(entry){ 
                 if(entry.key === 'Enter'){ //Adicionando opção de clicagem com a tecla ENTER
                     entry.preventDefault();
@@ -154,6 +162,10 @@ document.addEventListener("DOMContentLoaded", function(){
                     btn_avancar_calc.click();
                 }
             })
+
+           
+
+
         btn_avancar_calc.addEventListener('click', function(){
             
             const valor_digitado = campo_input_calc.value // Identificamos o valor digitado na caixa pai selecionada
@@ -162,13 +174,15 @@ document.addEventListener("DOMContentLoaded", function(){
                 window.alert('Para prosseguir, preencha o campo vazio.') //Precaução de campo vazio
             } else{
 
+                if (progresso_total < 100){ //Lógica de progresso para a barra de progresso - calc
+                progresso_total += 25
+                barra_progresso.style.width = `${progresso_total}%`
+                }
+
                 btn_avancar_calc.disabled = true; //Desativa o botão de avançar - Prevenção de clique duplo e resultado falso.
 
                 campo_input_calc.disabled = true; //Trava o input
 
-
-                progresso_total += 20
-                barra_progresso.style.width = `${progresso_total}%` //Barra de progresso é atualizada com +20%
 
                 let valor_calc = Number(valor_digitado)
                 pontuacao_total += valor_calc //Calculamos o acumulamento do valor digitado

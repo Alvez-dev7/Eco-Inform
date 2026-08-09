@@ -11,14 +11,13 @@
 <body>
     
     <header id="cabecalho-fixo">
-        <!--
+        
         <div id="config">
             <button id="engrenagem">
-                <span class="material-symbols-outlined">settings</span>
+                EN
             </button>
-            
         </div>
-        -->
+        
         <div class="hud-centro">
             <span class="material-symbols-outlined" id="planta-progresso">potted_plant</span>
 
@@ -39,7 +38,7 @@
             </div>
 
                 <div id="titulo-principal">
-                    <h2>O custo invisível.</h2>
+                    <h2 data-i18n="tituloHero">O custo invisível.</h2>
                 </div>
                 
             <div id="narrativa-textos">
@@ -107,7 +106,7 @@
 
                     <p></p>
                     
-                <button type="button" class="btn-avancar" data-proxima="#questao02">Próxima pergunta</button>
+                <button type="button" class="btn-avancar btn-chama-barra-progresso" data-proxima="#questao02">Próxima pergunta</button>
                 </div>
 
             </article>
@@ -263,7 +262,7 @@
                     <div class="opcoes-container">
                         <input type="number" id="input-calc01" min="1" max="100" placeholder="Ex: 15" class="input-calculadora">
                         
-                        <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta02">Confirmar</button>
+                        <button type="button" class="btn-avancar-calc btn-chama-barra-progresso" data-proxima="#calc-pergunta02">Confirmar</button>
                     </div>
                 
                 </div>
@@ -433,7 +432,7 @@
             <p class="copyright">&copy; 2026 Eco-Inform. Todos os direitos reservados.</p>
         </div>
     </footer>
-
+    <script src="js/idiomas.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
