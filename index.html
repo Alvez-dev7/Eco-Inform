@@ -89,7 +89,7 @@
             <!--               QUESTÃO 01               -->
             <article id="questao01">
                 <div class="card-quiz">
-                    <h2 data-i18n="pergunta01">Você sabe exatamente o que é a ODS 12 da ONU e qual é o seu objetivo principal?</h2>
+                    <h2 data-i18n="pergunta01"> Você sabe exatamente o que é a ODS 12 da ONU e qual é o seu objetivo principal?</h2>
                     <div class="opcoes-container">
                         <button type="button"class="btn-opcao"
                             
@@ -98,8 +98,8 @@
                             data-i18n-titulo="tituloOpt1Q1"
                             data-info="Exato! A ODS 12 é sobre Produção e Consumo Sustentáveis. Cientificamente isso é olhar o ciclo de vida completo de um produto: desde a extração da matéria-prima até o descarte. O objetivo é desacoplar crescimento econômico da degradação ambiental, ou seja, fazer mais e melhor com menos e sair do modelo extrai-usa-joga fora."
                             data-i18n-info="infoOpt1Q1"
-                            data-i18n="textoOpt1Q1">>
-                            Sim, estou ciente!
+                            data-i18n="textoOpt1Q1">
+                             Sim, estou ciente!
                         </button>
                         <button type="button" class="btn-opcao"
                             
@@ -295,7 +295,8 @@
                     <h2 data-i18n="calcPergunta01">Quantos minutos, em média, dura o seu banho diário?</h2>
                     
                     <div class="opcoes-container">
-                        <input type="number" id="input-calc01"  placeholder="Ex: 15" class="input-calculadora" min="1" max="60">
+                        <input type="number" id="input-calc01"  placeholder="Ex: 15" class="input-calculadora" min="1" max="60" oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
+                        
                         
                         <button type="button" class="btn-avancar-calc btn-chama-barra-progresso" data-proxima="#calc-pergunta02" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
@@ -310,7 +311,7 @@
                     <h2 data-i18n="calcPergunta02">Quantos aparelhos ou acessórios eletrônicos sem uso (celulares velhos, fones quebrados, cabos soltos) você guarda nas gavetas de casa?</h2>
                     
                     <div class="opcoes-container">
-                        <input type="number" id="input-calc02" min="1" max="100" placeholder="Ex: 3" class="input-calculadora">
+                        <input type="number" id="input-calc02" min="0" max="30" placeholder="Ex: 3" class="input-calculadora" oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
                         
                         <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta03" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
@@ -325,7 +326,7 @@
                     
                     <div class="opcoes-container">
                         
-                        <input type="number" id="input-calc03" min="1" max="100" placeholder="Ex: 10" class="input-calculadora">
+                        <input type="number" id="input-calc03" min="0" max="20" placeholder="Ex: 10" class="input-calculadora" oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
                         
                         <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta04" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
@@ -341,7 +342,7 @@
                     
                     <div class="opcoes-container">
                         
-                        <input type="number" id="input-calc04" min="0" max="10" maxlength="2" placeholder="Ex: 4" class="input-calculadora">
+                        <input type="number" id="input-calc04" min="0" max="10" maxlength="2" placeholder="Ex: 4" class="input-calculadora" oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
                     
                         <button type="button" class="btn-avancar-calc" data-proxima="#card-pessoal" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>

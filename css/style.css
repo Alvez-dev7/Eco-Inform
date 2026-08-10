@@ -727,7 +727,7 @@ article.visivel{
     scroll-snap-type: mandatory;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--hero-jogo-escuro);
     color: #F4F0EA;

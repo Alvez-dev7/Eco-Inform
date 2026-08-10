@@ -164,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const botoes_avancar_calculadora = document.querySelectorAll('.btn-avancar-calc')
     let pontuacao_total = 0
         
+    
 
     botoes_avancar_calculadora.forEach(function(btn_avancar_calc){
         const caixa_pai = btn_avancar_calc.parentElement //Caixa_pai recebe a caixa relacionada ao botao de avançar especifico
@@ -205,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 
 
                 if(btn_avancar_calc.dataset.proxima ==="#card-pessoal"){  
-                    document.querySelector('#resultado-numero').innerHTML = (pontuacao_total*3); //Resultado é 3x da pontuação total
+                    document.querySelector('#resultado-numero').innerHTML = (pontuacao_total * 3); //Resultado é 3x da pontuação total
 
 
                     const campo_mensagem = document.querySelector('#resultado-mensagem') 
@@ -246,27 +247,28 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     })
 
-    const botao_pessoal = document.querySelector('.btn-pessoal')
-    const link_game = document.querySelector('#link-game')
+    const botao_pessoal = document.querySelector('.btn-pessoal') //Identifica o botão do card-pessoal
+    const link_game = document.querySelector('#link-game') //Identifica o botão que será o link para a parte do game
 
-    botao_pessoal.addEventListener('click', function(){
+    botao_pessoal.addEventListener('click', function(){ // Faz a transição da parte do card pessoal, para o card do link-game
         link_game.classList.add('visivel')
         link_game.scrollIntoView({behavior: 'smooth'})
     })
 
-    const btn_chama_game = document.querySelector('#btn-chama-game')
-    const secao_game = document.querySelector('#game')
-    btn_chama_game.addEventListener('click', function(){
+    const btn_chama_game = document.querySelector('#btn-chama-game') //Identifica o botão que tem o link do game
+    const secao_game = document.querySelector('#game') // Identifica a secao do game
+
+    btn_chama_game.addEventListener('click', function(){ //Faz a transição para o parte do game
         secao_game.classList.add('visivel')
         secao_game.scrollIntoView({behavior: 'smooth'})
     })
 
-    const link_gdd = document.querySelector('#link-gdd')
-    const secao_gdd = document.querySelector('article#gdd')
+    const link_gdd = document.querySelector('#link-gdd') //Identifica o botão que fará o gdd aparecer
+    const secao_gdd = document.querySelector('article#gdd') // identifica a secao do gdd
 
-    const secao_dowload = document.querySelector('#dowload-game')
+    const secao_dowload = document.querySelector('#dowload-game') // Identifica a secao que terá o botao de download
 
-    link_gdd.addEventListener('click', function(){
+    link_gdd.addEventListener('click', function(){ // Faz a transição para a secao do gdd
 
         secao_gdd.classList.add('visivel')
         secao_gdd.scrollIntoView({behavior: 'smooth'})
@@ -274,9 +276,10 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
 
-    const lista_cards_gdd = document.querySelectorAll('.card-gdd')
-    const aviso_clique = document.querySelector('#aviso-clique')
-    const observador_cards_gdd = new IntersectionObserver(function(entries){
+    const lista_cards_gdd = document.querySelectorAll('.card-gdd') //Identifica todos os cards do gdd
+    const aviso_clique = document.querySelector('#aviso-clique') // Identifica o card de aviso clique
+
+    const observador_cards_gdd = new IntersectionObserver(function(entries){ // Cria o observador dos cards gdd
         entries.forEach(function(entry){
             if(entry.isIntersecting){
                 entry.target.classList.add('visivel')
@@ -284,38 +287,30 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     },{threshold: 0.1})
 
-    lista_cards_gdd.forEach(function(card_gdd){
-        observador_cards_gdd.observe(card_gdd)
+    lista_cards_gdd.forEach(function(card_gdd){ 
+        observador_cards_gdd.observe(card_gdd) // Faz observar cada card gdd
 
-        card_gdd.addEventListener('click', function(){
+        card_gdd.addEventListener('click', function(){ //Faz o efeito de desembaçamento dos cards
         card_gdd.classList.add('desembacado');
 
         if(aviso_clique){
-            aviso_clique.style.opacity = '0'
+            aviso_clique.style.opacity = '0' // Tira o aviso clique após o 1° clique em algum card gdd
         }
 
         
-        secao_dowload.classList.add('visivel')
+        secao_dowload.classList.add('visivel') // Deixa a secao do dowload visivel
     });
     })
 
-    const lista_cards_dowload = document.querySelectorAll('.card-dowload')
-
-    const observador_cards_dowload = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-            if(entry.isIntersecting){
-                entry.target.classList.add('visivel')
-            }
-        })
-    },{threshold: 0.1})
+    const lista_cards_dowload = document.querySelectorAll('.card-dowload') //Identifica o card que irá chamar a secao dowload
     
     const footer = document.querySelector('footer') //Identificamos o footer
-    const btn_link_caixa_dowload = document.querySelector('#btn-chama-dowload')
-    const caixa_dowload = document.querySelector('#caixa-dowload')
+    const btn_link_caixa_dowload = document.querySelector('#btn-chama-dowload') //Identifica o botão de chamamento da caixa dowload
+    const caixa_dowload = document.querySelector('#caixa-dowload') //Identifica a caixa de download
 
-    btn_link_caixa_dowload.addEventListener('click', function(){
+    btn_link_caixa_dowload.addEventListener('click', function(){ // faz a transição para a caixa dowload
 
-        caixa_dowload.classList.add('visivel')
+        caixa_dowload.classList.add('visivel') 
         caixa_dowload.scrollIntoView({behavior: "smooth"})
 
         if(footer){
@@ -323,19 +318,18 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
 
-    const btn_idioma = document.querySelector("#btn-idioma")
-    const seletor_idioma = document.querySelector("#seletor-idioma")
-    let idioma_atual = "pt"
+    const btn_idioma = document.querySelector("#btn-idioma") // Identifica o botão de troca de idioma
+    let idioma_atual = "pt" // Deixa como linguagem padrão o PORTUGUES
 
     function atualizaTextos(){
-        //Traduz os elementos visíveis
-        const elementosTraduziveis = document.querySelectorAll('[data-i18n]')
+        //Traduz os elementos estáticos
+        const elementosTraduziveis = document.querySelectorAll('[data-i18n]') // Identifica todos os elementos traduziveis estáticos
 
-        elementosTraduziveis.forEach(function(elementoTraduzivel){
+        elementosTraduziveis.forEach(function(elementoTraduzivel){ // Identifica cada elemento Traduzivel
 
-            const chave = elementoTraduzivel.dataset.i18n;
-            if(traducoes[idioma_atual][chave]){
-                elementoTraduzivel.innerHTML = traducoes[idioma_atual][chave];
+            const chave = elementoTraduzivel.dataset.i18n; // Identifica a chave de cada um. em que: data-i18n
+            if(traducoes[idioma_atual][chave]){ 
+                elementoTraduzivel.innerHTML = traducoes[idioma_atual][chave]; //Identifica o dicionário de estado, e a chave do data-i18n dentro da const traducoes
             }
         })
         //Traduz Elementos data-titulo
@@ -352,16 +346,16 @@ document.addEventListener("DOMContentLoaded", function(){
         elementosInfo.forEach(function(elementoInfo){
             const chaveInfo = elementoInfo.dataset.i18nInfo
             if(traducoes[idioma_atual][chaveInfo]){
-                elementoInfo.setAttribute('data-info', traducoes[idioma_atual][chaveInfo])
+                elementoInfo.setAttribute('data-info', traducoes[idioma_atual][chaveInfo]) //Traz para o data-info o texto traduzido
             }
         })
 
 
-        document.querySelector('#texto-sigla').innerText = traducoes[idioma_atual].textoBotaoIdioma;
+        document.querySelector('#texto-sigla').innerText = traducoes[idioma_atual].textoBotaoIdioma; //  Atualiza a sigla do botao de idiomas
 
     }
 
-    btn_idioma.addEventListener('click', function(){
+    btn_idioma.addEventListener('click', function(){ //Lógica de troca de idiomas conforme o clique no botão
         if (idioma_atual === "pt"){
             idioma_atual = 'en'
         } else if(idioma_atual ==='en'){
@@ -369,11 +363,32 @@ document.addEventListener("DOMContentLoaded", function(){
         } else{
             idioma_atual = 'pt'
         }
-        atualizaTextos()
+        atualizaTextos() 
     })
 
 })
+//PREVENÇÃO DE PONTOS - CALCULADORA
+function validarLimiteInput(input) { 
+        const min = parseInt(input.min);
+        const max = parseInt(input.max);
+        const valor = parseInt(input.value);
 
+        if (isNaN(valor)){
+            return
+        }
+        if (valor > max) {
+            input.value = max;
+        }
+    }
+
+    function validarMinimoInput(input) {
+        const min = parseInt(input.min);
+        const valor = parseInt(input.value);
+
+        if (!isNaN(valor) && valor < min) {
+            input.value = min;
+        }
+    }
 
 window.addEventListener("beforeunload", function () {
     sessionStorage.setItem("posicaoScroll", window.scrollY);
