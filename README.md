@@ -21,6 +21,10 @@ Este portal atua como a interface principal de um ecossistema focado na **ODS 12
 * 🧠 **Quiz Educativo e Calculadora Ambiental:** Questionário interativo que analisa hábitos de consumo com cálculos matemáticos imediatos e diagnóstico personalizado.
 * 🃏 **Vitrine Interativa do Jogo:** Apresentação institucional das mecânicas do projeto. O portal funciona como landing page de divulgação do game, utilizando a `IntersectionObserver API`, desfoque (`backdrop-filter`) e animações em `@keyframes`.
 
+*   🌍 **Sistema Multilíngue Nativo (i18n):** O site suporta Português, Inglês e Espanhol de forma dinâmica através de um dicionário em JavaScript. A troca de idiomas ocorre instantaneamente via manipulação do DOM e atributos `data-i18n`, sem recarregar a página.
+*   🔦 **Interface com Efeito Lanterna:** A seção *Hero* conta com um sistema interativo guiado pelo cursor. As coordenadas X e Y do mouse são capturadas via JavaScript (`mousemove`) e aplicadas dinamicamente no CSS para mover um `radial-gradient`.
+*   🧠 **Quiz Educativo e Calculadora Ambiental:** Um questionário interativo coleta dados de hábitos de consumo. O script processa os valores matematicamente, valida limites e exibe um diagnóstico personalizado ao final.
+*   🃏 **Seção Interativa do Jogo:** Apresentação fluida das mecânicas do projeto. Os cartões reagem à rolagem da página por meio da `IntersectionObserver API`, utilizando desfoques (`backdrop-filter`) e animações de balanço (`@keyframes`).
 
 ## 🚀 Destaques Técnicos & Boas Práticas
 
@@ -31,12 +35,14 @@ Desenvolvido inteiramente com tecnologias nativas da web (Vanilla JS, HTML5 e CS
 * ⚡ **Performance com APIs Nativas:** Uso da `IntersectionObserver API` para monitorar a visibilidade de elementos e o avanço da barra superior apenas dentro da *viewport*.
 * 📍 **Memória de Estado:** Utilização de `sessionStorage` para registrar a posição do *scroll*, mantendo o usuário exatamente no mesmo ponto após recarregar a página. Navegação estruturada com *scroll-snap*.
 
+## 📂 Estrutura do Projeto
 
 ## ⚡ Métricas do Google Lighthouse
 
 * **Mobile:** `72` Performance | `100` Acessibilidade | `100` Boas Práticas | `90` SEO
 * **Desktop:** `98` Performance | `100` Acessibilidade | `100` Boas Práticas | `90` SEO
 
+Clone este repositório:
 
 ## 🛠️ Como Executar Localmente
 
