@@ -61,6 +61,6 @@ Distribuído sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 👨‍💻 Autoria & Desenvolvimento
 Projeto desenvolvido para fins educacionais e de conscientização ambiental.
 
-Engenharia Front-End & Web Design: João Vitor Alves do Nascimento [@Alvez-dev7](github.com/Alvez-dev7)
+Engenharia Front-End & Web Design: João Vitor Alves do Nascimento 
 
 Idealização Multiplataforma: Time 02, 1°C (ETE Cícero Dias)
