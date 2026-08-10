@@ -35,7 +35,6 @@ Desenvolvido inteiramente com tecnologias nativas da web (Vanilla JS, HTML5 e CS
 * ⚡ **Performance com APIs Nativas:** Uso da `IntersectionObserver API` para monitorar a visibilidade de elementos e o avanço da barra superior apenas dentro da *viewport*.
 * 📍 **Memória de Estado:** Utilização de `sessionStorage` para registrar a posição do *scroll*, mantendo o usuário exatamente no mesmo ponto após recarregar a página. Navegação estruturada com *scroll-snap*.
 
-## 📂 Estrutura do Projeto
 
 ## ⚡ Métricas do Google Lighthouse
 
@@ -62,6 +61,6 @@ Distribuído sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 👨‍💻 Autoria & Desenvolvimento
 Projeto desenvolvido para fins educacionais e de conscientização ambiental.
 
-Engenharia Front-End & Web Design: João Vitor Alves do Nascimento (@Alvez-dev7)
+Engenharia Front-End & Web Design: João Vitor Alves do Nascimento [@Alvez-dev7](github.com/Alvez-dev7)
 
 Idealização Multiplataforma: Time 02, 1°C (ETE Cícero Dias)
