@@ -12,6 +12,11 @@
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
+
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
     
@@ -290,7 +295,7 @@
                     <h2 data-i18n="calcPergunta01">Quantos minutos, em média, dura o seu banho diário?</h2>
                     
                     <div class="opcoes-container">
-                        <input type="number" id="input-calc01" min="1" max="100" placeholder="Ex: 15" class="input-calculadora">
+                        <input type="number" id="input-calc01"  placeholder="Ex: 15" class="input-calculadora" min="1" max="60">
                         
                         <button type="button" class="btn-avancar-calc btn-chama-barra-progresso" data-proxima="#calc-pergunta02" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
