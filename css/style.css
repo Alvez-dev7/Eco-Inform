@@ -205,7 +205,8 @@ div#narrativa-textos{
     display: flex;
     flex-flow: column nowrap;
     gap: 30px;
-    max-width: auto;
+    width: auto;
+     max-width: 400px;
     font-family: "Montserrat", sans-serif;
     font-size: 1.5em;
     font-weight: 400;
