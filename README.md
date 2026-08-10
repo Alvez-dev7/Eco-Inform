@@ -41,7 +41,6 @@ Desenvolvido inteiramente com tecnologias nativas da web (Vanilla JS, HTML5 e CS
 * **Mobile:** `72` Performance | `100` Acessibilidade | `100` Boas Práticas | `90` SEO
 * **Desktop:** `98` Performance | `100` Acessibilidade | `100` Boas Práticas | `90` SEO
 
-Clone este repositório:
 
 ## 🛠️ Como Executar Localmente
 
