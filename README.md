@@ -16,7 +16,6 @@ Este portal atua como a interface principal de um ecossistema focado na **ODS 12
 
 ## ✨ Funcionalidades
 
-* 🌍 **Sistema Multilíngue Nativo (i18n):** Suporte dinâmico a Português, Inglês e Espanhol via dicionário em JavaScript. Troca de idioma instantânea no DOM utilizando atributos `data-i18n`, sem recarregar a página.
 * 🔦 **Interface com Efeito Lanterna:** A seção *Hero* possui um sistema interativo guiado pelo cursor. As coordenadas `X` e `Y` do mouse são capturadas via JavaScript (`mousemove`) e aplicadas dinamicamente ao CSS para mover um `radial-gradient`.
 * 🧠 **Quiz Educativo e Calculadora Ambiental:** Questionário interativo que analisa hábitos de consumo com cálculos matemáticos imediatos e diagnóstico personalizado.
 * 🃏 **Vitrine Interativa do Jogo:** Apresentação institucional das mecânicas do projeto. O portal funciona como landing page de divulgação do game, utilizando a `IntersectionObserver API`, desfoque (`backdrop-filter`) e animações em `@keyframes`.
