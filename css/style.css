@@ -342,7 +342,7 @@ div#narrativa-textos{
     align-items: center;
     background: white url(../assets/img-questao01-desktop.jpg);
     background-size: cover;
-    background-position: top center ;
+    background-position: top right ;
     min-height: 130vh;
     width: 100%;
 }
