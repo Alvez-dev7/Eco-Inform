@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
     const btn_chama_calculadora = document.querySelector('.btn-chama-calculadora') // Botao final do quiz que irá fazer a calc ficar visivel
     const secao_calculadora = document.querySelector('#calculadora')
+    const respostas_normalizadas = []
 
     btn_chama_calculadora.addEventListener('click', function(){
         quiz.classList.remove('quiz-visivel')   // Quiz passa a ficar invisivel
@@ -159,16 +160,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
         barra_progresso.classList.remove('visivel')
         progresso_total = 0 
+        respostas_normalizadas.length = 0
     })
 
     const botoes_avancar_calculadora = document.querySelectorAll('.btn-avancar-calc')
-    let pontuacao_total = 0
-        
-    
 
     botoes_avancar_calculadora.forEach(function(btn_avancar_calc){
         const caixa_pai = btn_avancar_calc.parentElement //Caixa_pai recebe a caixa relacionada ao botao de avançar especifico
-            const campo_input_calc = caixa_pai.querySelector('input')
+        const campo_input_calc = caixa_pai.querySelector('input')
 
             
             campo_input_calc.addEventListener('keypress', function(entry){ 
@@ -183,65 +182,100 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
         btn_avancar_calc.addEventListener('click', function(){
-            
-            const valor_digitado = campo_input_calc.value // Identificamos o valor digitado na caixa pai selecionada
-            
-            if(valor_digitado === ""){
-                window.alert('Para prosseguir, preencha o campo vazio.') //Precaução de campo vazio
-            } else{
+            if(campo_input_calc.value === "" || !campo_input_calc.validity.valid){
+                campo_input_calc.reportValidity()
+                return
+            }
 
-                if (progresso_total < 100){ //Lógica de progresso para a barra de progresso - calc
+            if (progresso_total < 100){ //Lógica de progresso para a barra de progresso - calc
                 progresso_total += 25
                 barra_progresso.style.width = `${progresso_total}%`
+            }
+
+            btn_avancar_calc.disabled = true; //Desativa o botão de avançar - Prevenção de clique duplo e resultado falso.
+
+            campo_input_calc.disabled = true; //Trava o input
+
+            const valor = Number(campo_input_calc.value)
+            const min = Number(campo_input_calc.min)
+            const max = Number(campo_input_calc.max)
+            respostas_normalizadas.push(((valor - min) / (max - min)) * 100)
+
+            const proxima = document.querySelector(btn_avancar_calc.dataset.proxima) // identificamos a proxima questao
+
+            if(btn_avancar_calc.dataset.proxima === "#card-pessoal"){
+                const indice = Math.round(
+                    respostas_normalizadas.reduce(function(total, resposta){
+                        return total + resposta
+                    }, 0) / respostas_normalizadas.length
+                )
+
+                document.querySelector('#resultado-numero').textContent = indice
+
+                const campo_mensagem = document.querySelector('#resultado-mensagem')
+                let chaveMensagem
+
+                if(indice <= 33){
+                    chaveMensagem = 'msgResultadoBaixo'
+                } else if(indice <= 66){
+                    chaveMensagem = 'msgResultadoMedio'
+                } else{
+                    chaveMensagem = 'msgResultadoAlto'
                 }
 
-                btn_avancar_calc.disabled = true; //Desativa o botão de avançar - Prevenção de clique duplo e resultado falso.
+                campo_mensagem.setAttribute('data-i18n', chaveMensagem)
 
-                campo_input_calc.disabled = true; //Trava o input
+                const recomendacao_primaria = document.querySelector('#texto-recomendacao-primaria')
+                const recomendacao_secundaria = document.querySelector('#texto-recomendacao-secundaria')
+                const maior_resposta = Math.max(...respostas_normalizadas)
 
+                recomendacao_secundaria.hidden = true
+                recomendacao_secundaria.removeAttribute('data-i18n')
 
-                let valor_calc = Number(valor_digitado)
-                pontuacao_total += valor_calc //Calculamos o acumulamento do valor digitado
-                const proxima = document.querySelector(btn_avancar_calc.dataset.proxima) // identificamos a proxima questao
-                
+                if(maior_resposta <= 33){
+                    recomendacao_primaria.setAttribute('data-i18n', 'recomendacaoManter')
+                } else{
+                    const perguntas_prioritarias = respostas_normalizadas
+                        .map(function(resposta, indice){
+                            return {resposta: resposta, indice: indice}
+                        })
+                        .filter(function(resposta){
+                            return maior_resposta - resposta.resposta <= 5
+                        })
 
-                if(btn_avancar_calc.dataset.proxima ==="#card-pessoal"){  
-                    document.querySelector('#resultado-numero').innerHTML = (pontuacao_total * 3); //Resultado é 3x da pontuação total
+                    const recomendacoes_por_pergunta = [
+                        'recomendacaoBanho',
+                        'recomendacaoEletronicos',
+                        'recomendacaoDescartaveis',
+                        'recomendacaoCompras'
+                    ]
 
+                    recomendacao_primaria.setAttribute(
+                        'data-i18n',
+                        recomendacoes_por_pergunta[perguntas_prioritarias[0].indice]
+                    )
 
-                    const campo_mensagem = document.querySelector('#resultado-mensagem') 
-                    //Campo da mensagem do card recebe informações conforme a pontuação total
-                    let chaveMensagem = ''
-
-
-                    if (pontuacao_total > 30){
-                        chaveMensagem = 'msgResultadoRuim'
-                        
-                    } else{
-                        chaveMensagem = 'msgResultadoBom'
-                    
+                    if(perguntas_prioritarias.length > 1){
+                        recomendacao_secundaria.setAttribute(
+                            'data-i18n',
+                            recomendacoes_por_pergunta[perguntas_prioritarias[1].indice]
+                        )
+                        recomendacao_secundaria.hidden = false
                     }
-                    campo_mensagem.setAttribute('data-i18n', chaveMensagem)
-
-                    atualizaTextos()
                 }
 
-                
+                atualizaTextos()
+            }
 
-                
-
-                proxima.classList.remove('escondida') // Revela a proxima questão
-                proxima.classList.add('visivel')
-                proxima.scrollIntoView({behavior: 'smooth'}) //Faz um efeito de rolagem leve
+            proxima.classList.remove('escondida') // Revela a proxima questão
+            proxima.classList.add('visivel')
+            proxima.scrollIntoView({behavior: 'smooth'}) //Faz a rolagem leve até a próxima etapa
 
 
-                    const proximo_input = proxima.querySelector('input')
+            const proximo_input = proxima.querySelector('input')
 
-                    if (proximo_input){
-                        proximo_input.focus()
-                    }
-                
-
+            if (proximo_input){
+                proximo_input.focus()
             }
 
         })
@@ -249,18 +283,27 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const botao_pessoal = document.querySelector('.btn-pessoal') //Identifica o botão do card-pessoal
     const link_game = document.querySelector('#link-game') //Identifica o botão que será o link para a parte do game
+    const btn_chama_game = document.querySelector('#btn-chama-game')
+    const btn_volta_resultado = document.querySelector('#btn-volta-resultado')
+    const secao_game = document.querySelector('#game') // Identifica a secao do game
 
     botao_pessoal.addEventListener('click', function(){ // Faz a transição da parte do card pessoal, para o card do link-game
         link_game.classList.add('visivel')
+        botao_pessoal.setAttribute('aria-expanded', 'true')
         link_game.scrollIntoView({behavior: 'smooth'})
+        btn_chama_game.focus({preventScroll: true})
     })
-
-    const btn_chama_game = document.querySelector('#btn-chama-game') //Identifica o botão que tem o link do game
-    const secao_game = document.querySelector('#game') // Identifica a secao do game
 
     btn_chama_game.addEventListener('click', function(){ //Faz a transição para o parte do game
         secao_game.classList.add('visivel')
         secao_game.scrollIntoView({behavior: 'smooth'})
+    })
+
+    btn_volta_resultado.addEventListener('click', function(){
+        link_game.classList.remove('visivel')
+        botao_pessoal.setAttribute('aria-expanded', 'false')
+        document.querySelector('#card-pessoal').scrollIntoView({behavior: 'smooth'})
+        botao_pessoal.focus({preventScroll: true})
     })
 
     const link_gdd = document.querySelector('#link-gdd') //Identifica o botão que fará o gdd aparecer

@@ -295,7 +295,7 @@
                     <h2 data-i18n="calcPergunta01">Quantos minutos, em média, dura o seu banho diário?</h2>
                     
                     <div class="opcoes-container">
-                        <input type="number" id="input-calc01"  placeholder="Ex: 15" class="input-calculadora" min="1" max="60" oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
+                        <input type="number" id="input-calc01" placeholder="Ex: 15" class="input-calculadora" min="1" max="60" required oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
                         
                         
                         <button type="button" class="btn-avancar-calc btn-chama-barra-progresso" data-proxima="#calc-pergunta02" data-i18n="botaoConfirmar">Confirmar</button>
@@ -311,7 +311,7 @@
                     <h2 data-i18n="calcPergunta02">Quantos aparelhos ou acessórios eletrônicos sem uso (celulares velhos, fones quebrados, cabos soltos) você guarda nas gavetas de casa?</h2>
                     
                     <div class="opcoes-container">
-                        <input type="number" id="input-calc02" min="0" max="30" placeholder="Ex: 3" class="input-calculadora" oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
+                        <input type="number" id="input-calc02" min="0" max="30" placeholder="Ex: 3" class="input-calculadora" required oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
                         
                         <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta03" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
@@ -326,7 +326,7 @@
                     
                     <div class="opcoes-container">
                         
-                        <input type="number" id="input-calc03" min="0" max="20" placeholder="Ex: 10" class="input-calculadora" oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
+                        <input type="number" id="input-calc03" min="0" max="20" placeholder="Ex: 10" class="input-calculadora" required oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
                         
                         <button type="button" class="btn-avancar-calc" data-proxima="#calc-pergunta04" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
@@ -342,7 +342,7 @@
                     
                     <div class="opcoes-container">
                         
-                        <input type="number" id="input-calc04" min="0" max="10" maxlength="2" placeholder="Ex: 4" class="input-calculadora" oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
+                        <input type="number" id="input-calc04" min="0" max="10" placeholder="Ex: 4" class="input-calculadora" required oninput="validarLimiteInput(this)" onblur="validarMinimoInput(this)">
                     
                         <button type="button" class="btn-avancar-calc" data-proxima="#card-pessoal" data-i18n="botaoConfirmar">Confirmar</button>
                     </div>
@@ -350,32 +350,45 @@
                 </div>
             </article>
 
+
+        </section>
+
+        <section id="transicao-game">
             <article id="card-pessoal" class="escondida">
-                <div class="card-info">
+                <div class="resultado-conteudo">
                     <h2 data-i18n="tituloResultado">Seu Resultado</h2>
-                    
-                    <p>
-                        <span data-i18n="textoPontuacaoIntro">Sua pontuação foi de: </span>
+
+                    <p id="resultado-mensagem" aria-live="polite"></p>
+                    <div class="resultado-recomendacao" aria-live="polite">
+                        <h3 data-i18n="tituloRecomendacao">Seu próximo passo</h3>
+                        <p id="texto-recomendacao-primaria" data-i18n="recomendacaoManter">Continue mantendo esses hábitos conscientes no dia a dia.</p>
+                        <p id="texto-recomendacao-secundaria" hidden></p>
+                    </div>
+
+                    <p class="resultado-pontuacao">
+                        <span data-i18n="textoPontuacaoIntro">Indicador educativo aproximado:</span>
                         <span id="resultado-numero"></span>
-                        <span data-i18n="textoPontuacaoFim"> pontos!</span>
+                        <span data-i18n="textoPontuacaoFim"> / 100</span>
                     </p>
 
-                    <p id="resultado-mensagem"></p>
+                    <details class="resultado-explicacao">
+                        <summary data-i18n="rotuloExplicacaoPontuacao">Ver explicação da pontuação</summary>
+                        <p data-i18n="explicacaoPontuacao">Cada resposta é convertida proporcionalmente para uma escala de 0 a 100, com o mesmo peso para as quatro perguntas. Quanto maior o índice, mais oportunidades de mudança aparecem nas respostas. É uma autoavaliação; não mede sua pegada ambiental.</p>
+                    </details>
 
-                    <button class="btn-pessoal" data-i18n="botaoContinuar">Continuar</button>
+                    <button type="button" class="btn-pessoal" aria-controls="link-game" aria-expanded="false" data-i18n="botaoDescobrirMundo">Descobrir o mundo sustentável</button>
                 </div>
 
             </article>
 
             <article id="link-game">
                     <div class="card-link-game">
-                        <h2 data-i18n="TituloCardLinkGame">Parabéns!!</h2>
-                        <p data-i18n="TextoCardLinkGame">Agora que voce já entendeu um pouco sobre a ODS 12, já viu na prática quais são seus gastos e seu perfil de consumidor, que tal entender um pouco mais sobre esse assunto de forma divertida jogando um game?</p>
-                        <button id="btn-chama-game" data-i18n="btnConhecerJogo">Conhecer o Jogo</button>
+                        <h2 data-i18n="TituloCardLinkGame">Parabéns por chegar até aqui!</h2>
+                        <p data-i18n="TextoCardLinkGame">Eco Education é um jogo educativo sobre consumo responsável. Explore uma cidade em crise, recicle resíduos e descubra como suas escolhas ajudam a construir um futuro mais sustentável.</p>
+                        <button type="button" id="btn-chama-game" data-i18n="btnConhecerJogo">Explorar o jogo</button>
+                        <button type="button" id="btn-volta-resultado" data-i18n="btnVoltaResultado">Voltar ao resultado</button>
                     </div>
                 </article>
-            
-        
         </section>
         <!--PARTE DO JOGO-->
         <section id="game">

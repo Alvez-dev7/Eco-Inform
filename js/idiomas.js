@@ -93,18 +93,27 @@ const traducoes = {
         // CARD PESSOAL
         //Estrutura fixa do html:
         tituloResultado: "Seu Resultado",
-        textoPontuacaoIntro: "Sua pontuação foi de: ",
-        textoPontuacaoFim: " pontos!",
+        textoPontuacaoIntro: "Indicador educativo aproximado:",
+        textoPontuacaoFim: " / 100",
+        rotuloExplicacaoPontuacao: "Ver explicação da pontuação",
+        explicacaoPontuacao: "Cada resposta é convertida proporcionalmente para uma escala de 0 a 100, com o mesmo peso para as quatro perguntas. Quanto maior o índice, mais oportunidades de mudança aparecem nas respostas. É uma autoavaliação; não mede sua pegada ambiental.",
         botaoContinuar: "Continuar",
-        //Estrutura JS:
-        msgResultadoRuim: "Atenção ao seu consumo! Pequenas mudanças nas escolhas diárias geram grande impacto. A ODS 12 da ONU nos alerta que os recursos da Terra são finitos, mas nosso padrão de consumo atual continua crescendo. Ajustar pequenas decisões no dia a dia, do prato de comida à escolha das roupas ajuda a construir uma cadeia produtiva mais justa e sustentável para as próximas gerações.",
-
-        msgResultadoBom: "Parabéns! Você demonstra hábitos de consumo consciente e equilibrado. Cada decisão inteligente que você toma, desde evitar produtos descartáveis até valorizar cadeias de produção sustentáveis reduz diretamente a sua pegada ecológica. Você já faz parte da solução para preservar os recursos naturais que todos nós compartilhamos.",
+        botaoDescobrirMundo: "Descobrir o mundo sustentável",
+        msgResultadoBaixo: "Suas respostas indicam menos oportunidades de mudança dentro dos hábitos avaliados. Manter escolhas conscientes no dia a dia já é um bom caminho.",
+        msgResultadoMedio: "Suas respostas apontam alguns hábitos que podem ser revistos. Escolha uma mudança simples para começar, como reduzir itens descartáveis ou planejar melhor as compras.",
+        msgResultadoAlto: "Suas respostas apontam mais oportunidades de mudança nos hábitos avaliados. Comece por uma ação possível para você, como encaminhar eletrônicos sem uso para um ponto de coleta.",
+        tituloRecomendacao: "Seu próximo passo",
+        recomendacaoManter: "Continue mantendo esses hábitos conscientes no dia a dia.",
+        recomendacaoBanho: "Experimente reduzir alguns minutos do banho, se isso for confortável para você.",
+        recomendacaoEletronicos: "Procure um ponto de coleta adequado para encaminhar eletrônicos que não usa mais.",
+        recomendacaoDescartaveis: "Experimente trocar um item descartável frequente por uma alternativa reutilizável.",
+        recomendacaoCompras: "Antes da próxima compra não planejada, faça uma pausa e avalie se você realmente precisa do produto.",
         //----------//
         //CARD-CHAMA-GAME//
-        TituloCardLinkGame: "Parabéns!!",
-        TextoCardLinkGame: "Agora que você já entendeu um pouco sobre a ODS 12, já viu na prática quais são seus gastos e seu perfil de consumidor, que tal entender um pouco mais sobre esse assunto de forma divertida jogando um game?",
-        btnConhecerJogo: "Conhecer o Jogo",
+        TituloCardLinkGame: "Parabéns por chegar até aqui!",
+        TextoCardLinkGame: "Eco Education é um jogo educativo sobre consumo responsável. Explore uma cidade em crise, recicle resíduos e descubra como suas escolhas ajudam a construir um futuro mais sustentável.",
+        btnConhecerJogo: "Explorar o jogo",
+        btnVoltaResultado: "Voltar ao resultado",
         //--------//
         //HERO SECTION//
         citacaoHeroGame: "Enquanto os Vândalos apodrecem a cidade, você descobre que a culpa não é dos que persistem, e sim, da sociedade",
@@ -251,18 +260,27 @@ const traducoes = {
         //CARD PESSOAL (INGLES)
         //Estrutura fixa do html:
         tituloResultado: "Your Result",
-        textoPontuacaoIntro: "Your score was: ",
-        textoPontuacaoFim: " points!",
+        textoPontuacaoIntro: "Approximate educational indicator:",
+        textoPontuacaoFim: " / 100",
+        rotuloExplicacaoPontuacao: "See how the score is calculated",
+        explicacaoPontuacao: "Each answer is proportionally converted to a 0–100 scale, with all four questions weighted equally. A higher index means the answers show more opportunities for change. This is a self-assessment; it does not measure your environmental footprint.",
         botaoContinuar: "Continue",
-        //Estrutura do JS:
-        msgResultadoRuim: "Pay attention to your consumption! Small changes in daily choices make a big impact. UN SDG 12 warns us that the Earth's resources are finite, yet our current consumption patterns keep growing. Adjusting small everyday decisions—from the food on your plate to the clothes you choose—helps build a fairer and more sustainable production chain for future generations.",
-
-        msgResultadoBom: "Congratulations! You demonstrate conscious and balanced consumption habits. Every smart decision you make—from avoiding disposable products to valuing sustainable production chains—directly reduces your ecological footprint. You are already part of the solution to preserve the natural resources we all share.",
+        botaoDescobrirMundo: "Discover a more sustainable world",
+        msgResultadoBaixo: "Your answers indicate fewer opportunities for change among the habits assessed. Maintaining thoughtful everyday choices is a good path forward.",
+        msgResultadoMedio: "Your answers point to some habits you could revisit. Choose one simple change to start with, such as reducing disposables or planning purchases more carefully.",
+        msgResultadoAlto: "Your answers point to more opportunities to change the habits assessed. Start with an action that works for you, such as taking unused electronics to a collection point.",
+        tituloRecomendacao: "A next step to try",
+        recomendacaoManter: "Keep up these thoughtful habits in your everyday life.",
+        recomendacaoBanho: "Try shortening your shower by a few minutes, if that feels comfortable for you.",
+        recomendacaoEletronicos: "Find an appropriate collection point for electronics you no longer use.",
+        recomendacaoDescartaveis: "Try replacing one disposable item you use often with a reusable alternative.",
+        recomendacaoCompras: "Before your next unplanned purchase, pause and consider whether you really need the product.",
         //----------//
         //CARD-CHAMA-GAME(INGLES)//
-        TituloCardLinkGame: "Congratulations!!",
-        TextoCardLinkGame: "Now that you've learned a bit about SDG 12 and seen your spending and consumer profile in practice, how about exploring this topic in a fun way by playing a game?",
-        btnConhecerJogo: "Check out the game",
+        TituloCardLinkGame: "Congratulations on making it this far!",
+        TextoCardLinkGame: "Eco Education is an educational game about responsible consumption. Explore a city in crisis, recycle waste, and discover how your choices can help build a more sustainable future.",
+        btnConhecerJogo: "Explore the game",
+        btnVoltaResultado: "Back to my result",
         //-------//
         //HERO SECTION GAME(INGLES)//
         citacaoHeroGame: "As the Vandals let the city rot, you discover that the blame lies not with those who endure, but with society itself.",
@@ -405,20 +423,29 @@ const traducoes = {
         //------//
         // CARD PESSOAL (ESPANHOL)
         tituloResultado: "Tu Resultado",
-        textoPontuacaoIntro: "Tu puntuación fue de: ",
-        textoPontuacaoFim: " puntos!",
+        textoPontuacaoIntro: "Indicador educativo aproximado:",
+        textoPontuacaoFim: " / 100",
+        rotuloExplicacaoPontuacao: "Ver explicación de la puntuación",
+        explicacaoPontuacao: "Cada respuesta se convierte proporcionalmente a una escala de 0 a 100, con el mismo peso para las cuatro preguntas. Cuanto más alto es el índice, más oportunidades de cambio muestran las respuestas. Es una autoevaluación; no mide tu huella ambiental.",
         botaoContinuar: "Continuar",
+        botaoDescobrirMundo: "Descubrir un mundo sostenible",
 
-        //Estrutura JS:
-        msgResultadoRuim: "¡Atención a tu consumo! Pequeños cambios en las elecciones diarias generan un gran impacto. El ODS 12 de la ONU nos advierte que los recursos de la Tierra son finitos, pero nuestro patrón de consumo actual sigue creciendo. Ajustar pequeñas decisiones en el día a día, del plato de comida a la elección de la ropa, ayuda a construir una cadena productiva más justa y sostenible para las próximas generaciones.",
-
-        msgResultadoBom: "¡Felicitaciones! Demuestras hábitos de consumo consciente y equilibrado. Cada decisión inteligente que tomas, desde evitar productos desechables hasta valorar cadenas de producción sostenibles, reduce directamente tu huella ecológica. Ya formas parte de la solución para preservar los recursos naturales que todos compartimos.",
+        msgResultadoBaixo: "Tus respuestas indican menos oportunidades de cambio entre los hábitos evaluados. Mantener decisiones conscientes en el día a día ya es un buen camino.",
+        msgResultadoMedio: "Tus respuestas señalan algunos hábitos que podrías revisar. Elige un cambio sencillo para empezar, como reducir los productos desechables o planificar mejor tus compras.",
+        msgResultadoAlto: "Tus respuestas señalan más oportunidades de cambio en los hábitos evaluados. Empieza con una acción que te resulte posible, como llevar los aparatos electrónicos sin uso a un punto de recolección.",
+        tituloRecomendacao: "Un próximo paso",
+        recomendacaoManter: "Sigue manteniendo estos hábitos conscientes en tu día a día.",
+        recomendacaoBanho: "Prueba reducir unos minutos la ducha, si te resulta cómodo.",
+        recomendacaoEletronicos: "Busca un punto de recolección adecuado para llevar los aparatos electrónicos que ya no usas.",
+        recomendacaoDescartaveis: "Prueba sustituir un producto desechable que uses con frecuencia por una alternativa reutilizable.",
+        recomendacaoCompras: "Antes de tu próxima compra no planificada, haz una pausa y piensa si realmente necesitas el producto.",
 
         //----------//
         //CARD-CHAMA-GAME (ESPANHOL)//
-        TituloCardLinkGame: "¡Felicitaciones!",
-        TextoCardLinkGame: "¿Ahora que ya entendiste un poco sobre el ODS 12, viste en la práctica cuáles son tus gastos y tu perfil de consumidor, qué tal entender un poco más sobre este tema de forma divertida jugando a un juego?",
-        btnConhecerJogo: "Conocer el Juego",
+        TituloCardLinkGame: "¡Felicitaciones por llegar hasta aquí!",
+        TextoCardLinkGame: "Eco Education es un juego educativo sobre consumo responsable. Explora una ciudad en crisis, recicla residuos y descubre cómo tus decisiones pueden ayudar a construir un futuro más sostenible.",
+        btnConhecerJogo: "Explorar el juego",
+        btnVoltaResultado: "Volver al resultado",
 
         //--------//
         //HERO SECTION (ESPANHOL)//

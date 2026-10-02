@@ -415,7 +415,7 @@ div.opcoes-container{
     align-items: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 650;
-    font-size: 0.8em;
+    font-size: 1rem;
 
     background: transparent;
     color: var(--texto-principal);
@@ -508,7 +508,7 @@ article.visivel{
 
     color: var(--texto-principal);
     font-weight: 650;
-    font-size: 0.8em;
+    font-size: 1rem;
 
     cursor: pointer;
     transition: transform .3s;
@@ -600,28 +600,121 @@ article.visivel{
     outline: 1px solid var(--destaque-suave);
 }
 
+section#transicao-game{
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+
+
+}
+
 #card-pessoal.visivel{
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 70vh;
+    height: auto;
+    padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 8vw, 7rem);
+    background-color: var(--fundo-jogo);
 }
 
-#card-pessoal > div.card-info{
-    text-align: left;
-    text-wrap: balance;
-    text-indent: 15px;
-    padding: 40px;
-    line-height: 1.3em;
-    font-size: 1.4em;
-    height: 90vh;
+#card-pessoal > .resultado-conteudo{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: min(100%, 720px);
 }
 
 #card-pessoal h2{
-    color: var(--destaque-cta);
+    color: var(--texto-principal);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.15;
 }
 
-#card-pessoal span#resultado-numero{
-    font-size: 1.6em;
-    font-weight: 900;
+#card-pessoal .resultado-pontuacao{
+    color: var(--texto-principal);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+#card-pessoal .resultado-pontuacao #resultado-numero{
+    color: var(--texto-principal);
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+#card-pessoal #resultado-mensagem{
+    max-width: 65ch;
+    color: var(--texto-principal);
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+#card-pessoal .resultado-explicacao{
+    max-width: 65ch;
+    color: var(--texto-principal);
+    font-size: 0.95rem;
+}
+
+#card-pessoal .resultado-explicacao summary{
+    width: fit-content;
+    color: var(--texto-principal);
+    cursor: pointer;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+#card-pessoal .resultado-explicacao summary:focus-visible{
+    outline: 2px solid var(--destaque-suave);
+    outline-offset: 4px;
+}
+
+#card-pessoal .resultado-explicacao p{
+    margin-top: 0.75rem;
+    line-height: 1.6;
+}
+
+#card-pessoal .resultado-recomendacao{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+    max-width: 65ch;
+    padding-top: 0.5rem;
+    color: var(--texto-principal);
+}
+
+#card-pessoal .resultado-recomendacao h3{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#card-pessoal .resultado-recomendacao p{
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#card-pessoal .btn-pessoal{
+    align-self: flex-start;
+    width: auto;
+    min-width: 12rem;
+    max-width: 100%;
+    min-height: 60px;
+    height: auto;
+    margin-top: 0.5rem;
+    padding: 0 1.5rem;
+    border-color: var(--texto-principal);
+    background-color: var(--texto-principal);
+    color: var(--fundo-principal);
+}
+
+#card-pessoal .btn-pessoal:focus-visible{
+    outline: 2px solid var(--destaque-suave);
+    outline-offset: 4px;
 }
 
 #link-game{
@@ -633,82 +726,92 @@ article.visivel{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 85px;
-    min-height: 100vh;
+    min-height: 85vh;
     width: 100%;
+    padding: clamp(4rem, 9vw, 7rem) 1.5rem;
+    background-color: var(--hero-jogo-escuro);
 }
-
-#link-game.visivel::after{
-    position: absolute;
-    content: '';
-    bottom: 0;
-    background-image: linear-gradient(to bottom, transparent, var(--hero-jogo-escuro));
-    height: 100px;
-    width: 100%;
-    z-index: 5;
-    pointer-events: none;
-}
-
 
 .card-link-game{
     scroll-snap-align: center;
     display: flex;
-    justify-self: center;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
-    gap: 20px;
-    min-height: 70vh;
-    height: auto;
-    max-height: 800px;
-    width: 90vw;
-    max-width: 600px;
+    gap: clamp(1.25rem, 3vw, 2rem);
+    width: min(100%, 760px);
+    color: var(--fundo-jogo);
+    text-align: center;
+}
 
-    font-size: 1.5em;
-    font-weight: 500;
-    text-indent: 15px;
-    text-align: left;
-    text-wrap: balance;
+.card-link-game h2{
+    color: var(--fundo-jogo);
+    font-family: "Lilita One", sans-serif;
+    font-size: clamp(2.75rem, 7vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
 
-    background: var(--texto-principal);
-    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.373), 4px 5px 7px rgba(0, 0, 0, 0.244);
-    color: #F6EBB7;
-    border-radius: 12px;
-    padding: 30px;
-    
+.card-link-game p{
+    max-width: 52ch;
+    font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.75;
 }
 
 #btn-chama-game{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 80%;
+    width: auto;
+    min-width: 14rem;
     height: 60px;
-    padding: 20px;
-
-    border: 2px solid var(--destaque-cta);
+    margin-top: 0.5rem;
+    padding: 0 1.75rem;
+    border: 2px solid var(--fundo-jogo);
     border-radius: 16px;
-    box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.293);
-
-    background: var(--hero-jogo-escuro);
-
-    color: #F6EBB7;
-
-    font-size: 0.8em;
-    font-weight: 2rem;
+    background: var(--fundo-jogo);
+    color: var(--hero-jogo-escuro);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: transform .3s;
+    transition: transform .3s, background-color .3s, color .3s;
 }
 
 #btn-chama-game:hover{
     transform: translateY(-3px);
-    
-    box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.293);
+    background: var(--fundo-principal);
+    border-color: var(--fundo-principal);
+    color: var(--hero-jogo-escuro);
 }
 
 #btn-chama-game:active{
     transform: translateY(3px);
+}
+
+#btn-chama-game:focus-visible,
+#btn-volta-resultado:focus-visible{
+    outline: 2px solid var(--fundo-principal);
+    outline-offset: 4px;
+}
+
+#btn-volta-resultado{
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    border: 0;
+    background: transparent;
+    color: var(--fundo-jogo);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    transition: opacity .2s ease;
+}
+
+#btn-volta-resultado:hover{
+    opacity: 0.75;
 }
 
 /*CSS DA PARTE DO JOGO*/
@@ -1220,15 +1323,6 @@ footer .copyright {
     .card-info{
     font-size: 1.3em;
     }
-
-    #card-pessoal > div.card-info{
-    text-align: left;
-    padding: 30px;
-    line-height: 1.2em;
-    font-size: 1.2em;
-    min-height: 80vh;
-    height: auto;
-}
 
     #hero-game #titulo-hero h2{
     font-size: 4rem;
