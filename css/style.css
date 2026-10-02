@@ -182,7 +182,7 @@ div#titulo-principal{
 
     color: transparent;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 6em;
+    font-size: 9em;
     font-weight: 100;
 
     margin-top: 140px;
@@ -205,7 +205,7 @@ div#narrativa-textos{
     display: flex;
     flex-flow: column nowrap;
     gap: 30px;
-     max-width: 400px;
+    max-width: 400px;
     font-family: "Montserrat", sans-serif;
     font-size: 1.5em;
     font-weight: 400;
@@ -413,7 +413,7 @@ div.opcoes-container{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    font-family: "Montserrat", sans-serif;
     font-weight: 650;
     font-size: 0.8em;
 
@@ -493,6 +493,7 @@ article.visivel{
 }
 
 .btn-avancar, .btn-avancar-calc, .btn-chama-calculadora, .btn-pessoal{
+    font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1179,6 +1180,8 @@ footer .copyright {
     .card-frase{
         font-size: 1.3em;
         line-height: 2;
+        padding: 25px;
+        margin: 24px 24px 20px 24px;
     }
 
     .card-frase.esquerda, .card-frase.direita{
