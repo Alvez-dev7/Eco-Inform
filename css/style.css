@@ -615,7 +615,7 @@ section#transicao-game{
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 70vh;
+    min-height: 100vh;
     height: auto;
     padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 8vw, 7rem);
     background-color: var(--fundo-jogo);
