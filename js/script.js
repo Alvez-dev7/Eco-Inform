@@ -1,59 +1,91 @@
 document.addEventListener("DOMContentLoaded", function(){
+    let idioma_atual = "pt"
     
     
 
     const heroSection = document.querySelector('#hero');
-    const caixa_escura = document.querySelector('#efeito-escuro');
+    const heroScene = document.querySelector('.hero-scene');
+    const phrases = document.querySelectorAll('.hero-phrase');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    // EFEITO LANTERNA - HERO SECTION
+    if (heroSection && heroScene && phrases.length === 4) {
+        heroSection.classList.add('story-ready');
 
-    function moverLanterna(c) {
-        if (window.innerWidth > 768) {
-            const retangulo = heroSection.getBoundingClientRect(); // Calcular topo do HEADER de acordo com a VH
-            const x = c.clientX - retangulo.left;
-            const y = c.clientY - retangulo.top;
+        if (!reduceMotion.matches) {
+            let frame = 0;
+            let pointerFrame = 0;
+            let lightX = window.innerWidth / 2;
+            let lightY = window.innerHeight * 0.44;
+            let targetX = lightX;
+            let targetY = lightY;
 
-            caixa_escura.style.setProperty('--x', x + 'px'); //Concatenação das coordenadas para o CSS
-            caixa_escura.style.setProperty('--y', y + 'px');
+            function updateStory(){
+                frame = 0;
+                const rect = heroSection.getBoundingClientRect();
+                const sceneHeight = heroScene.clientHeight;
+                const range = Math.max(rect.height - sceneHeight, 1);
+                const progress = Math.min(Math.max(-rect.top / range, 0), 1);
+                const storyStep = Math.min(Math.max((progress - 0.14) / 0.72 * 5, 0), 5);
+                const lightProgress = Math.min(Math.max((progress - 0.2) / 0.8, 0), 1);
+                const introOpacity = Math.min(Math.max(1 - progress / 0.16, 0), 1);
+
+                heroScene.style.setProperty('--story-y', `${(1 - storyStep) * sceneHeight}px`);
+                heroScene.style.setProperty('--scene-shade', (0.72 - lightProgress * 0.34).toFixed(2));
+                heroScene.style.setProperty('--intro-opacity', introOpacity.toFixed(2));
+                heroScene.style.setProperty('--intro-y', `${-progress * 56}px`);
+                heroScene.style.setProperty('--indicator-opacity', Math.max(1 - progress * 8, 0).toFixed(2));
+                heroScene.querySelector('.hero-copy').inert = progress > 0.16;
+
+                const activePhrase = Math.min(Math.max(Math.round(storyStep) - 1, 0), phrases.length - 1);
+                phrases.forEach(function(phrase, index){
+                    const active = index === activePhrase;
+                    phrase.style.setProperty('--phrase-opacity', active ? '1' : '0');
+                    phrase.setAttribute('aria-hidden', active ? 'false' : 'true');
+                });
+            }
+
+            function requestStoryUpdate(){
+                if (!frame) frame = window.requestAnimationFrame(updateStory);
+            }
+
+            function moveLight(event){
+                const rect = heroScene.getBoundingClientRect();
+                targetX = event.clientX - rect.left;
+                targetY = event.clientY - rect.top;
+
+                if (!pointerFrame) pointerFrame = window.requestAnimationFrame(animateLight);
+            }
+
+            function animateLight(){
+                lightX += (targetX - lightX) * 0.16;
+                lightY += (targetY - lightY) * 0.16;
+                heroScene.style.setProperty('--light-x', `${lightX}px`);
+                heroScene.style.setProperty('--light-y', `${lightY}px`);
+
+                if (Math.abs(targetX - lightX) + Math.abs(targetY - lightY) > 0.5) {
+                    pointerFrame = window.requestAnimationFrame(animateLight);
+                } else {
+                    pointerFrame = 0;
+                }
+            }
+
+            heroScene.addEventListener('pointermove', function(event){
+                if (event.pointerType === 'mouse' && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                    moveLight(event);
+                }
+            });
+            heroScene.addEventListener('pointerleave', function(){
+                targetX = heroScene.clientWidth * 0.52;
+                targetY = heroScene.clientHeight * 0.44;
+                if (!pointerFrame) pointerFrame = window.requestAnimationFrame(animateLight);
+            });
+            window.addEventListener('scroll', requestStoryUpdate, {passive: true});
+            window.addEventListener('resize', requestStoryUpdate);
+            requestStoryUpdate();
         }
     }
     
-    if (heroSection) {
-        heroSection.addEventListener('mousemove', moverLanterna);
-    }
-
-    //EFEITO CARDS - HERO SECTION
-
-    const cards = window.document.querySelectorAll('.card-frase')
-
-    const observador = new IntersectionObserver(function(lista_cards){ //Nova instancia
-        lista_cards.forEach(function(relatorio_card){
-            if(relatorio_card.isIntersecting){
-                relatorio_card.target.classList.add('visivel')
-            }
-        })
-        
-     },{threshold: 0.2}) // 2° Parametro do observer - 20% do card
-
-    cards.forEach(function(card){
-        observador.observe(card)
-    })
-    
-    const segundo_card_frase = document.querySelector('#segundoCardFrase')
-    const titulo_principal = document.querySelector('#titulo-principal')
     const indicador_rolagem = document.querySelector('#indicador-rolagem')
-    const observador_idioma = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-            if (entry.isIntersecting){
-                btn_idioma.classList.add('visivel')
-            }else{
-                btn_idioma.classList.remove('visivel')
-            }
-        })
-    }, {threshold: 0.1})
-
-    observador_idioma.observe(titulo_principal)
-    observador_idioma.observe(indicador_rolagem)
 
     // BARRA PROGRESSO INVISIVEL - HERO / QUIZ
     const hud_centro = document.querySelector('.hud-centro')
@@ -76,295 +108,159 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // CHAMAMENTO DO QUIZ - Hero --> Quiz
     const botao_quiz = document.querySelector('#link-quiz')
-    botao_quiz.addEventListener('click', function(link){
-        link.preventDefault()
-        quiz.classList.add('quiz-visivel') //Deixando o quiz visivel
-        quiz.scrollIntoView({behavior: 'smooth'})
-    })
-    //CLICAGEM DE BOTAO NO QUIZ
-    const botoes_quiz = document.querySelectorAll('.btn-opcao')
+    if (botao_quiz) {
+        botao_quiz.addEventListener('click', function(link){
+            link.preventDefault()
+            quiz.classList.add('quiz-visivel') //Deixando o quiz visivel
+            quiz.scrollIntoView({behavior: 'smooth'})
+        })
+    }
+    const quizQuestions = [
+        {question: 'quizQuestion1', options: ['quizQ1A', 'quizQ1B'], correct: 0, explanation: 'quizExplainQ1'},
+        {question: 'quizQuestion2', options: ['quizQ2A', 'quizQ2B'], correct: 1, explanation: 'quizExplainQ2'},
+        {question: 'quizQuestion3', options: ['quizQ3A', 'quizQ3B'], correct: 0, explanation: 'quizExplainQ3'}
+    ];
+    const quizOptions = document.querySelectorAll('.quiz-option');
+    const quizStage = document.querySelector('#quiz-stage');
+    const quizEnd = document.querySelector('#quiz-end');
+    const quizFeedback = document.querySelector('#quiz-feedback');
+    const quizFeedbackTitle = document.querySelector('#quiz-feedback-title');
+    const quizExplanation = document.querySelector('#quiz-explanation-text');
+    const quizProgress = document.querySelector('#quiz-progress');
+    const quizProgressBar = document.querySelector('#quiz-progress-bar');
+    const quizProgressLabel = document.querySelector('#quiz-progress-label');
+    const quizNext = document.querySelector('#quiz-next');
+    let quizIndex = 0;
+    let quizAnswered = false;
 
-    botoes_quiz.forEach(function(clica_botao){
+    function setCopy(element, key){
+        element.dataset.i18n = key;
+        element.textContent = traducoes[idioma_atual][key];
+    }
 
-        clica_botao.addEventListener('click', function(){
-            const id_alvo = clica_botao.dataset.alvo; // Identifica a Questao alvo
+    function updateQuizProgress(){
+        quizProgress.setAttribute('aria-label', traducoes[idioma_atual].quizProgressAria);
+        quizProgressLabel.textContent = quizIndex >= quizQuestions.length
+            ? traducoes[idioma_atual].quizComplete
+            : traducoes[idioma_atual].quizQuestionCount
+                .replace('{current}', String(quizIndex + 1))
+                .replace('{total}', String(quizQuestions.length));
+    }
 
-            const container_info = document.querySelector(id_alvo) // Container_info recebe o ID da questao
+    function renderQuiz(){
+        const question = quizQuestions[quizIndex];
+        setCopy(document.querySelector('#quiz-question'), question.question);
+        quizOptions.forEach(function(option, index){
+            setCopy(option, question.options[index]);
+            option.classList.remove('is-selected', 'is-correct', 'is-wrong');
+            option.setAttribute('aria-pressed', 'false');
+            option.disabled = false;
+        });
+        quizFeedback.hidden = true;
+        quizFeedbackTitle.removeAttribute('data-i18n');
+        quizExplanation.removeAttribute('data-i18n');
+        document.querySelector('#quiz-explanation').open = false;
+        quizNext.hidden = true;
+        setCopy(quizNext, quizIndex === quizQuestions.length - 1 ? 'quizFinish' : 'quizNext');
+        quizProgress.setAttribute('aria-valuenow', String(quizIndex + 1));
+        quizProgressBar.style.width = `${((quizIndex + 1) / quizQuestions.length) * 100}%`;
+        updateQuizProgress();
+        quizStage.hidden = false;
+        quizEnd.hidden = true;
+        quizAnswered = false;
+    }
 
-            const paragrafo_info = container_info.querySelector('p') //Busca limitada -- Informações sobre a questao
-            const titulo_info = container_info.querySelector('h3')
+    quizOptions.forEach(function(option, selectedIndex){
+        option.addEventListener('click', function(){
+            if (quizAnswered) return;
+            quizAnswered = true;
+            const question = quizQuestions[quizIndex];
+            const correct = selectedIndex === question.correct;
 
-            paragrafo_info.innerHTML = clica_botao.dataset.info // Inserindo informações
-            titulo_info.innerHTML = clica_botao.dataset.titulo
+            quizOptions.forEach(function(answer, index){
+                answer.disabled = true;
+                answer.setAttribute('aria-pressed', String(index === selectedIndex));
+                if (index === selectedIndex) answer.classList.add('is-selected');
+                if (index === question.correct) answer.classList.add('is-correct');
+                else if (index === selectedIndex) answer.classList.add('is-wrong');
+            });
 
-            container_info.classList.add('visivel'); //Container de informações passa a ficar visivel
-
-            container_info.scrollIntoView({behavior: 'smooth'}) //Faz a rolagem para informação de forma leve
-
-            const botao_avancar_info = container_info.querySelector('.btn-avancar')
-
-            if(botao_avancar_info){
-                botao_avancar_info.focus()
-            }
-
+            quizFeedback.hidden = false;
+            setCopy(quizFeedbackTitle, correct ? 'quizCorrect' : 'quizIncorrect');
+            setCopy(quizExplanation, question.explanation);
+            quizNext.hidden = false;
+            quizNext.focus();
         });
     });
 
-    //BARRA DE PROGRESSO E CONSTRUÇÃO DAS QUESTOES
-
-    const btn_avancar_conjunto = document.querySelectorAll('.btn-avancar');
-
-    const barra_progresso = document.querySelector('#barra-progresso')
-
-    let progresso_total = 0 // Barra de progresso começa com 20 
-
-    const chama_barra_progresso = document.querySelectorAll('.btn-chama-barra-progresso')
-    chama_barra_progresso.forEach(function(botao){
-        botao.addEventListener('click', function(){
-            progresso_total = 0
-            barra_progresso.classList.add('visivel')
-        })
-    })
-    
-    
-    btn_avancar_conjunto.forEach(function(btn_avancar_individual){
-        
-        btn_avancar_individual.addEventListener('click', function(){
-            const proxima_quest = btn_avancar_individual.dataset.proxima //Identifica qual será a proxima questão
-
-            const destino = document.querySelector(proxima_quest); // Pega o ID dessa questão
-
-            destino.classList.remove('escondida') // Proxima questão passa  a ser visivel
-            destino.classList.add('visivel')
-
-            destino.scrollIntoView({behavior: 'smooth'}) //Rolagem leve até a proxima questão 
-
-            if (progresso_total < 100){ //Lógica de progresso para a barra de progresso
-                progresso_total += 25
-                barra_progresso.style.width = `${progresso_total}%`
-            }
-
-        })
-    })    
-    
-    const btn_chama_calculadora = document.querySelector('.btn-chama-calculadora') // Botao final do quiz que irá fazer a calc ficar visivel
-    const secao_calculadora = document.querySelector('#calculadora')
-    const respostas_normalizadas = []
-
-    btn_chama_calculadora.addEventListener('click', function(){
-        quiz.classList.remove('quiz-visivel')   // Quiz passa a ficar invisivel
-        observador_cabecalho.observe(secao_calculadora) // Cabeçalho também fica visivel na seção calc 
-        secao_calculadora.classList.add('visivel') //Deixa a seção da calculadora visivel
-
-        secao_calculadora.scrollIntoView({behavior: 'smooth'}) //Faz um efeito de rolagem simples até ela
-
-        barra_progresso.classList.remove('visivel')
-        progresso_total = 0 
-        respostas_normalizadas.length = 0
-    })
-
-    const botoes_avancar_calculadora = document.querySelectorAll('.btn-avancar-calc')
-
-    botoes_avancar_calculadora.forEach(function(btn_avancar_calc){
-        const caixa_pai = btn_avancar_calc.parentElement //Caixa_pai recebe a caixa relacionada ao botao de avançar especifico
-        const campo_input_calc = caixa_pai.querySelector('input')
-
-            
-            campo_input_calc.addEventListener('keypress', function(entry){ 
-                if(entry.key === 'Enter'){ //Adicionando opção de clicagem com a tecla ENTER
-                    entry.preventDefault();
-
-                    btn_avancar_calc.click();
-                }
-            })
-
-           
-
-
-        btn_avancar_calc.addEventListener('click', function(){
-            if(campo_input_calc.value === "" || !campo_input_calc.validity.valid){
-                campo_input_calc.reportValidity()
-                return
-            }
-
-            if (progresso_total < 100){ //Lógica de progresso para a barra de progresso - calc
-                progresso_total += 25
-                barra_progresso.style.width = `${progresso_total}%`
-            }
-
-            btn_avancar_calc.disabled = true; //Desativa o botão de avançar - Prevenção de clique duplo e resultado falso.
-
-            campo_input_calc.disabled = true; //Trava o input
-
-            const valor = Number(campo_input_calc.value)
-            const min = Number(campo_input_calc.min)
-            const max = Number(campo_input_calc.max)
-            respostas_normalizadas.push(((valor - min) / (max - min)) * 100)
-
-            const proxima = document.querySelector(btn_avancar_calc.dataset.proxima) // identificamos a proxima questao
-
-            if(btn_avancar_calc.dataset.proxima === "#card-pessoal"){
-                const indice = Math.round(
-                    respostas_normalizadas.reduce(function(total, resposta){
-                        return total + resposta
-                    }, 0) / respostas_normalizadas.length
-                )
-
-                document.querySelector('#resultado-numero').textContent = indice
-
-                const campo_mensagem = document.querySelector('#resultado-mensagem')
-                let chaveMensagem
-
-                if(indice <= 33){
-                    chaveMensagem = 'msgResultadoBaixo'
-                } else if(indice <= 66){
-                    chaveMensagem = 'msgResultadoMedio'
-                } else{
-                    chaveMensagem = 'msgResultadoAlto'
-                }
-
-                campo_mensagem.setAttribute('data-i18n', chaveMensagem)
-
-                const recomendacao_primaria = document.querySelector('#texto-recomendacao-primaria')
-                const recomendacao_secundaria = document.querySelector('#texto-recomendacao-secundaria')
-                const maior_resposta = Math.max(...respostas_normalizadas)
-
-                recomendacao_secundaria.hidden = true
-                recomendacao_secundaria.removeAttribute('data-i18n')
-
-                if(maior_resposta <= 33){
-                    recomendacao_primaria.setAttribute('data-i18n', 'recomendacaoManter')
-                } else{
-                    const perguntas_prioritarias = respostas_normalizadas
-                        .map(function(resposta, indice){
-                            return {resposta: resposta, indice: indice}
-                        })
-                        .filter(function(resposta){
-                            return maior_resposta - resposta.resposta <= 5
-                        })
-
-                    const recomendacoes_por_pergunta = [
-                        'recomendacaoBanho',
-                        'recomendacaoEletronicos',
-                        'recomendacaoDescartaveis',
-                        'recomendacaoCompras'
-                    ]
-
-                    recomendacao_primaria.setAttribute(
-                        'data-i18n',
-                        recomendacoes_por_pergunta[perguntas_prioritarias[0].indice]
-                    )
-
-                    if(perguntas_prioritarias.length > 1){
-                        recomendacao_secundaria.setAttribute(
-                            'data-i18n',
-                            recomendacoes_por_pergunta[perguntas_prioritarias[1].indice]
-                        )
-                        recomendacao_secundaria.hidden = false
-                    }
-                }
-
-                atualizaTextos()
-            }
-
-            proxima.classList.remove('escondida') // Revela a proxima questão
-            proxima.classList.add('visivel')
-            proxima.scrollIntoView({behavior: 'smooth'}) //Faz a rolagem leve até a próxima etapa
-
-
-            const proximo_input = proxima.querySelector('input')
-
-            if (proximo_input){
-                proximo_input.focus()
-            }
-
-        })
-    })
-
-    const botao_pessoal = document.querySelector('.btn-pessoal') //Identifica o botão do card-pessoal
-    const link_game = document.querySelector('#link-game') //Identifica o botão que será o link para a parte do game
-    const btn_chama_game = document.querySelector('#btn-chama-game')
-    const btn_volta_resultado = document.querySelector('#btn-volta-resultado')
-    const secao_game = document.querySelector('#game') // Identifica a secao do game
-
-    botao_pessoal.addEventListener('click', function(){ // Faz a transição da parte do card pessoal, para o card do link-game
-        link_game.classList.add('visivel')
-        botao_pessoal.setAttribute('aria-expanded', 'true')
-        link_game.scrollIntoView({behavior: 'smooth'})
-        btn_chama_game.focus({preventScroll: true})
-    })
-
-    btn_chama_game.addEventListener('click', function(){ //Faz a transição para o parte do game
-        secao_game.classList.add('visivel')
-        secao_game.scrollIntoView({behavior: 'smooth'})
-    })
-
-    btn_volta_resultado.addEventListener('click', function(){
-        link_game.classList.remove('visivel')
-        botao_pessoal.setAttribute('aria-expanded', 'false')
-        document.querySelector('#card-pessoal').scrollIntoView({behavior: 'smooth'})
-        botao_pessoal.focus({preventScroll: true})
-    })
-
-    const link_gdd = document.querySelector('#link-gdd') //Identifica o botão que fará o gdd aparecer
-    const secao_gdd = document.querySelector('article#gdd') // identifica a secao do gdd
-
-    const secao_dowload = document.querySelector('#dowload-game') // Identifica a secao que terá o botao de download
-
-    link_gdd.addEventListener('click', function(){ // Faz a transição para a secao do gdd
-
-        secao_gdd.classList.add('visivel')
-        secao_gdd.scrollIntoView({behavior: 'smooth'})
-
-    })
-
-
-    const lista_cards_gdd = document.querySelectorAll('.card-gdd') //Identifica todos os cards do gdd
-    const aviso_clique = document.querySelector('#aviso-clique') // Identifica o card de aviso clique
-
-    const observador_cards_gdd = new IntersectionObserver(function(entries){ // Cria o observador dos cards gdd
-        entries.forEach(function(entry){
-            if(entry.isIntersecting){
-                entry.target.classList.add('visivel')
-            }
-        })
-    },{threshold: 0.1})
-
-    lista_cards_gdd.forEach(function(card_gdd){ 
-        observador_cards_gdd.observe(card_gdd) // Faz observar cada card gdd
-
-        card_gdd.addEventListener('click', function(){ //Faz o efeito de desembaçamento dos cards
-        card_gdd.classList.add('desembacado');
-
-        if(aviso_clique){
-            aviso_clique.style.opacity = '0' // Tira o aviso clique após o 1° clique em algum card gdd
+    quizNext.addEventListener('click', function(){
+        quizIndex += 1;
+        if (quizIndex === quizQuestions.length) {
+            quizStage.hidden = true;
+            quizEnd.hidden = false;
+            updateQuizProgress();
+            quizProgress.setAttribute('aria-valuenow', String(quizQuestions.length));
+            quizProgressBar.style.width = '100%';
+            document.querySelector('#quiz-restart').focus();
+            return;
         }
-
-        
-        secao_dowload.classList.add('visivel') // Deixa a secao do dowload visivel
+        renderQuiz();
+        quizOptions[0].focus();
     });
-    })
 
-    const lista_cards_dowload = document.querySelectorAll('.card-dowload') //Identifica o card que irá chamar a secao dowload
-    
-    const footer = document.querySelector('footer') //Identificamos o footer
-    const btn_link_caixa_dowload = document.querySelector('#btn-chama-dowload') //Identifica o botão de chamamento da caixa dowload
-    const caixa_dowload = document.querySelector('#caixa-dowload') //Identifica a caixa de download
+    document.querySelector('#quiz-restart').addEventListener('click', function(){
+        quizIndex = 0;
+        renderQuiz();
+        quizOptions[0].focus();
+    });
 
-    btn_link_caixa_dowload.addEventListener('click', function(){ // faz a transição para a caixa dowload
+    renderQuiz();
 
-        caixa_dowload.classList.add('visivel') 
-        caixa_dowload.scrollIntoView({behavior: "smooth"})
+    const profileForm = document.querySelector('#profile-form');
+    const profileInputs = [
+        {input: document.querySelector('#profile-shower'), output: document.querySelector('#profile-shower-value'), unit: 'profileMinutes'},
+        {input: document.querySelector('#profile-electronics'), output: document.querySelector('#profile-electronics-value'), unit: 'profileDevices'},
+        {input: document.querySelector('#profile-impulse'), output: document.querySelector('#profile-impulse-value'), unit: 'profileOutOfTen'}
+    ];
 
-        if(footer){
-            footer.style.display = 'flex'
-        }
-    })
+    function updateProfileValues(){
+        profileInputs.forEach(function(control){
+            const value = control.input.value;
+            control.output.textContent = traducoes[idioma_atual][control.unit].replace('{value}', value);
+            control.input.setAttribute('aria-valuetext', control.output.textContent);
+        });
+    }
+
+    profileInputs.forEach(function(control){
+        control.input.addEventListener('input', updateProfileValues);
+    });
+    updateProfileValues();
+
+    profileForm.addEventListener('submit', function(event){
+        event.preventDefault();
+        const scores = profileInputs.map(function(control){
+            const range = Number(control.input.max) - Number(control.input.min);
+            return (Number(control.input.value) - Number(control.input.min)) / range * 100;
+        });
+        const score = Math.round(scores.reduce(function(total, value){ return total + value; }, 0) / scores.length);
+        const highest = scores.indexOf(Math.max(...scores));
+        const recommendations = ['profileTipShower', 'profileTipElectronics', 'profileTipImpulse'];
+        document.querySelector('#resultado-numero').textContent = String(score);
+        setCopy(document.querySelector('#texto-recomendacao-primaria'), recommendations[highest]);
+
+        const result = document.querySelector('#card-pessoal');
+        const firstResult = result.hidden;
+        result.hidden = false;
+        if (firstResult) result.scrollIntoView({behavior: 'smooth', block: 'center'});
+    });
 
     const btn_idioma = document.querySelector("#btn-idioma") // Identifica o botão de troca de idioma
-    let idioma_atual = "pt" // Deixa como linguagem padrão o PORTUGUES
+    if (btn_idioma) {
+        btn_idioma.classList.add('visivel')
+    }
 
     function atualizaTextos(){
+        document.documentElement.lang = idioma_atual === 'pt' ? 'pt-BR' : idioma_atual;
         //Traduz os elementos estáticos
         const elementosTraduziveis = document.querySelectorAll('[data-i18n]') // Identifica todos os elementos traduziveis estáticos
 
@@ -375,6 +271,14 @@ document.addEventListener("DOMContentLoaded", function(){
                 elementoTraduzivel.innerHTML = traducoes[idioma_atual][chave]; //Identifica o dicionário de estado, e a chave do data-i18n dentro da const traducoes
             }
         })
+        document.querySelectorAll('[data-i18n-alt]').forEach(function(element){
+            const key = element.dataset.i18nAlt;
+            if (traducoes[idioma_atual][key]) element.alt = traducoes[idioma_atual][key];
+        });
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(function(element){
+            const key = element.dataset.i18nAriaLabel;
+            if (traducoes[idioma_atual][key]) element.setAttribute('aria-label', traducoes[idioma_atual][key]);
+        });
         //Traduz Elementos data-titulo
         const elementosTitulo = document.querySelectorAll('[data-i18n-titulo]')
         elementosTitulo.forEach(function(elementoTitulo){
@@ -394,7 +298,9 @@ document.addEventListener("DOMContentLoaded", function(){
         })
 
 
-        document.querySelector('#texto-sigla').innerText = traducoes[idioma_atual].textoBotaoIdioma; //  Atualiza a sigla do botao de idiomas
+        document.querySelector('#texto-sigla').innerText = traducoes[idioma_atual].textoBotaoIdioma;
+        updateQuizProgress();
+        updateProfileValues();
 
     }
 
