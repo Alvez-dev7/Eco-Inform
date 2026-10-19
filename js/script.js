@@ -87,21 +87,7 @@ document.addEventListener("DOMContentLoaded", function(){
     
     const indicador_rolagem = document.querySelector('#indicador-rolagem')
 
-    // BARRA PROGRESSO INVISIVEL - HERO / QUIZ
-    const hud_centro = document.querySelector('.hud-centro')
     const quiz = document.querySelector('#quiz')
-    const observador_cabecalho = new IntersectionObserver(function(entries){ //Nova instancia - Todas as entradas
-        entries.forEach(function(entry){ 
-            if(entry.isIntersecting){
-                hud_centro.classList.add('visivel')
-            } else{
-                hud_centro.classList.remove('visivel')
-            }
-            
-        })
-    },{threshold: 0.1}) // 2° parametro do observer
-
-    observador_cabecalho.observe(quiz)
 
     // CONSTRUÇÃO DO QUIZ - INFORMAÇÕES
 

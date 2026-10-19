@@ -52,7 +52,7 @@ header#cabecalho-fixo{
     z-index: 40;
     width: min(92%, 1120px);
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 1rem;
     padding: 0.6rem 1rem;
@@ -129,59 +129,10 @@ header#cabecalho-fixo{
     fill: #fff;
 }
 
-div.hud-centro{
-    opacity: 0;
-    transition: all 0.5s ease;
-    transform: translateY(-50%);
-    z-index: 100;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(15px);
-    padding: 0.5rem 0.8rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.04);
-}
-
-div.hud-centro.visivel{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-div#barra-fundo{
-    width: min(13rem, 28vw);
-    height: 12px;
-    background-color: transparent;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.45);
-    overflow: hidden;
-}
-
-div#barra-progresso{
-    opacity: 0;
-    border-radius: 999px;
-    background-color: rgba(132, 150, 122, 0.95);
-    height: 100%;
-    width: 0%;
-    transition: width 0.5s ease-in-out, opacity 0.5s ease, visibility 0.5s;
-}
-
-div#barra-progresso.visivel{
-    opacity: 1;
-}
-
 div#config{
     display: flex;
     justify-content: flex-end;
     border-radius: 8px;
-}
-
-#planta-progresso{
-    color: rgba(255,255,255,0.8);
-    font-size: 1rem;
 }
 
 button:focus-visible,
@@ -1269,10 +1220,6 @@ footer .copyright {
         font-size: 0.62rem;
         letter-spacing: 0.01em;
         white-space: nowrap;
-    }
-
-    div.hud-centro{
-        display: none;
     }
 
     #btn-idioma{
